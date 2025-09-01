@@ -66,7 +66,7 @@
         <!-- Carousel Slides -->
         <div class="carousel-inner">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                <h1>Discover Our Next Adventure</h1>
+                <h1>Discover Our Next <span class="text-primary">Adventure</span></h1>
                 <p>Experience the breathtaking beauty of the Himalayas, where snow-capped peaks meet serene valleys.</p>
 
                 <!-- Search Form -->
@@ -131,36 +131,31 @@
 
     <!-- New section below the carousel -->
     <div class="About-section">
-    <div class="container my-5 d-flex flex-column justify-content-center align-items-center h-100">
-        <h5>TRAVELLER'S FAVORITE</h5>
-        <h2>Explore Our Popular Packages</h2>
-        <p>Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
-        <div class="container my-5">
-            <div class="row">
-                <!-- Image 1 -->
-                <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <img src="assets/img1.jpg" class="img-fluid rounded shadow" alt="Image 1">
-                </div>
-                <!-- Image 2 -->
-                <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <img src="assets/img2.jpg" class="img-fluid rounded shadow" alt="Image 2">
-                </div>
-                <!-- Image 3 -->
-                <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <img src="assets/img3.jpg" class="img-fluid rounded shadow" alt="Image 3">
-                </div>
-                <!-- Image 4 -->
-                <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <img src="assets/img4.jpg" class="img-fluid rounded shadow" alt="Image 4">
-                </div>
-                <!-- Image 5 -->
-                <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <img src="assets/img5.jpg" class="img-fluid rounded shadow" alt="Image 5">
-                </div>
+        <div class="container my-5 text-center">
+            <h5>TRAVELLER'S FAVORITE</h5>
+            <h2>Explore Our Popular Packages</h2>
+            <p>Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
+
+            <div class="position-relative my-5 d-flex justify-content-center align-items-center flex-wrap" style="min-height: 400px;">
+                
+                <!-- Top Left -->
+                <img src="assets/img1.jpg" class="img-fluid rounded shadow position-absolute top-0 start-0 m-2 img-corner" alt="Image 1">
+                
+                <!-- Top Right -->
+                <img src="assets/img2.jpg" class="img-fluid rounded shadow position-absolute top-0 end-0 m-2 img-corner" alt="Image 2">
+                
+                <!-- Center -->
+                <img src="assets/img3.jpg" class="img-fluid rounded shadow mx-3 my-3 img-center top-50 start-50" alt="Image 3">
+                
+                <!-- Bottom Left -->
+                <img src="assets/img4.jpg" class="img-fluid rounded shadow position-absolute bottom-0 start-0 m-2 img-corner" alt="Image 4">
+                
+                <!-- Bottom Right -->
+                <img src="assets/img5.jpg" class="img-fluid rounded shadow position-absolute bottom-0 end-0 m-2 img-corner" alt="Image 5">
             </div>
-        </div>      
+        </div>
     </div>
-    </div>
+
     
     <script>
         const navbar = document.querySelector('.navbar-scroll');
