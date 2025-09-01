@@ -1,0 +1,106 @@
+:root {
+    --primary-color: #0077CC;
+    --secondary-color: #f8f9fa;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    color: var(--secondary-color);
+}
+h5{
+    color: var(--primary-color);
+}
+
+/* Transparent navbar initially */
+.navbar-scroll {
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+.navbar-brand img {
+    height: 50px; /* desktop default */
+}
+
+/* Contact button default */
+.navbar-scroll .btn {
+    background-color: #0d6efd;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Contact button on scroll */
+.navbar-scroll.scrolled .btn {
+    background-color: white;
+    color: #0d6efd;
+}
+
+/* Carousel indicators default visible */
+.carousel-indicators {
+    transition: opacity 0.3s ease;
+}
+
+/* Hide indicators when navbar is scrolled */
+.carousel-indicators.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Background appears on scroll */
+.navbar-scroll.scrolled {
+    background-color: var(--primary-color); /* Bootstrap primary color */
+    transition: background-color 0.3s ease;
+}
+.carousel-inner img {
+    height: 600px; /* Adjust carousel height */
+    object-fit: cover;
+}
+
+.carousel-dark .carousel-indicators [data-bs-target]{
+    background-color: white;
+}
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+.carousel-caption {
+    z-index: 2; /* Ensure captions are above the overlay */
+}
+
+.contact-btn {
+    margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand img {
+        height: 35px; /* smaller on mobile */
+    }
+    .carousel-caption p {
+        font-size: clamp(12px, 2vw, 16px);   /* smaller font size */
+        line-height: 1.4;  /* adjust spacing for readability */
+        padding: 0 10px;   /* optional: add some side padding */
+    }
+    .About-section{
+        font-size: clamp(12px, 2vw, 16px);
+        line-height: 1.4;
+        padding: 0;
+    }
+}
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.8); /* optional */
+        z-index: 5;
+    }
+}

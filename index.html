@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Tour</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div id="mainCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+        <!-- Navbar overlay -->
+        <div class="position-absolute top-0 start-0 w-100 p-3" style="z-index: 10;">
+            <div class="container d-flex justify-content-between align-items-center">              
+
+                <!-- Menu -->
+                <!-- Navbar overlay -->
+                <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 w-100 p-3 navbar-scroll" style="z-index: 10;">
+                    <div class="container">
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="#">
+                            <img src="assets/logo1.png">
+                        </a>
+
+                        <!-- Hamburger toggle button for mobile -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Menu items center -->
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                            <ul class="navbar-nav mb-2 mb-lg-0">
+                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">Home</a></li>
+                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">About</a></li>
+                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">Services</a></li>
+                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">Packages</a></li>
+                                <li class="nav-item"><a class="nav-link text-white" href="#">Blogs</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Us button right -->
+                        <div class="d-flex ms-auto">
+                            <a class="btn btn-primary" href="#">Contact Us</a>
+                        </div>           
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators" style="z-index: 10;">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
+                <h1>Discover Our Next Adventure</h1>
+                <p>Experience the breathtaking beauty of the Himalayas, where snow-capped peaks meet serene valleys.</p>
+            </div>
+            <div class="carousel-item active">
+                <img src="assets/slide1.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/slide2.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="assets/slide3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- New section below the carousel -->
+    <div class="About-section">
+    <div class="container my-5 d-flex flex-column justify-content-center align-items-center h-100">
+        <h5>TRAVELLER'S FAVORITE</h5>
+        <h2>Explore Our Popular Packages</h2>
+        <p>Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
+        <div class="container my-5">
+            <div class="row">
+                <!-- Image 1 -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <img src="assets/img1.jpg" class="img-fluid rounded shadow" alt="Image 1">
+                </div>
+                <!-- Image 2 -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <img src="assets/img2.jpg" class="img-fluid rounded shadow" alt="Image 2">
+                </div>
+                <!-- Image 3 -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <img src="assets/img3.jpg" class="img-fluid rounded shadow" alt="Image 3">
+                </div>
+                <!-- Image 4 -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <img src="assets/img4.jpg" class="img-fluid rounded shadow" alt="Image 4">
+                </div>
+                <!-- Image 5 -->
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <img src="assets/img5.jpg" class="img-fluid rounded shadow" alt="Image 5">
+                </div>
+            </div>
+        </div>      
+    </div>
+    </div>
+    
+    <script>
+        const navbar = document.querySelector('.navbar-scroll');
+        const indicators = document.querySelector('.carousel-indicators');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // when scroll > 50px
+                navbar.classList.add('scrolled');
+                indicators.classList.add('hidden'); // hide indicators
+            } else {
+                navbar.classList.remove('scrolled');
+                indicators.classList.remove('hidden'); // show indicators
+            }
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
