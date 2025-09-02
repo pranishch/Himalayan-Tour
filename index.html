@@ -5,59 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Himalayan Tour</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-
 <body>
-
-    <div id="mainCarousel" class="carousel slide position-relative" data-bs-ride="carousel">
+    <div id="mainCarousel" class="carousel slide position-relative" data-bs-ride="carousel">      
+        <!-- Menu -->
         <!-- Navbar overlay -->
-        <div class="position-absolute top-0 start-0 w-100 p-3" style="z-index: 10;">
-            <div class="container d-flex justify-content-between align-items-center">              
+        <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 w-100 p-3 navbar-scroll" style="z-index: 10;">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo1.png">
+                </a>
 
-                <!-- Menu -->
-                <!-- Navbar overlay -->
-                <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 w-100 p-3 navbar-scroll" style="z-index: 10;">
-                    <div class="container">
-                        <!-- Logo -->
-                        <a class="navbar-brand" href="#">
-                            <img src="assets/logo1.png">
-                        </a>
+                <!-- Hamburger toggle button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                        <!-- Hamburger toggle button for mobile -->
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                            aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                <!-- Menu items center -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item me-3"><a class="nav-link text-white" href="#">Home</a></li>
+                        <li class="nav-item me-3"><a class="nav-link text-white" href="#">About</a></li>
+                        <li class="nav-item me-3"><a class="nav-link text-white" href="#">Services</a></li>
+                        <li class="nav-item me-3"><a class="nav-link text-white" href="#">Packages</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Blogs</a></li>
+                    </ul>
+                </div>
 
-                        <!-- Menu items center -->
-                        <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
-                            <ul class="navbar-nav mb-2 mb-lg-0">
-                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">Home</a></li>
-                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">About</a></li>
-                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">Services</a></li>
-                                <li class="nav-item me-3"><a class="nav-link text-white" href="#">Packages</a></li>
-                                <li class="nav-item"><a class="nav-link text-white" href="#">Blogs</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Contact Us button right -->
-                        <div class="d-flex ms-auto">
-                            <a class="btn btn-primary" href="#">Contact Us</a>
-                        </div>           
-                    </div>
-                </nav>
+                <!-- Contact Us button right -->
+                <div class="d-flex ms-auto">
+                    <a class="btn btn-primary" href="#">Contact Us</a>
+                </div>           
             </div>
-        </div>
+        </nav>
 
         <!-- Carousel Indicators -->
-        <div class="carousel-indicators" style="z-index: 10;">
+        <div class="carousel-indicators">
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -66,46 +61,46 @@
         <!-- Carousel Slides -->
         <div class="carousel-inner">
             <div class="carousel-caption d-flex flex-column justify-content-center align-items-center h-100">
-                <h1>Discover Our Next <span class="text-primary">Adventure</span></h1>
-                <p>Experience the breathtaking beauty of the Himalayas, where snow-capped peaks meet serene valleys.</p>
-
+                <div class="animate__animated animate__fadeInUp">
+                    <h1>Discover Your Next <span class="text-primary">Adventure</span></h1>
+                    <p>Experience the breathtaking beauty of the Himalayas, where snow-capped peaks meet serene valleys.</p>
+                </div>
                 <!-- Search Form -->
-                <form class="search-form d-flex flex-wrap align-items-center mt-3">
-                
-                <!-- Destination -->
-                <div class="form-item d-flex align-items-center">
-                    <i class="bi bi-geo-alt me-2"></i>
-                    <input type="text" class="form-input w-100" placeholder="Destination">
-                </div>
+                <form class="search-form d-flex flex-wrap align-items-center mt-3" action="/" method="GET">              
+                    <!-- Destination -->
+                    <div class="form-item d-flex align-items-center">
+                        <i class="bi bi-geo-alt me-2"></i>
+                        <input type="text" name="destination" class="form-input w-100" placeholder="Destination">
+                    </div>
 
-                <div class="form-divider"></div>
+                    <div class="form-divider"></div>
 
-                <!-- Travel Type -->
-                <div class="form-item d-flex align-items-center">
-                    <i class="bi bi-person me-2"></i>
-                    <select class="form-input w-100">
-                    <option selected>Travel Type</option>
-                    <option value="1">Solo</option>
-                    <option value="2">Family</option>
-                    <option value="3">Group</option>
-                    </select>
-                </div>
+                    <!-- Travel Type -->
+                    <div class="form-item d-flex align-items-center">
+                        <i class="bi bi-person me-2"></i>
+                        <select class="form-input w-100" name="travel_type">
+                            <option selected>Travel Type</option>
+                            <option value="1">Solo</option>
+                            <option value="2">Family</option>
+                            <option value="3">Group</option>
+                        </select>
+                    </div>
 
-                <div class="form-divider"></div>
+                    <div class="form-divider"></div>
 
-                <!-- Duration -->
-                <div class="form-item d-flex align-items-center">
-                    <i class="bi bi-calendar-event me-2"></i>
-                    <select class="form-input w-100">
-                    <option selected>Duration</option>
-                    <option value="1">3 Days</option>
-                    <option value="2">7 Days</option>
-                    <option value="3">14 Days</option>
-                    </select>
-                </div>
+                    <!-- Duration -->
+                    <div class="form-item d-flex align-items-center">
+                        <i class="bi bi-calendar-event me-2"></i>
+                        <select class="form-input w-100" name="duration">
+                            <option selected>Duration</option>
+                            <option value="1">3 Days</option>
+                            <option value="2">7 Days</option>
+                            <option value="3">14 Days</option>
+                        </select>
+                    </div>
 
-                <!-- Search Button -->
-                <button type="submit" class="btn btn-primary ms-3">Search</button>
+                    <!-- Search Button -->
+                    <button type="submit" class="btn btn-primary ms-3">Search</button>
                 </form>
             </div>
 
@@ -129,15 +124,14 @@
         </button>
     </div>
 
-    <!-- New section below the carousel -->
+    <!-- About section below the carousel -->
     <div class="About-section">
         <div class="container my-5 text-center">
             <h5>TRAVELLER'S FAVORITE</h5>
             <h2>Explore Our Popular Packages</h2>
             <p>Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
 
-            <div class="position-relative my-5 d-flex justify-content-center align-items-center flex-wrap" style="min-height: 400px;">
-                
+            <div class="position-relative my-5 d-flex justify-content-center align-items-center flex-wrap" style="min-height: 400px;">           
                 <!-- Top Left -->
                 <img src="assets/img1.jpg" class="img-fluid rounded shadow position-absolute top-0 start-0 m-2 img-corner" alt="Image 1">
                 
@@ -145,7 +139,7 @@
                 <img src="assets/img2.jpg" class="img-fluid rounded shadow position-absolute top-0 end-0 m-2 img-corner" alt="Image 2">
                 
                 <!-- Center -->
-                <img src="assets/img3.jpg" class="img-fluid rounded shadow mx-3 my-3 img-center top-50 start-50" alt="Image 3">
+                <img src="assets/img3.jpg" class="img-fluid rounded shadow mx-3 my-2 img-center top-50 start-50" alt="Image 3">
                 
                 <!-- Bottom Left -->
                 <img src="assets/img4.jpg" class="img-fluid rounded shadow position-absolute bottom-0 start-0 m-2 img-corner" alt="Image 4">
@@ -153,28 +147,120 @@
                 <!-- Bottom Right -->
                 <img src="assets/img5.jpg" class="img-fluid rounded shadow position-absolute bottom-0 end-0 m-2 img-corner" alt="Image 5">
             </div>
+            <a href="#" class="btn btn-custom">View More</a>
         </div>
     </div>
 
-    
-    <script>
-        const navbar = document.querySelector('.navbar-scroll');
-        const indicators = document.querySelector('.carousel-indicators');
+    <!-- Service Section -->
+    <div class="service-section text-center"  style="background-image: url('images/service-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">
+        <div class="container">
+        <h5 class="mb-2 pt-2">YOUR JOURNERY OUR COMMITMENT</h5>
+        <h2 class="mb-2 pb-1">Why Nepal Himalaya Tours?</h2>
+        <p class="mb-5 pb-3">Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) { // when scroll > 50px
-                navbar.classList.add('scrolled');
-                indicators.classList.add('hidden'); // hide indicators
-            } else {
-                navbar.classList.remove('scrolled');
-                indicators.classList.remove('hidden'); // show indicators
-            }
-        });
-    </script>
+        <!-- Responsive 3 Column Service Cards -->
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="icon-circle mb-3">
+                    <i class="bi bi-airplane"></i>
+                </div>
+                <h4>Expert Planning</h4>
+                <p>Our travel experts craft personalized itineraries that match your dreams and budget perfectly.</p>
+            </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="icon-circle mb-3">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h4>Safety First</h4>
+                <p>Your safety is our priority. We ensure secure travels with comprehensive insurance coverage.</p>
+            </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+            <div class="service-card">
+                <div class="icon-circle mb-3">
+                    <i class="bi bi-heart"></i>
+                </div>
+                <h4>Authentic Experiences</h4>
+                <p>We connect you with local cultures and hidden gems for truly authentic travel experiences.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- Feature Section -->
+    <div class="feature-section text-center py-5">
+    <div class="container">
+        <h5 class="mb-2 pt-2">FEATURED DESTINATIONS</h5>
+        <h2 class="mb-2 pb-1">Explore Most Iconic Treks & Tours</h2>
+        <p class="mb-5 pb-3">From Everest Base Camp to serene valleys, discover journeys crafted for every explorer.</p>
+
+        <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="feature-card shadow rounded overflow-hidden h-100">
+            <!-- Image (50%) -->
+            <div class="feature-img" style="height:50%;">
+                <img src="images/features/tropical.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Tropical Paradise">
+            </div>
+            <!-- Text (50%) -->
+            <div class="p-3 d-flex flex-column justify-content-center" style="height:50%;">
+                <h4>Tropical Paradise</h4>
+                <p>Crystal clear waters and overwater bungalows await.</p>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Book Now</a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="feature-card shadow rounded overflow-hidden h-100">
+            <div class="feature-img" style="height:50%;">
+                <img src="images/features/mountain.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Mountain Adventure">
+            </div>
+            <div class="p-3 d-flex flex-column justify-content-center" style="height:50%;">
+                <h4>Mountain Adventure</h4>
+                <p>Breathtaking peaks and highest peak adventures.</p>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Book Now</a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="feature-card shadow rounded overflow-hidden h-100">
+            <div class="feature-img" style="height:50%;">
+                <img src="images/features/city.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="City Explorer">
+            </div>
+            <div class="p-3 d-flex flex-column justify-content-center" style="height:50%;">
+                <h4>City Explorer</h4>
+                <p>Modern metropolis meets ancient culture.</p>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Book Now</a>
+            </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="feature-card shadow rounded overflow-hidden h-100">
+            <div class="feature-img" style="height:50%;">
+                <img src="images/features/safari.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Safari Experience">
+            </div>
+            <div class="p-3 d-flex flex-column justify-content-center" style="height:50%;">
+                <h4>Safari Experience</h4>
+                <p>Wildlife encounters in their natural habitat.</p>
+                <a href="#" class="btn btn-primary btn-sm mt-2">Book Now</a>
+            </div>
+            </div>
+        </div>
+        </div>
+        <a href="#" class="btn btn-destination">View All Destination</a>
+    </div>
+    </div>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
 </body>
-
 </html>

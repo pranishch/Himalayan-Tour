@@ -1,19 +1,25 @@
 :root {
     --primary-color: #0077CC;
     --secondary-color: #f8f9fa;
+    --bs-font-sans-serif: 'Montserrat', sans-serif;
+    --bs-body-font-family: 'Montserrat', sans-serif;
 }
 
 body {
+    font-family: var(--bs-body-font-family);
     background-color: #f8f9fa;
 }
 
-h1 {
-    color: var(--secondary-color);
-}
 h5{
     color: var(--primary-color);
 }
 
+   /* Main carousel section */
+
+/* navbar */
+.navbar .nav-link {
+    font-family: 'Poppins', sans-serif;
+}
 /* Transparent navbar initially */
 .navbar-scroll {
     background-color: transparent;
@@ -22,31 +28,26 @@ h5{
 .navbar-brand img {
     height: 50px; /* desktop default */
 }
-
 /* Contact button default */
 .navbar-scroll .btn {
     background-color: #0d6efd;
     color: white;
     transition: all 0.3s ease;
 }
-
 /* Contact button on scroll */
 .navbar-scroll.scrolled .btn {
     background-color: white;
     color: #0d6efd;
 }
-
 /* Carousel indicators default visible */
 .carousel-indicators {
     transition: opacity 0.3s ease;
 }
-
 /* Hide indicators when navbar is scrolled */
 .carousel-indicators.hidden {
     opacity: 0;
     pointer-events: none;
 }
-
 /* Background appears on scroll */
 .navbar-scroll.scrolled {
     background-color: var(--primary-color); /* Bootstrap primary color */
@@ -56,7 +57,6 @@ h5{
     height: 600px; /* Adjust carousel height */
     object-fit: cover;
 }
-
 .carousel-dark .carousel-indicators [data-bs-target]{
     background-color: white;
 }
@@ -70,11 +70,15 @@ h5{
     background: rgba(0,0,0,0.4); /* Dark overlay */
     z-index: 1;
 }
-
 .carousel-caption {
     z-index: 2; /* Ensure captions are above the overlay */
 }
-
+.carousel-caption h1 {
+    font-weight: 700;
+}
+.carousel-caption p{
+    font-weight: 500;
+}
 .contact-btn {
     margin-left: 20px;
 }
@@ -86,7 +90,6 @@ h5{
   padding: 10px 20px;
   gap: 15px;
 }
-
 /* Items inside the form */
 .form-item {
   padding: 5px 10px;
@@ -94,7 +97,6 @@ h5{
   color: #000;
   flex: 1;
 }
-
 /* Input & select without box borders */
 .form-input {
   border: none;
@@ -103,33 +105,168 @@ h5{
   font-size: 15px;
   color: #000;
 }
-
 /* Divider */
 .form-divider {
   width: 1px;
   height: 30px;
   background: rgba(0,0,0,0.2);
 }
-
 /* Button */
 .search-form .btn-primary {
   border-radius: 6px;
   padding: 8px 20px;
 }
+
+    /* About-section */
+
+.About-section h5{
+    font-weight: 600;
+}
+.About-section h2{
+    font-weight: 600;
+}
+.About-section p{
+    font-weight: 500;
+}
 /* Center image larger */
 .img-center {
-    width: 30%;
+    width: 31%;
     max-width: 700px; 
 }
-
 /* Corner images smaller */
 .img-corner {
-    width: 31.8%;
+    width: 31.2%;
     max-width: 700px;
     height: 220px;
     margin: 5px;
 }
+/* btn */
+.btn-custom{
+    background-color: white;
+    color: #0D6EFD;
+    border: 1px solid #0D6EFD;
+    padding: 8px 55px;
+    border-radius: 16px;
+}
+.btn-custom:hover{
+    background-color: #0D6EFD;
+    color: white;
+}
 
+    /* Service Section */
+
+.service-section {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 60px 0;
+}
+/* Service Cards */
+
+.service-section h5 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.service-section h2{
+    font-size: 35px;
+    font-weight: 600;
+}
+.service-section p{
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(207, 201, 201);
+}
+.service-card h4{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 0px 19px 0px;
+}
+.service-card h4,
+.service-card p {
+    color: #212529;
+}
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 40px 20px 40px 20px; 
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Hover effect for Service Cards */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #dbe9fb; /* light blue */
+  border-radius: 50%; /* makes it round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 24px; /* icon size */
+  color: #0d6efd; /* icon color */
+}
+
+/* Feature section */
+
+.feature-section {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 60px 0;
+}
+/* Feature Cards */
+
+.feature-section h5 {
+    /* color: white; */
+    font-size: 16px;
+    font-weight: 600;
+}
+.feature-section h2{
+    font-size: 35px;
+    font-weight: 600;
+}
+.feature-section p{
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(148, 139, 139);
+}
+.feature-card h4{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 0px 19px 0px;
+}
+.feature-card h4,
+.feature-card p {
+    color: #212529;
+}
+.feature-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  /* padding: 40px 20px 40px 20px;  */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Hover effect for Service Cards */
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+/* btn */
+.btn-destination{
+    background-color: white;
+    color: #0D6EFD;
+    border: 1px solid #0D6EFD;
+    padding: 8px 55px;
+    border-radius: 16px;
+    margin: 65px 0px 0px 0px;
+}
+.btn-destination:hover{
+    background-color: #0D6EFD;
+    color: white;
+}
 @media (max-width: 767px) {
     .navbar-brand img {
         height: 35px; /* smaller on mobile */
@@ -139,12 +276,7 @@ h5{
         line-height: 1.4;  /* adjust spacing for readability */
         padding: 0 10px;   /* optional: add some side padding */
     }
-    .About-section{
-        font-size: clamp(12px, 2vw, 16px);
-        line-height: 1.4;
-        padding: 0;
-    }
-   /* Search Form: all in one row, very compact */
+    /* Search Form: all in one row, very compact */
     .search-form {
         flex-direction: row !important;
         flex-wrap: nowrap !important;
@@ -153,7 +285,6 @@ h5{
         width: 100%;
         overflow-x: auto; /* horizontal scroll if needed */
     }
-
     .search-form .form-item {
         flex: 0 0 auto;
         display: flex;
@@ -162,26 +293,27 @@ h5{
         margin: 0 !important;
         width: auto;
     }
-
     .search-form .form-item i {
         margin-right: 0.1rem !important; /* smaller icon spacing */
         font-size: 0.7rem;
     }
-
     .search-form .form-input {
         font-size: 0.65rem; /* smaller font */
         padding: 0.1rem 0.2rem; /* smaller padding */
         width: 70px !important; /* compact input width */
     }
-
     .search-form button {
         font-size: 0.65rem !important; /* smaller button font */
         padding: 0.1rem 0.25rem !important; /* compact padding */
         flex: 0 0 auto;
     }
-
     .form-divider {
         display: none; /* hide dividers */
+    }
+    .About-section{
+        font-size: clamp(12px, 2vw, 16px);
+        line-height: 1.4;
+        padding: 0;
     }
     .img-center {
         width: 60%;
