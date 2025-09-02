@@ -124,32 +124,45 @@
         </button>
     </div>
 
-    <!-- About section below the carousel -->
-    <div class="About-section">
-        <div class="container my-5 text-center">
-            <h5>TRAVELLER'S FAVORITE</h5>
-            <h2>Explore Our Popular Packages</h2>
-            <p>Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
+    <!-- Gallery Section -->
+    <section class="gallery-section py-5">
+        <div class="container text-center">
+            <h5 class="mb-1">TRAVELER'S FAVOURITE</h5>
+            <h2 class="mb-2">Explore Our Popular Packages</h2>
+            <p class="mb-5">Discover, plan, and set off on your dream journey with our expert guidance and personalized experiences.</p>
 
-            <div class="position-relative my-5 d-flex justify-content-center align-items-center flex-wrap" style="min-height: 400px;">           
-                <!-- Top Left -->
-                <img src="assets/img1.jpg" class="img-fluid rounded shadow position-absolute top-0 start-0 m-2 img-corner" alt="Image 1">
-                
-                <!-- Top Right -->
-                <img src="assets/img2.jpg" class="img-fluid rounded shadow position-absolute top-0 end-0 m-2 img-corner" alt="Image 2">
-                
-                <!-- Center -->
-                <img src="assets/img3.jpg" class="img-fluid rounded shadow mx-3 my-2 img-center top-50 start-50" alt="Image 3">
-                
-                <!-- Bottom Left -->
-                <img src="assets/img4.jpg" class="img-fluid rounded shadow position-absolute bottom-0 start-0 m-2 img-corner" alt="Image 4">
-                
-                <!-- Bottom Right -->
-                <img src="assets/img5.jpg" class="img-fluid rounded shadow position-absolute bottom-0 end-0 m-2 img-corner" alt="Image 5">
+            <!-- Updated Gallery Section -->
+            <div class="position-relative gallery-wrapper" style="min-height: 600px;">
+                <!-- Image 1,2,4,5: Shared class for same height -->
+                <div class="img-wrapper position-absolute top-0 start-0 m-2">
+                    <img src="assets/img1.jpg" class="img-fluid rounded shadow gallery-img-other" alt="Nepal">
+                    <div class="img-text"><h5>Nepal</h5><p>From $200-4000</p></div>
+                </div>
+
+                <div class="img-wrapper position-absolute top-0 end-0 m-2">
+                    <img src="assets/img2.jpg" class="img-fluid rounded shadow gallery-img-other" alt="Switzerland">
+                    <div class="img-text"><h5>China</h5><p>From $800-7000</p></div>
+                </div>
+
+                <div class="img-wrapper position-absolute bottom-0 start-0 m-2">
+                    <img src="assets/img4.jpg" class="img-fluid rounded shadow gallery-img-other" alt="Italy">
+                    <div class="img-text"><h5>India</h5><p>From $500-6000</p></div>
+                </div>
+
+                <div class="img-wrapper position-absolute bottom-0 end-0 m-2">
+                    <img src="assets/img5.jpg" class="img-fluid rounded shadow gallery-img-other" alt="Japan">
+                    <div class="img-text"><h5>Japan</h5><p>From $600-7000</p></div>
+                </div>
+
+                <!-- Image 3: Center -->
+                <div class="img-wrapper position-absolute top-50 start-50 translate-middle">
+                    <img src="assets/img3.jpg" class="img-fluid rounded shadow gallery-img-center" alt="Thailand">
+                    <div class="img-text"><h5>Europe</h5><p>From $150-3500</p></div>
+                </div>
             </div>
             <a href="#" class="btn btn-custom">View More</a>
         </div>
-    </div>
+    </section>
 
     <!-- Service Section -->
     <div class="service-section text-center"  style="background-image: url('images/service-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; color: white;">

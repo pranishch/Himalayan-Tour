@@ -117,42 +117,80 @@ h5{
   padding: 8px 20px;
 }
 
-    /* About-section */
+    /* Gallery-section */
 
-.About-section h5{
-    font-weight: 600;
+/* Other images height */
+.gallery-img-other {
+    width: 350px;  /* or max-width */
+    height: 275px; /* fixed height for all except center */
+    object-fit: cover;
 }
-.About-section h2{
-    font-weight: 600;
+
+/* Center image height */
+.gallery-img-center {
+    width: 350px;   /* different width if needed */
+    height: 580px;  /* different height */
+    object-fit: cover;
 }
-.About-section p{
+.gallery-section h5 {
+    color: var(--primary-color);
+    font-family: var(--bs-body-font-family); /* Poppins font */
+    font-weight: 600; /* Semibold */
+    font-size: 16px;
+}
+.gallery-section h2{
+    color: black;
+    font-weight: 600;
+    font-size: 35px;
+}
+.gallery-section p{
+    font-family: var(--bs-body-font-family);
     font-weight: 500;
+    font-size: 16px;
+    color: rgb(68, 65, 65);
 }
-/* Center image larger */
-.img-center {
-    width: 31%;
-    max-width: 700px; 
+
+/* Text overlay */
+.img-text{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    /* background: rgba(0,0,0,0.4); */
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: left;
 }
-/* Corner images smaller */
-.img-corner {
-    width: 31.2%;
-    max-width: 700px;
-    height: 220px;
-    margin: 5px;
+/* Style only the h5 and p inside images */
+.img-text h5 {
+    color: white; /* Example: gold */
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0; /* remove extra margin */
 }
+
+.img-text p {
+    color: #ffffff; /* White text */
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+
 /* btn */
 .btn-custom{
     background-color: white;
     color: #0D6EFD;
     border: 1px solid #0D6EFD;
-    padding: 8px 55px;
+    padding: 7px 70px;
     border-radius: 16px;
+    margin: 40px 0px 0px 0px;
 }
 .btn-custom:hover{
     background-color: #0D6EFD;
     color: white;
 }
-
     /* Service Section */
 
 .service-section {
@@ -217,7 +255,6 @@ h5{
   padding: 60px 0;
 }
 /* Feature Cards */
-
 .feature-section h5 {
     /* color: white; */
     font-size: 16px;
@@ -332,6 +369,8 @@ h5{
         margin: 0.5rem;
         height: 150px;
     }
+    .gallery-img-other { width: 150px; height: 150px; }
+    .gallery-img-center { width: 180px; height: 220px; }
 }
 @media (max-width: 991px) {
     .navbar-collapse {
