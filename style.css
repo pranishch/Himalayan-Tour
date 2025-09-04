@@ -270,9 +270,14 @@ h5{
     color: rgb(148, 139, 139);
 }
 .feature-card h4{
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
-    padding: 0px 0px 19px 0px;
+    padding: 0px 0px 1px 0px;
+}
+.feature-card p{
+    font-size: 14px;
+    font-weight: 400;
+
 }
 .feature-card h4,
 .feature-card p {
@@ -304,6 +309,49 @@ h5{
     background-color: #0D6EFD;
     color: white;
 }
+.price-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.duration-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.feature-img {
+    position: relative; /* needed for absolute positioning of badge */
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #ffffff; /* yellow background */
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.rating-badge .star {
+    color: gold; /* star color */
+}
+
+.rating-badge .rating-number {
+    color: black; /* number color */
+    margin-left: 3px; /* small gap after star */
+}
+
+/* override any hover effect hiding it */
+.feature-img .rating-badge {
+    display: block !important;
+}
+
 @media (max-width: 767px) {
     .navbar-brand img {
         height: 35px; /* smaller on mobile */
