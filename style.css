@@ -335,16 +335,7 @@ h5{
     font-weight: 500;
     font-size: 14px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    z-index: 10;
-}
-
-.rating-badge .star {
-    color: gold; /* star color */
-}
-
-.rating-badge .rating-number {
-    color: black; /* number color */
-    margin-left: 3px; /* small gap after star */
+    z-index: 5;
 }
 
 /* override any hover effect hiding it */
@@ -352,6 +343,122 @@ h5{
     display: block !important;
 }
 
+/* ++++++ Adventure Section ++++++++ */
+
+#adventure-section .container .row{
+    margin: 10px 10px;
+}
+.counter-box {
+    background: #f8f9fa;
+    padding: 20px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+.counter-box:hover {
+    transform: translateY(-5px);
+}
+.counter-box i {
+    font-size: 40px;
+    /* color: #ff5722; */
+    margin-bottom: 15px;
+}
+.counter-number {
+    font-size: 32px;
+    color: #212529;
+}
+.counter-text {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #6c757d;
+}
+.counter-wrapper {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.counter-number,
+.counter-suffix {
+    font-size: 32px;      /* same as number */
+    color: #212529;       /* same color */
+    line-height: 1;
+}
+/* ======================================
+    Testimonial Section
+   ====================================== */
+
+#testimonial-section h5{
+    color: #ffffff;
+}   
+/*=======================================
+    Blogs Section
+  ======================================= */
+.blog-section {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 60px 0;
+}
+/* Feature Cards */
+.blog-section h5 {
+    /* color: white; */
+    font-size: 16px;
+    font-weight: 600;
+}
+.blog-section h2{
+    font-size: 35px;
+    font-weight: 600;
+}
+.blog-section p{
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(148, 139, 139);
+}
+.blog-card h4{
+    font-size: 16px;
+    font-weight: 600;
+    padding: 0px 0px 1px 0px;
+}
+.blog-card p{
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.blog-card h4,
+.blog-card p {
+    color: #212529;
+}
+.blog-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  /* padding: 40px 20px 40px 20px;  */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+/* Hover effect for Service Cards */
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.price-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.duration-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+.blog-img {
+    position: relative; /* needed for absolute positioning of badge */
+}
+
+/* ===============================
+    Booking Section
+   =============================== */
+  
 @media (max-width: 767px) {
     .navbar-brand img {
         height: 35px; /* smaller on mobile */
