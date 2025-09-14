@@ -13,8 +13,73 @@ body {
 h5{
     color: var(--primary-color);
 }
+/* ===================================================
+   ===================================================
+                    Home Page
+   ===================================================
+   =================================================== */
+   
+/*====================================================
+     Scroll animation base 
+====================================================== */
 
-   /* Main carousel section */
+/* Base state for all scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  will-change: opacity, transform;
+}
+
+/* Default fade up (for other elements) */
+.animate-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide from left */
+.slide-left {
+  transform: translateX(-50px);
+}
+.slide-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.slide-right {
+  transform: translateX(50px);
+}
+.slide-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade in */
+.fade-in {
+  transform: translateY(20px);
+}
+.fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Zoom effect for gallery images */
+.zoom-on-scroll {
+  opacity: 0;
+  transform: scale(0.8); /* start slightly zoomed out */
+  transition: opacity 1.2s ease, transform 1.2s ease;
+  will-change: opacity, transform;
+}
+
+.zoom-on-scroll.in-view {
+  opacity: 1;
+  transform: scale(1); /* normal size */
+}
+
+
+/*==================================================
+    Main carousel section 
+  ==================================================  */
 
 /* navbar */
 .navbar .nav-link {
@@ -30,7 +95,7 @@ h5{
 }
 /* Contact button default */
 .navbar-scroll .btn {
-    background-color: #0d6efd;
+    background-color: #0077CC;
     color: white;
     transition: all 0.3s ease;
 }
@@ -54,7 +119,7 @@ h5{
     transition: background-color 0.3s ease;
 }
 .carousel-inner img {
-    height: 600px; /* Adjust carousel height */
+    height: 841px; /* Adjust carousel height */
     object-fit: cover;
 }
 .carousel-dark .carousel-indicators [data-bs-target]{
@@ -117,21 +182,112 @@ h5{
   padding: 8px 20px;
 }
 
-    /* Gallery-section */
+/*=======================================================
+    Gallery-section 
+  ======================================================= */
+/* ---------------------------
+   Desktop & tablet layout
+   (apply only for widths >= 768px)
+   --------------------------- */
+@media (min-width: 768px) {
 
-/* Other images height */
+    /* Top-left corner image */
+    .gallery-wrapper .img-wrapper.top-0.start-0 {
+        top: 6px !important;
+        left: 25px !important;
+        transform: none !important;
+        width: 403px !important; 
+        height: 255px !important;
+        Padding: -6px 20px 20px 20px !important;
+    }
+
+    /* Top-right corner image */
+    .gallery-wrapper .img-wrapper.top-0.end-0 {
+        top:0px !important;
+        transform: none !important;
+        left: 775px !important;             
+        width: 402px !important;
+        height: 255px !important;
+        Padding: -6px 20px 20px 20px !important;
+    }
+
+    /* Bottom-left corner image */
+    .gallery-wrapper .img-wrapper.bottom-0.start-0 {
+        top: 300px !important;
+        left: 25px !important;
+        transform: none !important;
+        width: 403px !important; 
+        height: 255px !important;
+        Padding: -6px 20px 20px 20px !important;
+    }
+
+    /* Bottom-right corner image */
+    .gallery-wrapper .img-wrapper.bottom-0.end-0 {
+        top: 300px !important;
+        transform: none !important;
+        left: 775px !important;            
+        width: 402px !important;
+        height: 255px !important;
+        Padding: -6px 20px 20px 20px !important;
+    }
+
+    /* Center image — larger, centered and above the corners */
+    .gallery-wrapper .img-wrapper.top-50.start-50.translate-middle {
+        width: 399px !important; 
+        height: 551px !important;
+        top: 280px !important;
+        left: 607px !important;
+        padding: -10px 25px 25px 25px !important;
+    }
+
+    /* Images fill their wrapper and keep aspect ratio */
+    .gallery-wrapper img.gallery-img-other,
+    .gallery-wrapper img.gallery-img-center {
+        width: 100%;
+        height: auto;         /* preserve intrinsic aspect ratio */
+        display: block;
+        object-fit: cover;    /* crop elegantly if needed */
+        border-radius: 8px;
+    }
+
+    /* keep the aspect-ratios you already set as hints for modern browsers */
+    .gallery-img-other { aspect-ratio: 350 / 275; }
+    .gallery-img-center {  aspect-ratio: 350 / 580; }
+
+    /* larger overlay text on bigger screens */
+    .gallery-wrapper .img-text h5 { font-size: 20px; }
+    .gallery-wrapper .img-text p  { font-size: 14px; }
+
+    /* spacing for call-to-action */
+    .btn-custom { margin-top: 36px; }
+
+    /* optional: increase spacing on very large screens */
+    @media (min-width: 1200px) {
+        .gallery-wrapper .img-wrapper { width: 24%; }
+        .gallery-wrapper .img-wrapper.top-50.start-50.translate-middle { width: 31%; max-width: 640px; }
+    }
+}
+
+/* Other gallery images */
 .gallery-img-other {
-    width: 350px;  /* or max-width */
-    height: 275px; /* fixed height for all except center */
-    object-fit: cover;
+    width: 100%;            /* take full container width */
+    max-width: 350px;       /* maximum width on large screens */
+    height: auto;           /* auto height to keep aspect ratio */
+    aspect-ratio: 350 / 275; /* maintain ratio */
+    object-fit: cover;      /* crop if needed */
+    border-radius: 8px;     /* optional rounded corners */
 }
 
-/* Center image height */
+/* Center gallery image */
 .gallery-img-center {
-    width: 350px;   /* different width if needed */
-    height: 580px;  /* different height */
+    width: 100%;
+    max-width: 350px;       /* can increase if needed */
+    height: auto;
+    aspect-ratio: 350 / 580; /* maintain ratio */
     object-fit: cover;
+    border-radius: 8px;
 }
+
 .gallery-section h5 {
     color: var(--primary-color);
     font-family: var(--bs-body-font-family); /* Poppins font */
@@ -147,7 +303,8 @@ h5{
     font-family: var(--bs-body-font-family);
     font-weight: 500;
     font-size: 16px;
-    color: rgb(68, 65, 65);
+    color: #6B6B6B;
+;
 }
 
 /* Text overlay */
@@ -191,7 +348,10 @@ h5{
     background-color: #0D6EFD;
     color: white;
 }
-    /* Service Section */
+
+/*======================================================
+   Service Section 
+  ====================================================== */
 
 .service-section {
   background-color: #f8f9fa; /* Light gray background */
@@ -208,10 +368,10 @@ h5{
     font-size: 35px;
     font-weight: 600;
 }
-.service-section p{
+.service-section .container p{
     font-size: 16px;
     font-weight: 500;
-    color: rgb(207, 201, 201);
+    color: #CBCBCB;
 }
 .service-card h4{
     font-size: 20px;
@@ -248,7 +408,9 @@ h5{
   color: #0d6efd; /* icon color */
 }
 
-/* Feature section */
+/*========================================================
+    Feature section 
+  ========================================================  */
 
 .feature-section {
   background-color: #f8f9fa; /* Light gray background */
@@ -343,11 +505,28 @@ h5{
     display: block !important;
 }
 
-/* ++++++ Adventure Section ++++++++ */
+/*========================================================
+    Adventure Section 
+  ======================================================== */
 
 #adventure-section .container .row{
     margin: 10px 10px;
 }
+#adventure-section .left-content h2,
+.left-content span {
+    font-weight: 700;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+#adventure-section .left-content span{
+    color: #0077CC;
+}
+#adventure-section .left-content p{
+    font-weight: 400;
+    color: #6B6B6B;
+    font-size: 20px;
+}
+
 .counter-box {
     background: #f8f9fa;
     padding: 20px 20px;
@@ -383,48 +562,117 @@ h5{
     color: #212529;       /* same color */
     line-height: 1;
 }
-/* ======================================
+.floating-card {
+    position: absolute;
+    bottom: -20px;
+    left: -45px;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.floating-card span:first-child {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0077CC;
+}
+
+.floating-card span:last-child {
+    font-size: 14px;
+    color: #555;
+}
+/* ==========================================================
+    Activities Section
+   ========================================================== */
+
+#activities-section h5{
+    font-weight: 600;
+    font-size: 16px;
+    color: #0077CC;
+}   
+#activities-section h3{
+    font-weight: 600;
+    font-size: 35px;
+    color: #1B1D21;
+} 
+#activities-section p{
+    font-weight: 500;
+    font-size: 16px;
+    color: #6B6B6B;
+} 
+#activities-section .btn{
+    border-radius: 20px;
+}
+
+/* ==========================================================
     Testimonial Section
-   ====================================== */
+   ========================================================== */
 
 #testimonial-section h5{
     color: #ffffff;
-}   
-/*=======================================
+    font-weight: 600;
+    font-size: 16px;
+} 
+#testimonial-section h2{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 35px;
+} 
+#testimonial-section p{
+    color: #CBCBCB;
+    font-weight: 500;
+    font-size: 16px;
+} 
+
+
+/*===========================================================
     Blogs Section
-  ======================================= */
+  =========================================================== */
+
 .blog-section {
   background-color: #f8f9fa; /* Light gray background */
   padding: 60px 0;
 }
 /* Feature Cards */
 .blog-section h5 {
-    /* color: white; */
+    color: #0077CC;
     font-size: 16px;
     font-weight: 600;
 }
 .blog-section h2{
     font-size: 35px;
     font-weight: 600;
+    color: #1B1D21;
 }
 .blog-section p{
     font-size: 16px;
     font-weight: 500;
-    color: rgb(148, 139, 139);
+    color: #6B6B6B;
 }
 .blog-card h4{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
+    color: #000000;
     padding: 0px 0px 1px 0px;
 }
 .blog-card p{
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-
+    color: #6B6B6B;
 }
 .blog-card h4,
 .blog-card p {
     color: #212529;
+}
+.blog-card p span{
+    font-weight: 400;
+    color: #6B6B6B;
+    font-size: 16px;
+    margin-top: 20px;
 }
 .blog-card {
   background-color: #ffffff;
@@ -455,11 +703,48 @@ h5{
     position: relative; /* needed for absolute positioning of badge */
 }
 
-/* ===============================
+/* ==============================================================
     Booking Section
-   =============================== */
-  
+   ============================================================== */
+
+.booking-section h2{
+    font-weight: 700;
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+/* ==============================================================
+    Footer
+   ============================================================== */
+
+   #footer .container .row h6{
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   }
+   #footer .container .row h5{
+    font-weight: 700;
+    font-size: 18px;
+   }
+   #footer .container .row ul li a{
+    font-weight: 500;
+    font-size: 16px;
+   }
+   #footer{
+    background-color: #0077CC;
+   }
+   
+
+
+/* ==============================================================
+    Mobile view
+   ============================================================== */  
+   
 @media (max-width: 767px) {
+    body, html {
+        overflow-x: hidden;
+    }
     .navbar-brand img {
         height: 35px; /* smaller on mobile */
     }
@@ -507,33 +792,177 @@ h5{
         line-height: 1.4;
         padding: 0;
     }
-    .img-center {
-        width: 60%;
-        max-width: 200px;
-        margin: 1rem auto;
+
+    /*++++++++ Gallery Section +++++++++ */
+    
+    /* Make gallery wrapper relative for stacking */
+    .gallery-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px; /* spacing between images */
         position: relative !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        height: 170px;
     }
-    .img-corner {
-        width: 35%;
-        max-width: 120px;
+
+    .gallery-wrapper .img-wrapper {
+        position: relative !important; /* remove absolute positioning */
+        width: 100% !important;        /* take full container width */
+        max-width: 350px;              /* keep a reasonable max */
+        height: auto !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin: 0 auto;                /* center horizontally */
+    }
+
+    /* Center image behaves like others */
+    .gallery-wrapper .img-wrapper.top-50.start-50.translate-middle {
         position: relative !important;
-        margin: 0.5rem;
-        height: 150px;
+        width: 100% !important;
+        max-width: 350px;
+        height: auto !important;
+        left: auto !important;
+        top: 10px !important;
+        transform: none !important;
     }
-    .gallery-img-other { width: 150px; height: 150px; }
-    .gallery-img-center { width: 180px; height: 220px; }
-}
-@media (max-width: 991px) {
+    .gallery-img-center {
+        aspect-ratio: 350 / 320; /* shorter ratio than desktop (580) */
+        object-fit: cover;
+    }
+    /* Text overlay adapts for smaller screens */
+    .img-text h5 {
+        font-size: 18px;
+    }
+    .img-text p {
+        font-size: 14px;
+    }
     .navbar-collapse {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: rgba(0,0,0,0.8); /* optional */
+        background-color: rgba(0,0,0,0.8); 
         z-index: 5;
     }
+    /*++++++++++++ Adventure Section ++++++++++*/
+    #adventure-section .container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 4px 15px;
+    }
+
+    #adventure-section .left-content,
+    #adventure-section .right-content {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    #adventure-section .right-content img {
+        width: 100%;
+        height: auto;
+    }
+    /* Floating card reposition */
+    #adventure-section .right-content > div {
+        position: static;
+        margin: 15px auto 0 auto;
+        text-align: center;
+    }
+
+    #adventure-section .left-content h2 {
+        font-size: clamp(22px, 5vw, 28px);
+    }
+
+    #adventure-section .left-content p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Counter boxes stack */
+    #adventure-section .row.g-4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .floating-card {
+        bottom: -10px;          /* closer to image bottom */
+        left: 10px;             /* small padding from left edge */
+        padding: 12px 16px;     /* reduce size for small screens */
+        border-radius: 8px;
+        font-size: 14px;
+        align-items: flex-start;
+    }
+
+    .floating-card span:first-child {
+        font-size: 18px;        /* slightly smaller */
+    }
+
+    .floating-card span:last-child {
+        font-size: 12px;        /* slightly smaller */
+    }
+    .counter-box {
+        padding: 1px 10px;        /* smaller padding */
+    }
+
+    .counter-box i {
+        font-size: 28px;            /* smaller icon */
+        margin-bottom: 10px;
+    }
+
+    .counter-number,
+    .counter-suffix {
+        font-size: 20px;            /* smaller number */
+    }
+
+    .counter-text {
+        font-size: 14px;            /* smaller text */
+    }
+
 }
+
+
+/* =============================================
+   =============================================
+                Destination page
+   =============================================
+   ============================================= */
+
+    /*===== Navbar section ======*/
+    /* Navbar scroll effect */
+    .navbar .container .navbar-nav .btn{
+        background-color: #FFFFFF;
+        color: blue;
+    }
+    .navbar-scroll {
+        transition: all 0.3s ease;
+        padding: 15px 0;
+    }
+
+    .navbar-scroll.scrolled {
+        padding: 8px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Optional: Toggler icon color for light text */
+    .navbar-light .navbar-toggler-icon {
+        filter: invert(1);
+    }
+
+    /* ========== Header Section ========= */
+    
+    #header{
+        margin-top: 90px;
+    }
+    #header #header-main-wrapper .row span{
+        font-weight: 400;
+        font-size: 14.3 px;
+        font-family: DM Sans;
+        color: #6B6B6B;
+    }
+    #header #header-main-wrapper .row h1{
+        font-weight: 700;
+        font-size: 40px;
+        color: #000000;
+        letter-spacing: 0%;
+    }
