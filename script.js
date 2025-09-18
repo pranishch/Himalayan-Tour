@@ -68,17 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    //======================== Testimonial Carousel Custom Logic ==================
-    const testimonialCarousel = document.querySelector('#testimonialCarousel');
-    if (testimonialCarousel) {
-      const carousel = new bootstrap.Carousel(testimonialCarousel, {
-        interval: 3000,
-        ride: carousel,
-        wrap: true
-      });
-    }
 
-    //========================= Scroll Animation Logic ============================= 
     //========================= Scroll Animation Logic ============================= 
     const scrollElements = document.querySelectorAll(
     'h1, h2, h3, h4, h5, h6, p, small, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .right-content img, #activities-images img, .blog-card, #testimonial-section img'

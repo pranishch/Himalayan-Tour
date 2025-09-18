@@ -352,60 +352,114 @@ h5{
 /*======================================================
    Service Section 
   ====================================================== */
-
+/* Service Section */
 .service-section {
   background-color: #f8f9fa; /* Light gray background */
   padding: 60px 0;
 }
-/* Service Cards */
 
+/* Section Headings */
 .service-section h5 {
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
 }
-.service-section h2{
-    font-size: 35px;
-    font-weight: 600;
+.service-section h2 {
+  font-size: 35px;
+  font-weight: 600;
 }
-.service-section .container p{
-    font-size: 16px;
-    font-weight: 500;
-    color: #CBCBCB;
+.service-section .container p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #CBCBCB;
 }
-.service-card h4{
-    font-size: 20px;
-    font-weight: 600;
-    padding: 0px 0px 19px 0px;
-}
-.service-card h4,
-.service-card p {
-    color: #212529;
-}
+
+/* Service Cards */
 .service-card {
   background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 8px;
-  padding: 40px 20px 40px 20px; 
+  padding: 40px 20px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background-image 0.3s, color 0.3s;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-/* Hover effect for Service Cards */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0); /* default transparent */
+  transition: background-color 0.3s;
+  z-index: 0; /* behind content */
+  border-radius: 8px;
+}
+
+.service-card:hover::before {
+  background-color: rgba(0,0,0,0.5); /* semi-transparent black overlay */
+}
+
+/* Default styles for h4 and p in service cards */
+.service-section .container .service-card h4 {
+  font-size: 20px;       /* Change the font size */
+  font-weight: 600;      /* Change the font weight */
+  color: #1B1D21;        /* Change the default color */
+  padding-bottom: 15px;  /* Adjust spacing */
+}
+
+.service-section .container .service-card p {
+  font-size: 14px;       /* Change the font size */
+  font-weight: 400;      /* Change the font weight */
+  color: #6B6B6B;        /* Change the default color */
+  line-height: 1.5;      /* Adjust line height */
+}
+
+.service-card .icon-circle{
+  position: relative;
+  z-index: 1;
+}
+/* Hover effect base */
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
+
+/* ✅ Different hover background images (fixed) */
+.service-section .col-12:nth-child(1) .service-card:hover {
+  background-image: url('images/services-card/services-hover-1.jpg'); /* Expert Planning */
+}
+.service-section .col-12:nth-child(2) .service-card:hover {
+  background-image: url('images/services-card/services-hover-2.jpg'); /* Safety First */
+}
+.service-section .col-12:nth-child(3) .service-card:hover {
+  background-image: url('images/services-card/services-hover-3.jpg'); /* Authentic Experiences */
+}
+
+/* Change icon-circle and text colors on hover */
+.service-card:hover .icon-circle {
+  background-color: #0d6efd; /* new bg */
+  color: #ffffff; /* icon white */
+}
+.service-section .container .service-card:hover h4,
+.service-section .container .service-card:hover p {
+  color: #ffffff; /* text white */
+}
+
+/* Icon Circle */
 .icon-circle {
   width: 60px;
   height: 60px;
   background-color: #dbe9fb; /* light blue */
-  border-radius: 50%; /* makes it round */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 15px;
-  font-size: 24px; /* icon size */
-  color: #0d6efd; /* icon color */
+  font-size: 24px;
+  color: #0d6efd;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /*========================================================
@@ -503,6 +557,11 @@ h5{
 /* override any hover effect hiding it */
 .feature-img .rating-badge {
     display: block !important;
+}
+
+.btn-book:hover {
+    background-color: #FFFFFF;
+    color: var(--primary-color);
 }
 
 /*========================================================
@@ -606,6 +665,80 @@ h5{
 } 
 #activities-section .btn{
     border-radius: 20px;
+}
+.activity-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.activity-card img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    display: block;
+    width: 100%;
+}
+
+.activity-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.activity-card .overlay button {
+    font-size: 12px;
+    padding: 4px 10px;
+    margin-bottom: 5px;
+    align-self: flex-start; /* aligns button to the left */
+}
+
+.activity-card .overlay p,
+.activity-card .overlay h4 {
+    text-align: left; /* left align text */
+    margin: 0 0 5px 0;
+}
+
+.activity-card .overlay h4 {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.activity-card .overlay .d-flex {
+    justify-content: space-between; /* calendar left, people right */
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.activity-card .overlay .d-flex span i {
+    margin-right: 4px;
+}
+
+
+.activity-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.99); /* makes image darker */
+}
+
+.activity-card:hover .overlay {
+    opacity: 1;
+}
+
+/* Optional: style badges/icons */
+.activity-card .overlay .badge {
+    font-size: 12px;
+    padding: 5px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 /* ==========================================================
@@ -939,49 +1072,3 @@ h5{
     }
 
 }
-
-
-/* =============================================
-   =============================================
-                Destination page
-   =============================================
-   ============================================= */
-
-    /*===== Navbar section ======*/
-    /* Navbar scroll effect */
-    .navbar .container .navbar-nav .btn{
-        background-color: #FFFFFF;
-        color: blue;
-    }
-    .navbar-scroll {
-        transition: all 0.3s ease;
-        padding: 15px 0;
-    }
-
-    .navbar-scroll.scrolled {
-        padding: 8px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    /* Optional: Toggler icon color for light text */
-    .navbar-light .navbar-toggler-icon {
-        filter: invert(1);
-    }
-
-    /* ========== Header Section ========= */
-    
-    #header{
-        margin-top: 90px;
-    }
-    #header #header-main-wrapper .row span{
-        font-weight: 400;
-        font-size: 14.3 px;
-        font-family: DM Sans;
-        color: #6B6B6B;
-    }
-    #header #header-main-wrapper .row h1{
-        font-weight: 700;
-        font-size: 40px;
-        color: #000000;
-        letter-spacing: 0%;
-    }
