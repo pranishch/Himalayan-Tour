@@ -628,6 +628,14 @@ h5{
     font-size: 16px;
 } 
 
+#testimonial-carousel {
+    transition: transform 0.6s ease-in-out;
+}
+
+#testimonial .testimonial-card {
+    background: none; 
+    min-height: 300px; 
+}
 
 /*===========================================================
     Blogs Section
@@ -917,6 +925,17 @@ h5{
 
     .counter-text {
         font-size: 14px;            /* smaller text */
+    }
+
+    /* ++++++++++++++ testimonial section ++++++++++ */
+    #testimonial-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    #testimonial-carousel .col-md-4 {
+        flex: 0 0 100%; 
+        max-width: 100%;  
     }
 
 }

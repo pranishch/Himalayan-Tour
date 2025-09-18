@@ -81,14 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
     //========================= Scroll Animation Logic ============================= 
     //========================= Scroll Animation Logic ============================= 
     const scrollElements = document.querySelectorAll(
-    'h1, h2, h3, h4, h5, h6, p, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .feature-card img,  .right-content img, #activities-images img, .blog-card, .blog-card img'
+    'h1, h2, h3, h4, h5, h6, p, small, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .right-content img, #activities-images img, .blog-card, #testimonial-section img'
     );
 
     // Add base class and specific animations
     scrollElements.forEach(el => {
         el.classList.add('animate-on-scroll');
 
-        // Zoom effect for gallery images and cards
         if(
             el.classList.contains('search-form') || 
             el.classList.contains('gallery-img-other') || 
@@ -96,10 +95,9 @@ document.addEventListener('DOMContentLoaded', function() {
             el.classList.contains('service-card') || 
             el.classList.contains('feature-card') ||
             el.classList.contains('blog-card') ||
-            el.closest('.feature-card') ||
-            el.closest('.blog-card') ||
             el.closest('.right-content') ||
-            el.closest('#activities-images')
+            el.closest('#activities-images') ||
+            el.closest('#testimonial-section')
         ) {
             el.classList.add('zoom-on-scroll');
         }
@@ -109,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if(el.tagName === 'H2') el.classList.add('slide-left');
         if(el.tagName === 'H5') el.classList.add('slide-right');
         if(el.tagName === 'P') el.classList.add('fade-in');
+        if(el.tagName === 'SMALL') el.classList.add('fade-in');
     });
 
     // IntersectionObserver setup
@@ -125,4 +124,55 @@ document.addEventListener('DOMContentLoaded', function() {
     // Observe all scroll elements
     scrollElements.forEach(el => observer.observe(el));
 
+    // testimonial carousel
+    const carousel = document.getElementById('testimonial-carousel');
+    let offset = 0;
+    const cardWidth = carousel.querySelector('.col-md-4').offsetWidth + 16; // card width + margin
+
+    let interval; 
+    let isPaused = false;
+
+    // function to move carousel
+    function slideCarousel() {
+    offset -= cardWidth;
+    carousel.style.transform = `translateX(${offset}px)`;
+
+    setTimeout(() => {
+        carousel.appendChild(carousel.firstElementChild);
+        offset += cardWidth;
+        carousel.style.transition = "none"; // disable transition for jump
+        carousel.style.transform = `translateX(${offset}px)`;
+        // force reflow
+        carousel.offsetHeight;
+        carousel.style.transition = "transform 0.6s ease-in-out"; // re-enable transition
+    }, 600);
+    }
+
+    // start auto sliding
+    function startCarousel() {
+    interval = setInterval(slideCarousel, 3000);
+    }
+
+    // stop auto sliding
+    function stopCarousel() {
+    clearInterval(interval);
+    }
+
+    // start initially
+    startCarousel();
+
+    // click to pause and resume
+    carousel.addEventListener("click", () => {
+    if (!isPaused) {
+        // pause on click
+        stopCarousel();
+        isPaused = true;
+
+        // resume after 5 seconds
+        setTimeout(() => {
+        startCarousel();
+        isPaused = false;
+        }, 5000);
+    }
+    });
 });

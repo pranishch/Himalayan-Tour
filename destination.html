@@ -12,6 +12,206 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <style>
+        :root{
+        --blue:#0f6fff;
+        --muted:#6b7280;
+        --panel:#f8fbff;
+        --card-border:#e6eef9;
+        --left-width:320px;
+        }
+        body{font-family:Inter,Arial,Helvetica,sans-serif;margin:0;color:#0f1724;background:#fff}
+        /* --- header --- */
+        .header{padding:20px 100px; background:#fff}
+        .header .top-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
+        .header nav{color:var(--muted);font-size:14px}
+        .header h1{margin:14px 0 0;font-size:28px}
+        .subtitle{color:var(--muted);font-size:15px}
+
+        /* --- layout --- */
+        .page{display:flex;gap:18px;padding:22px;max-width:1200px;margin:0 auto;align-items: flex-start;}
+        .left{width:var(--left-width)}
+        .right{flex:1}
+
+        /* Left sidebar (filters) */
+        #filters {
+            /* position: sticky;                 stick while scrolling */
+            top: 20px;                        /* distance from top */
+            padding-right: 5px;               /* avoid scrollbar overlap */
+            /* flex-shrink: 0;                   don’t shrink on smaller screens */
+            }
+            
+        /* Whole filter section border */
+        .filter-section {
+        border: 1px solid #e6eef9;   /* outer border */
+        border-radius: 10px;          /* rounded corners */
+        padding: 16px;                /* inner spacing */
+        background: #fff;             /* background color */
+        }
+
+        /* Individual blocks inside filter section */
+        .filter-section .filter-block {
+        border-bottom: 1px solid #e6eef9; /* bottom border between sections */
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        }
+        
+        .date-box .date-row input[type="date"] {
+        width: 100%;          /* full width */
+        padding: 10px 12px;   /* nice padding */
+        border-radius: 6px;   /* rounded edges */
+        border: none;          /* no border inside blue box */
+        outline: none;        /* remove outline */
+        font-size: 14px;
+        }
+
+        /* Remove border from last block */
+        .filter-section .filter-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        }
+
+        .card-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.card-desc {
+    flex: 1; /* take remaining space */
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+    padding-right: 10px; /* space between desc and price */
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between price and badge */
+    white-space: nowrap; /* keep price + badge on same line */
+}
+
+.price {
+    font-weight: 600;
+}
+
+.badge {
+    background: #0f6fff;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+
+        /* --- blue date box --- */
+        .date-box{background:#0077CC;color:#fff;padding:29px 30px 29px 30px;border-radius:10px 10px 0px 0px;margin:-16px 0px 16px -18px; width: 317px;}
+        .date-box h4{margin:0 0 6px;font-size:15px}
+        .date-row{display:flex;gap:8px;align-items:center}
+        .date-row input[type="date"]{padding:8px;border-radius:6px;border:none;outline:none}
+        .date-row .placeholder{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:6px}
+
+        /* --- filter blocks --- */
+        details{background:#fff;border:1px solid #e6eef9;border-radius:8px;padding:10px;margin-bottom:12px}
+        details summary{font-weight:600;cursor:pointer;list-style:none;outline:none}
+        .filter-list{padding-top:8px}
+        .filter-list label{display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:6px}
+        .filter-list input[type="checkbox"], .filter-list input[type="radio"]{transform:scale(1);}
+
+        /* price */
+        .price-row{display:flex;gap:8px;align-items:center}
+        .price-row input[type="number"]{width:100%;padding:6px;border-radius:6px;border:1px solid #dbeafe}
+
+        /* --- results --- */
+        .results-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+        .results-count{margin-left:auto;color:var(--muted)}
+        .card{display:flex;gap:12px;border:1px solid var(--card-border);padding:12px;border-radius:8px;margin-bottom:12px;background:#fff}
+        .card img{width:220px;height:130px;object-fit:cover;border-radius:6px}
+        .card .info{flex:1}
+        .card .meta{display:flex;justify-content:space-between;align-items:center}
+        .card h3{margin:6px 0 6px;font-size:18px}
+        .small{color:var(--muted);font-size:13px}
+        .badge{background:#ffeedb;padding:4px 8px;border-radius:6px;font-size:12px;color:#7a4e00}
+
+        /* view button */
+        .view-btn{border:1px solid #d1e3ff;padding:8px 12px;border-radius:8px;background:#fff;cursor:pointer}
+        .card {
+            display: flex;
+            gap: 16px;
+            flex-direction: row; /* ensures image left, content right */
+            border: 1px solid var(--card-border);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            background: #fff;
+            align-items: center;
+        }
+
+        .card img {
+            width: 280px;
+            height: 264px;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0; /* image won’t shrink */
+        }
+
+        .card .info {
+            flex: 1; /* take remaining width */
+        }
+        .bottom-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
+        .guarantees {
+            display: flex;
+            gap: 10px;
+            font-size: 13px;
+            color: #0f6fff;
+            flex-wrap: wrap;
+        }
+
+        .guarantee {
+            background: #e6f0ff;
+            color: #0f6fff;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+
+        /* responsive */
+        @media (max-width:950px){
+        .page{flex-direction:column;padding:12px}
+        .left{width:100%}
+        .card img{width:160px;height:100px}
+        }
+
+        @media (max-width: 767px) {
+            .date-box {
+                background: #0077CC;
+                color: #fff;
+                padding: 20px 25px; /* adjust padding for smaller screens */
+                border-radius: 10px;
+                margin: -16px 0px 16px -18px; /* center on mobile */
+                width: 440px; /* responsive width */
+            }
+            .card {
+                flex-direction: column;
+            }
+            .card img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <!-- Navbar Start -->
@@ -60,34 +260,114 @@
     <!-- Navbar End -->
     
     <!-- Header Section -->
-    <section id="header" class="container py-4">
-        <!-- Main wrapper inside header -->
-        <div id="header-main-wrapper">
-            <!-- Top row: Breadcrumb (left) + Subtitle (right) -->
-            <div class="row align-items-center">
-                <!-- Breadcrumb -->
-                <div class="col-12 col-md-6 mb-2 mb-md-0">
-                    <nav>
-                        <span class="me-2">Home</span> >
-                        <span class="mx-2">Tours</span> >
-                        <span class="ms-2">Nepal</span>
-                    </nav>
-                </div>
+    <section id="header" class="header">
+        <div class="top-row">
+            <nav id="breadcrumb">
+            <span class="me-2">Home</span> &gt;
+            <span class="mx-2">Tours</span> &gt;
+            <span class="ms-2" id="crumb-country"></span>
+            </nav>
+            <div class="subtitle" id="subtitle">The 10 Best Nepal Tours</div>
+        </div>
 
-                <!-- Subtitle -->
-                <div class="col-12 col-md-6 text-md-end">
-                    <span >The 10 Best Nepal Tours</span>
-                </div>
-            </div>
-
-            <!-- Heading below, aligned right -->
-            <div class="row mt-3">
-                <div class="col-12">
-                    <h1>Explore all things to do in Nepal</h1>
-                </div>
-            </div>
+        <div style="margin-top:12px">
+            <h1 id="page-title">Explore all things to do in Nepal</h1>
         </div>
     </section>
+
+        <!-- ===== MAIN PAGE (filters left, contents right) ===== -->
+        <div class="page">
+
+        <!-- LEFT: filters -->
+        <aside class="left" id="filters">
+
+        <div class="filter-section">
+
+            <!-- Date card (blue box) -->
+            <div class="date-box">
+            <h4>When are you travelling?</h4>
+            <div class="date-row">
+                <input type="date" id="date" style="width: 100%;">
+            </div>
+            </div>
+
+
+            <!-- Tour Type -->
+            <div class="filter-block">
+            <h5>Tour Type</h5>
+            <div class="filter-list" id="tour-type-list">
+                <label><input type="checkbox" value="Nepal Trekking" class="filter-type"> Nepal Trekking</label>
+                <label><input type="checkbox" value="Nepal Tours" class="filter-type"> Nepal Tours</label>
+                <label><input type="checkbox" value="Nepal Helicopter Tour" class="filter-type"> Nepal Helicopter Tour</label>
+                <label><input type="checkbox" value="Adventure Sports" class="filter-type"> Adventure Sports</label>
+                <label><input type="checkbox" value="City Tours" class="filter-type"> City Tours</label>
+                <label><input type="checkbox" value="Kathmandu Tours" class="filter-type"> Kathmandu Tours</label>
+                <label style="color:var(--blue);font-weight:600;cursor:pointer" id="see-more">See More</label>
+            </div>
+            </div>
+
+            <!-- Filter Price -->
+            <div class="filter-block">
+            <h5>Filter Price</h5>
+            <div class="price-row">
+                <input type="number" id="price-min" placeholder="Min" value="0">
+                <input type="number" id="price-max" placeholder="Max" value="5000">
+            </div>
+            </div>
+
+            <!-- Duration -->
+            <div class="filter-block">
+            <h5>Duration</h5>
+            <div class="filter-list" id="duration-list">
+                <label><input type="checkbox" value="0-3 hours" class="filter-duration"> 0-3 hours</label>
+                <label><input type="checkbox" value="3-5 hours" class="filter-duration"> 3-5 hours</label>
+                <label><input type="checkbox" value="5-7 hours" class="filter-duration"> 5-7 hours</label>
+                <label><input type="checkbox" value="Full Day (7+ hours)" class="filter-duration"> Full Day (7+ hours)</label>
+                <label><input type="checkbox" value="Multi-Day" class="filter-duration"> Multi-Day</label>
+            </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="filter-block">
+            <h5>Rating</h5>
+            <div class="filter-list" id="rating-list">
+                <label><input type="checkbox" value="4" class="filter-rating"> 4.0+</label>
+                <label><input type="checkbox" value="4.5" class="filter-rating"> 4.5+</label>
+                <label><input type="checkbox" value="4.8" class="filter-rating"> 4.8+</label>
+            </div>
+            </div>
+
+            <!-- Special -->
+            <div class="filter-block">
+            <h5>Special</h5>
+            <div class="filter-list" id="special-list">
+                <label><input type="checkbox" value="deal" class="filter-special"> Deals & Discounts</label>
+                <label><input type="checkbox" value="free_cancel" class="filter-special"> Free Cancellation</label>
+                <label><input type="checkbox" value="private" class="filter-special"> Private Tour</label>
+            </div>
+            </div>
+
+        </div>
+
+        </aside>
+
+
+        <!-- RIGHT: results -->
+        <main class="right">
+            <div class="results-top">
+            <div>
+                <strong id="results-heading">Showing tours</strong><br>
+                <small class="small">Results for <span id="results-country">Nepal</span></small>
+            </div>
+            <div class="results-count" id="results-count">12 results</div>
+            </div>
+
+            <div id="cards-root">
+            <!-- cards will be injected here -->
+            </div>
+        </main>
+
+    </div>
 
     <!-- Booking Section -->
     <section class="booking-section">
@@ -183,5 +463,235 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    /* ========= DATA: sample Nepal tours (you can replace with your real data) ========= */
+    const allTours = [
+    { id:1, country:'Nepal', city:'Everest', title:'Everest BC Helicopter Tour', duration:'2 Days 1 Nights', price:2460, rating:4.8, reviews:269, tags:['Nepal Helicopter Tour','Adventure Sports'], deal:true, free_cancel:true, private:false, image:'images/destination/1.jpg',  description: 'Fly over Everest Base Camp for an unforgettable experience.'},
+    { id:2, country:'Nepal', city:'Pokhara', title:'Annapurna BC Helicopter Tour', duration:'2 Days 1 Nights', price:2460, rating:4.7, reviews:180, tags:['Nepal Helicopter Tour'], deal:false, free_cancel:true, private:false, image:'https://picsum.photos/seed/e2/720/480' },
+    { id:3, country:'Nepal', city:'Kathmandu', title:'Best of Nepal Tour', duration:'9 Days 9 Nights', price:855, rating:4.6, reviews:120, tags:['Nepal Tours','City Tours'], deal:false, free_cancel:false, private:false, image:'https://picsum.photos/seed/e3/720/480' },
+    { id:4, country:'Nepal', city:'Kathmandu', title:'Kathmandu City Highlights', duration:'3 hours', price:45, rating:4.2, reviews:62, tags:['City Tours','Kathmandu Tours'], deal:false, free_cancel:false, private:false, image:'https://picsum.photos/seed/e4/720/480' },
+    { id:5, country:'Nepal', city:'Annapurna', title:'Nepal Trekking Classic', duration:'7 Days', price:1200, rating:4.9, reviews:340, tags:['Nepal Trekking'], deal:false, free_cancel:true, private:false, image:'https://picsum.photos/seed/e5/720/480' },
+    { id:6, country:'Nepal', city:'Everest', title:'Everest Base Camp Trek', duration:'12 Days', price:950, rating:4.8, reviews:420, tags:['Nepal Trekking','Adventure Sports'], deal:false, free_cancel:false, private:false, image:'https://picsum.photos/seed/e6/720/480' },
+    { id:7, country:'Nepal', city:'Pokhara', title:'Pokhara Adventure Sports', duration:'5 hours', price:150, rating:4.3, reviews:88, tags:['Adventure Sports'], deal:true, free_cancel:false, private:false, image:'https://picsum.photos/seed/e7/720/480' },
+    { id:8, country:'Nepal', city:'Kathmandu', title:'Mountain Flight (short tour)', duration:'45 minutes', price:300, rating:4.5, reviews:200, tags:['Nepal Helicopter Tour'], deal:false, free_cancel:true, private:false, image:'https://picsum.photos/seed/e8/720/480' },
+    { id:9, country:'Nepal', city:'Langtang', title:'Langtang Valley Trek', duration:'8 Days', price:700, rating:4.4, reviews:44, tags:['Nepal Trekking'], deal:false, free_cancel:false, private:false, image:'https://picsum.photos/seed/e9/720/480' },
+    { id:10, country:'Nepal', city:'Custom', title:'Private Luxury Nepal Tour', duration:'6 Days', price:5000, rating:4.9, reviews:60, tags:['Nepal Tours'], deal:true, free_cancel:true, private:true, image:'https://picsum.photos/seed/e10/720/480' },
+    { id:11, country:'Nepal', city:'Kathmandu', title:'Family Kathmandu Tour', duration:'4 hours', price:120, rating:4.0, reviews:30, tags:['Kathmandu Tours'], deal:false, free_cancel:false, private:false, image:'https://picsum.photos/seed/e11/720/480' },
+    { id:12, country:'Nepal', city:'Annapurna', title:'Annapurna Circuit Trek', duration:'14 Days', price:1300, rating:4.7, reviews:210, tags:['Nepal Trekking','Multi-Day'], deal:false, free_cancel:false, private:false, image:'https://picsum.photos/seed/e12/720/480' }
+    ];
+
+    /* ========= READ COUNTRY FROM URL (index.html should link like: destination.html?country=Nepal) ========= */
+    const params = new URLSearchParams(location.search);
+    const countryParam = (params.get('country') || 'Nepal').trim();
+    const countryName = decodeURIComponent(countryParam);
+
+    /* --------- update header text dynamically --------- */
+    document.getElementById('crumb-country').textContent = countryName;
+    document.getElementById('subtitle').textContent = `The 10 Best ${countryName} Tours`;
+    document.getElementById('page-title').textContent = `Explore all things to do in ${countryName}`;
+    document.getElementById('results-country').textContent = countryName;
+
+    /* ========= UI references ========= */
+    const cardsRoot = document.getElementById('cards-root');
+    const resultsCount = document.getElementById('results-count');
+
+    /* ========= filter state ========= */
+    const state = {
+    country: countryName,
+    types: new Set(),
+    priceMin: null,
+    priceMax: null,
+    durations: new Set(),
+    ratings: new Set(),
+    specials: new Set(),
+    dateFrom: null,
+    dateTo: null
+    };
+
+    /* initialize price default from data for selected country */
+    const countryTours = allTours.filter(t => t.country.toLowerCase() === countryName.toLowerCase());
+    const dataPrices = countryTours.map(t => t.price);
+    const defaultMin = Math.min(...dataPrices, 0);
+    const defaultMax = Math.max(...dataPrices, 5000);
+    document.getElementById('price-min').value = defaultMin;
+    document.getElementById('price-max').value = defaultMax;
+    state.priceMin = defaultMin;
+    state.priceMax = defaultMax;
+
+    /* ========= helper: duration category (map tour.duration -> category) ========= */
+    function durationToCategory(d){
+    if(!d) return null;
+    d = d.toString().toLowerCase();
+    if(d.includes('day') || d.includes('days') || d.match(/\d+\s*day/)) return 'Multi-Day';
+    // hours / minutes
+    const hoursMatch = d.match(/(\d+)\s*hour/);
+    if(hoursMatch){
+        const h = parseInt(hoursMatch[1],10);
+        if(h <= 3) return '0-3 hours';
+        if(h <= 5) return '3-5 hours';
+        if(h <= 7) return '5-7 hours';
+        return 'Full Day (7+ hours)';
+    }
+    // special minute or less than hour -> 0-3 hours
+    if(d.includes('minute') || d.includes('min') || d.includes('45')) return '0-3 hours';
+    return 'Multi-Day';
+    }
+
+    /* ========= render function: show cards ========= */
+    function renderList(list){
+    cardsRoot.innerHTML = '';
+    if(list.length === 0){
+        cardsRoot.innerHTML = '<p>No tours match your selected filters.</p>';
+        resultsCount.textContent = '0 results';
+        return;
+    }
+    resultsCount.textContent = `${list.length} results`;
+    list.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+        <img src="${t.image}" alt="${t.title}">
+        <div class="info">
+            <div class="meta"><div class="small">${t.city}, ${t.country}</div><div>${t.duration}</div></div>
+            <h3>${t.title}</h3>
+            <div class="small">★ ${t.rating} (${t.reviews})</div>
+            <div class="card-bottom-row">
+                <p class="card-desc">${t.description}</p>
+                <div class="price-row">
+                    <strong class="price">From $${t.price}</strong>
+                    ${t.deal ? `<span class="badge">Deal</span>` : ''}
+                </div>
+            </div>
+           
+            <!-- New row for guarantees and button -->
+            <div class="bottom-info">
+                <div class="guarantees">
+                    ${t.free_cancel ? `<span class="guarantee">Free Cancellation</span>` : ''}
+                    <span class="guarantee">Best Price Guarantee</span>
+                </div>
+                <button class="view-btn" onclick="alert('Open details for ${t.title.replace(/'/g,'')}')">View Details</button>
+            </div>
+        </div>
+        `;
+        cardsRoot.appendChild(card);
+    });
+    }
+
+    /* ========= applyFilters: use state to filter countryTours ========= */
+    function applyFilters(){
+    let list = countryTours.slice();
+
+    // types (tags) filter: if any selected, include item that has any of the selected tags
+    if(state.types.size > 0){
+        list = list.filter(t => t.tags.some(tag => state.types.has(tag)));
+    }
+
+    // price
+    list = list.filter(t => (t.price >= (state.priceMin ?? -Infinity) && t.price <= (state.priceMax ?? Infinity)));
+
+    // durations: if any duration selected, include if tour maps to any selected category
+    if(state.durations.size > 0){
+        list = list.filter(t => {
+        const cat = durationToCategory(t.duration);
+        return state.durations.has(cat);
+        });
+    }
+
+    // ratings: if any ratings chosen (thresholds), include if rating >= any chosen threshold
+    if(state.ratings.size > 0){
+        const thresholds = Array.from(state.ratings).map(Number);
+        list = list.filter(t => thresholds.some(th => (t.rating || 0) >= th));
+    }
+
+    // specials
+    if(state.specials.size > 0){
+        list = list.filter(t => {
+        for(const s of state.specials){
+            if(s === 'deal' && !t.deal) return false;
+            if(s === 'free_cancel' && !t.free_cancel) return false;
+            if(s === 'private' && !t.private) return false;
+        }
+        return true;
+        });
+    }
+
+    // date filters are currently not filtering tours (since sample tours have no date), but we store them in state
+    // you can extend tour objects to include available dates and filter here.
+
+    renderList(list);
+    }
+
+    /* ========= wire up filter inputs (live updates) ========= */
+    function setupListeners(){
+    // tour types
+    document.querySelectorAll('.filter-type').forEach(cb => {
+        cb.addEventListener('change', e => {
+        if(e.target.checked) state.types.add(e.target.value);
+        else state.types.delete(e.target.value);
+        applyFilters();
+        });
+    });
+
+    // price inputs
+    const pmin = document.getElementById('price-min'), pmax = document.getElementById('price-max');
+    pmin.addEventListener('input', e => {
+        state.priceMin = Number(e.target.value) || 0;
+        applyFilters();
+    });
+    pmax.addEventListener('input', e => {
+        state.priceMax = Number(e.target.value) || 999999;
+        applyFilters();
+    });
+
+    // durations
+    document.querySelectorAll('.filter-duration').forEach(cb => {
+        cb.addEventListener('change', e => {
+        if(e.target.checked) state.durations.add(e.target.value);
+        else state.durations.delete(e.target.value);
+        applyFilters();
+        });
+    });
+
+    // ratings
+    document.querySelectorAll('.filter-rating').forEach(cb => {
+        cb.addEventListener('change', e => {
+        if(e.target.checked) state.ratings.add(e.target.value);
+        else state.ratings.delete(e.target.value);
+        applyFilters();
+        });
+    });
+
+    // specials
+    document.querySelectorAll('.filter-special').forEach(cb => {
+        cb.addEventListener('change', e => {
+        if(e.target.checked) state.specials.add(e.target.value);
+        else state.specials.delete(e.target.value);
+        applyFilters();
+        });
+    });
+
+    // dates
+    document.getElementById('date-from').addEventListener('change', e => {
+        state.dateFrom = e.target.value || null;
+    });
+    document.getElementById('date-to').addEventListener('change', e => {
+        state.dateTo = e.target.value || null;
+    });
+
+    // optional "See More" demo
+    document.getElementById('see-more').addEventListener('click', () => {
+        alert('You can add more tour types here or a search input. For now this is a placeholder.');
+    });
+    }
+
+    /* ========= initialize page ========= */
+    function init(){
+    // render initial list (all Nepal tours)
+    renderList(countryTours);
+    setupListeners();
+    }
+    init();
+
+    </script>
 </body>
 </html>
