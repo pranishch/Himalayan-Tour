@@ -76,48 +76,42 @@ h5{
   transform: scale(1); /* normal size */
 }
 
+/*============================================================
+    Navbar CSS 
+  ============================================================ */
 
+#main-navbar {
+    background-color: var(--primary-color); /* Bootstrap Primary */
+    z-index: 10;
+}
+
+#main-navbar .nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#main-navbar .nav-link:hover {
+    color: #ffffff !important; /* White on hover */
+}
+
+#main-navbar .btn-contact {
+    background-color: var(--secondary-color); 
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#main-navbar .navbar-brand img {
+        height: 50px; /* desktop default */
+    }
+
+#main-navbar .navbar .nav-link {
+        font-family: 'Poppins', sans-serif;
+    }    
 /*==================================================
     Main carousel section 
   ==================================================  */
-
-/* navbar */
-.navbar .nav-link {
-    font-family: 'Poppins', sans-serif;
-}
-/* Transparent navbar initially */
-.navbar-scroll {
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-}
-.navbar-brand img {
-    height: 50px; /* desktop default */
-}
-/* Contact button default */
-.navbar-scroll .btn {
-    background-color: #0077CC;
-    color: white;
-    transition: all 0.3s ease;
-}
-/* Contact button on scroll */
-.navbar-scroll.scrolled .btn {
-    background-color: white;
-    color: #0d6efd;
-}
-/* Carousel indicators default visible */
-.carousel-indicators {
-    transition: opacity 0.3s ease;
-}
-/* Hide indicators when navbar is scrolled */
-.carousel-indicators.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-/* Background appears on scroll */
-.navbar-scroll.scrolled {
-    background-color: var(--primary-color); /* Bootstrap primary color */
-    transition: background-color 0.3s ease;
-}
 .carousel-inner img {
     height: 841px; /* Adjust carousel height */
     object-fit: cover;
@@ -747,18 +741,20 @@ h5{
 
 #testimonial-section h5{
     color: #ffffff;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
 } 
 #testimonial-section h2{
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 35px;
-} 
-#testimonial-section p{
     color: #CBCBCB;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 12px;
+    font-family: var(--bs-body-font-family);
+} 
+#testimonial-section p{
+    color: #FFFFFF;
+    font-family: var(--bs-body-font-family);
+    font-weight: 400;
+    font-size: 12px;
 } 
 
 #testimonial-carousel {
@@ -885,6 +881,14 @@ h5{
 @media (max-width: 767px) {
     body, html {
         overflow-x: hidden;
+    }
+    .navbar .container {
+        justify-content: flex-start !important;
+        gap: 8px;
+    }
+
+    .navbar .ms-auto {
+        margin-left: 0 !important; /* reset the auto margin on Contact Us button */
     }
     .navbar-brand img {
         height: 35px; /* smaller on mobile */
