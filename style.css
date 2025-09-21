@@ -76,9 +76,9 @@ h5{
   transform: scale(1); /* normal size */
 }
 
-/*============================================================
+/*============================================================================
     Navbar CSS 
-  ============================================================ */
+  ============================================================================ */
 
 #main-navbar {
     background-color: var(--primary-color); /* Bootstrap Primary */
@@ -109,9 +109,11 @@ h5{
 #main-navbar .navbar .nav-link {
         font-family: 'Poppins', sans-serif;
     }    
-/*==================================================
+
+/*======================================================================
     Main carousel section 
-  ==================================================  */
+  ======================================================================  */
+
 .carousel-inner img {
     height: 841px; /* Adjust carousel height */
     object-fit: cover;
@@ -126,11 +128,11 @@ h5{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.4); /* Dark overlay */
+    background: rgba(0,0,0,0.4); 
     z-index: 1;
 }
 .carousel-caption {
-    z-index: 2; /* Ensure captions are above the overlay */
+    z-index: 2; 
 }
 .carousel-caption h1 {
     font-weight: 700;
@@ -141,7 +143,6 @@ h5{
 .contact-btn {
     margin-left: 20px;
 }
-/* Search form container */
 .search-form {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
@@ -149,14 +150,12 @@ h5{
   padding: 10px 20px;
   gap: 15px;
 }
-/* Items inside the form */
 .form-item {
   padding: 5px 10px;
   font-size: 15px;
   color: #000;
   flex: 1;
 }
-/* Input & select without box borders */
 .form-input {
   border: none;
   outline: none;
@@ -164,13 +163,11 @@ h5{
   font-size: 15px;
   color: #000;
 }
-/* Divider */
 .form-divider {
   width: 1px;
   height: 30px;
   background: rgba(0,0,0,0.2);
 }
-/* Button */
 .search-form .btn-primary {
   border-radius: 6px;
   padding: 8px 20px;
@@ -184,8 +181,6 @@ h5{
    (apply only for widths >= 768px)
    --------------------------- */
 @media (min-width: 768px) {
-
-    /* Top-left corner image */
     .gallery-wrapper .img-wrapper.top-0.start-0 {
         top: 6px !important;
         left: 25px !important;
@@ -194,8 +189,6 @@ h5{
         height: 255px !important;
         Padding: -6px 20px 20px 20px !important;
     }
-
-    /* Top-right corner image */
     .gallery-wrapper .img-wrapper.top-0.end-0 {
         top:0px !important;
         transform: none !important;
@@ -204,8 +197,6 @@ h5{
         height: 255px !important;
         Padding: -6px 20px 20px 20px !important;
     }
-
-    /* Bottom-left corner image */
     .gallery-wrapper .img-wrapper.bottom-0.start-0 {
         top: 300px !important;
         left: 25px !important;
@@ -214,8 +205,6 @@ h5{
         height: 255px !important;
         Padding: -6px 20px 20px 20px !important;
     }
-
-    /* Bottom-right corner image */
     .gallery-wrapper .img-wrapper.bottom-0.end-0 {
         top: 300px !important;
         transform: none !important;
@@ -224,8 +213,6 @@ h5{
         height: 255px !important;
         Padding: -6px 20px 20px 20px !important;
     }
-
-    /* Center image — larger, centered and above the corners */
     .gallery-wrapper .img-wrapper.top-50.start-50.translate-middle {
         width: 399px !important; 
         height: 551px !important;
@@ -233,59 +220,45 @@ h5{
         left: 607px !important;
         padding: -10px 25px 25px 25px !important;
     }
-
-    /* Images fill their wrapper and keep aspect ratio */
     .gallery-wrapper img.gallery-img-other,
     .gallery-wrapper img.gallery-img-center {
         width: 100%;
-        height: auto;         /* preserve intrinsic aspect ratio */
+        height: auto;       
         display: block;
-        object-fit: cover;    /* crop elegantly if needed */
+        object-fit: cover;    
         border-radius: 8px;
     }
-
-    /* keep the aspect-ratios you already set as hints for modern browsers */
     .gallery-img-other { aspect-ratio: 350 / 275; }
     .gallery-img-center {  aspect-ratio: 350 / 580; }
-
-    /* larger overlay text on bigger screens */
     .gallery-wrapper .img-text h5 { font-size: 20px; }
     .gallery-wrapper .img-text p  { font-size: 14px; }
-
-    /* spacing for call-to-action */
     .btn-custom { margin-top: 36px; }
-
-    /* optional: increase spacing on very large screens */
     @media (min-width: 1200px) {
         .gallery-wrapper .img-wrapper { width: 24%; }
         .gallery-wrapper .img-wrapper.top-50.start-50.translate-middle { width: 31%; max-width: 640px; }
     }
 }
 
-/* Other gallery images */
 .gallery-img-other {
-    width: 100%;            /* take full container width */
-    max-width: 350px;       /* maximum width on large screens */
-    height: auto;           /* auto height to keep aspect ratio */
-    aspect-ratio: 350 / 275; /* maintain ratio */
-    object-fit: cover;      /* crop if needed */
-    border-radius: 8px;     /* optional rounded corners */
+    width: 100%;            
+    max-width: 350px;     
+    height: auto;          
+    aspect-ratio: 350 / 275; 
+    object-fit: cover;    
+    border-radius: 8px;    
 }
-
-/* Center gallery image */
 .gallery-img-center {
     width: 100%;
-    max-width: 350px;       /* can increase if needed */
+    max-width: 350px;    
     height: auto;
-    aspect-ratio: 350 / 580; /* maintain ratio */
+    aspect-ratio: 350 / 580; 
     object-fit: cover;
     border-radius: 8px;
 }
-
 .gallery-section h5 {
     color: var(--primary-color);
-    font-family: var(--bs-body-font-family); /* Poppins font */
-    font-weight: 600; /* Semibold */
+    font-family: var(--bs-body-font-family); 
+    font-weight: 600;
     font-size: 16px;
 }
 .gallery-section h2{
@@ -298,38 +271,30 @@ h5{
     font-weight: 500;
     font-size: 16px;
     color: #6B6B6B;
-;
 }
-
-/* Text overlay */
 .img-text{
     position: absolute;
     bottom: 10px;
     left: 10px;
     color: white;
-    /* background: rgba(0,0,0,0.4); */
     padding: 5px 10px;
     border-radius: 5px;
     text-align: left;
 }
-/* Style only the h5 and p inside images */
 .img-text h5 {
-    color: white; /* Example: gold */
+    color: white;
     font-family: 'Poppins', sans-serif; 
     font-weight: 600;
     font-size: 24px;
-    margin: 0; /* remove extra margin */
+    margin: 0;
 }
-
 .img-text p {
-    color: #ffffff; /* White text */
+    color: #ffffff;
     font-family: 'Poppins', sans-serif; 
     font-weight: 400;
     font-size: 18px;
     margin: 0;
 }
-
-/* btn */
 .btn-custom{
     background-color: white;
     color: #0D6EFD;
@@ -343,16 +308,14 @@ h5{
     color: white;
 }
 
-/*======================================================
+/*=============================================================
    Service Section 
-  ====================================================== */
-/* Service Section */
+  ============================================================= */
+
 .service-section {
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #f8f9fa;
   padding: 60px 0;
 }
-
-/* Section Headings */
 .service-section h5 {
   color: white;
   font-size: 16px;
@@ -367,8 +330,6 @@ h5{
   font-weight: 500;
   color: #CBCBCB;
 }
-
-/* Service Cards */
 .service-card {
   background-color: #ffffff;
   border: 1px solid #dee2e6;
@@ -385,67 +346,58 @@ h5{
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0); /* default transparent */
+  background-color: rgba(0,0,0,0); 
   transition: background-color 0.3s;
-  z-index: 0; /* behind content */
+  z-index: 0; 
   border-radius: 8px;
 }
-
 .service-card:hover::before {
-  background-color: rgba(0,0,0,0.5); /* semi-transparent black overlay */
+  background-color: rgba(0,0,0,0.5);
 }
-
-/* Default styles for h4 and p in service cards */
 .service-section .container .service-card h4 {
-  font-size: 20px;       /* Change the font size */
-  font-weight: 600;      /* Change the font weight */
-  color: #1B1D21;        /* Change the default color */
-  padding-bottom: 15px;  /* Adjust spacing */
+  font-size: 20px;       
+  font-weight: 600;      
+  color: #1B1D21;        
+  padding-bottom: 15px;  
 }
-
 .service-section .container .service-card p {
-  font-size: 14px;       /* Change the font size */
-  font-weight: 400;      /* Change the font weight */
-  color: #6B6B6B;        /* Change the default color */
-  line-height: 1.5;      /* Adjust line height */
+  font-size: 14px;      
+  font-weight: 400;      
+  color: #6B6B6B;        
+  line-height: 1.5;      
 }
-
 .service-card .icon-circle{
   position: relative;
   z-index: 1;
 }
-/* Hover effect base */
 .service-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* ✅ Different hover background images (fixed) */
 .service-section .col-12:nth-child(1) .service-card:hover {
-  background-image: url('images/services-card/services-hover-1.jpg'); /* Expert Planning */
+  background-image: url('images/services-card/services-hover-1.jpg'); 
 }
 .service-section .col-12:nth-child(2) .service-card:hover {
-  background-image: url('images/services-card/services-hover-2.jpg'); /* Safety First */
+  background-image: url('images/services-card/services-hover-2.jpg'); 
 }
 .service-section .col-12:nth-child(3) .service-card:hover {
-  background-image: url('images/services-card/services-hover-3.jpg'); /* Authentic Experiences */
+  background-image: url('images/services-card/services-hover-3.jpg'); 
 }
 
-/* Change icon-circle and text colors on hover */
 .service-card:hover .icon-circle {
-  background-color: #0d6efd; /* new bg */
-  color: #ffffff; /* icon white */
+  background-color: #0d6efd; 
+  color: #ffffff; 
 }
 .service-section .container .service-card:hover h4,
 .service-section .container .service-card:hover p {
-  color: #ffffff; /* text white */
+  color: #ffffff; 
 }
 
-/* Icon Circle */
 .icon-circle {
   width: 60px;
   height: 60px;
-  background-color: #dbe9fb; /* light blue */
+  background-color: #dbe9fb;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -456,17 +408,15 @@ h5{
   transition: background-color 0.3s, color 0.3s;
 }
 
-/*========================================================
+/*====================================================================
     Feature section 
-  ========================================================  */
+  ====================================================================  */
 
 .feature-section {
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #f8f9fa; 
   padding: 60px 0;
 }
-/* Feature Cards */
 .feature-section h5 {
-    /* color: white; */
     font-size: 16px;
     font-weight: 600;
 }
@@ -487,7 +437,6 @@ h5{
 .feature-card p{
     font-size: 14px;
     font-weight: 400;
-
 }
 .feature-card h4,
 .feature-card p {
@@ -497,16 +446,13 @@ h5{
   background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 8px;
-  /* padding: 40px 20px 40px 20px;  */
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-/* Hover effect for Service Cards */
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
-/* btn */
 .btn-destination{
     background-color: white;
     color: #0D6EFD;
@@ -531,7 +477,7 @@ h5{
   font-size: 14px;
 }
 .feature-img {
-    position: relative; /* needed for absolute positioning of badge */
+    position: relative; 
 }
 
 .rating-badge {
@@ -539,7 +485,7 @@ h5{
     top: 10px;
     right: 10px;
     padding: 5px 10px;
-    background-color: #ffffff; /* yellow background */
+    background-color: #ffffff; 
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -548,7 +494,6 @@ h5{
     z-index: 5;
 }
 
-/* override any hover effect hiding it */
 .feature-img .rating-badge {
     display: block !important;
 }
@@ -558,9 +503,9 @@ h5{
     color: var(--primary-color);
 }
 
-/*========================================================
+/*====================================================================
     Adventure Section 
-  ======================================================== */
+  ==================================================================== */
 
 #adventure-section .container .row{
     margin: 10px 10px;
@@ -591,7 +536,6 @@ h5{
 }
 .counter-box i {
     font-size: 40px;
-    /* color: #ff5722; */
     margin-bottom: 15px;
 }
 .counter-number {
@@ -611,8 +555,8 @@ h5{
 
 .counter-number,
 .counter-suffix {
-    font-size: 32px;      /* same as number */
-    color: #212529;       /* same color */
+    font-size: 32px;    
+    color: #212529;     
     line-height: 1;
 }
 .floating-card {
@@ -638,9 +582,10 @@ h5{
     font-size: 14px;
     color: #555;
 }
-/* ==========================================================
+
+/* ==================================================================
     Activities Section
-   ========================================================== */
+   ================================================================== */
 
 #activities-section h5{
     font-weight: 600;
@@ -678,7 +623,7 @@ h5{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* dark overlay */
+    background: rgba(0, 0, 0, 0.6); 
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -692,12 +637,12 @@ h5{
     font-size: 12px;
     padding: 4px 10px;
     margin-bottom: 5px;
-    align-self: flex-start; /* aligns button to the left */
+    align-self: flex-start;
 }
 
 .activity-card .overlay p,
 .activity-card .overlay h4 {
-    text-align: left; /* left align text */
+    text-align: left; 
     margin: 0 0 5px 0;
 }
 
@@ -707,7 +652,7 @@ h5{
 }
 
 .activity-card .overlay .d-flex {
-    justify-content: space-between; /* calendar left, people right */
+    justify-content: space-between;
     font-size: 12px;
     margin-top: 5px;
 }
@@ -719,14 +664,13 @@ h5{
 
 .activity-card:hover img {
     transform: scale(1.05);
-    filter: brightness(0.99); /* makes image darker */
+    filter: brightness(0.99); 
 }
 
 .activity-card:hover .overlay {
     opacity: 1;
 }
 
-/* Optional: style badges/icons */
 .activity-card .overlay .badge {
     font-size: 12px;
     padding: 5px 8px;
@@ -735,9 +679,9 @@ h5{
     gap: 4px;
 }
 
-/* ==========================================================
+/* =========================================================================
     Testimonial Section
-   ========================================================== */
+   ========================================================================= */
 
 #testimonial-section h5{
     color: #ffffff;
@@ -771,10 +715,9 @@ h5{
   =========================================================== */
 
 .blog-section {
-  background-color: #f8f9fa; /* Light gray background */
+  background-color: #f8f9fa;
   padding: 60px 0;
 }
-/* Feature Cards */
 .blog-section h5 {
     color: #0077CC;
     font-size: 16px;
@@ -815,11 +758,9 @@ h5{
   background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 8px;
-  /* padding: 40px 20px 40px 20px;  */
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-/* Hover effect for Service Cards */
 .blog-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -837,12 +778,12 @@ h5{
   font-size: 14px;
 }
 .blog-img {
-    position: relative; /* needed for absolute positioning of badge */
+    position: relative; 
 }
 
-/* ==============================================================
+/* =====================================================================
     Booking Section
-   ============================================================== */
+   ===================================================================== */
 
 .booking-section h2{
     font-weight: 700;
@@ -882,55 +823,68 @@ h5{
     body, html {
         overflow-x: hidden;
     }
+
+    /*+++++++++++++Navbar Section ++++++++++++++++++++++++  */
+ 
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.8); 
+        z-index: 5;
+    }
     .navbar .container {
         justify-content: flex-start !important;
         gap: 8px;
     }
 
     .navbar .ms-auto {
-        margin-left: 0 !important; /* reset the auto margin on Contact Us button */
+        margin-left: 0 !important; 
     }
     .navbar-brand img {
-        height: 35px; /* smaller on mobile */
+        height: 35px; 
     }
+
+    /*++++++++++++++ Main Carousel Section ++++++++++++++++*/
+
     .carousel-caption p {
-        font-size: clamp(12px, 2vw, 16px);   /* smaller font size */
-        line-height: 1.4;  /* adjust spacing for readability */
-        padding: 0 10px;   /* optional: add some side padding */
+        font-size: clamp(12px, 2vw, 16px);  
+        line-height: 1.4;  
+        padding: 0 10px;  
     }
-    /* Search Form: all in one row, very compact */
     .search-form {
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         justify-content: space-between;
-        gap: 0 !important; /* reduced gap */
+        gap: 0 !important; 
         width: 100%;
-        overflow-x: auto; /* horizontal scroll if needed */
+        overflow-x: auto; 
     }
     .search-form .form-item {
         flex: 0 0 auto;
         display: flex;
         align-items: center;
-        min-width: 60px; /* smaller width */
+        min-width: 60px; 
         margin: 0 !important;
         width: auto;
     }
     .search-form .form-item i {
-        margin-right: 0.1rem !important; /* smaller icon spacing */
+        margin-right: 0.1rem !important; 
         font-size: 0.7rem;
     }
     .search-form .form-input {
-        font-size: 0.65rem; /* smaller font */
-        padding: 0.1rem 0.2rem; /* smaller padding */
-        width: 70px !important; /* compact input width */
+        font-size: 0.65rem; 
+        padding: 0.1rem 0.2rem;
+        width: 70px !important;
     }
     .search-form button {
-        font-size: 0.65rem !important; /* smaller button font */
-        padding: 0.1rem 0.25rem !important; /* compact padding */
+        font-size: 0.65rem !important; 
+        padding: 0.1rem 0.25rem !important; 
         flex: 0 0 auto;
     }
     .form-divider {
-        display: none; /* hide dividers */
+        display: none; 
     }
     .About-section{
         font-size: clamp(12px, 2vw, 16px);
@@ -940,29 +894,27 @@ h5{
 
     /*++++++++ Gallery Section +++++++++ */
     
-    /* Make gallery wrapper relative for stacking */
     .gallery-wrapper {
         width: 100% !important;
         height: auto !important;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 16px; /* spacing between images */
+        gap: 16px; 
         position: relative !important;
     }
 
     .gallery-wrapper .img-wrapper {
-        position: relative !important; /* remove absolute positioning */
-        width: 100% !important;        /* take full container width */
-        max-width: 350px;              /* keep a reasonable max */
+        position: relative !important; 
+        width: 100% !important;      
+        max-width: 350px;              
         height: auto !important;
         left: auto !important;
         top: auto !important;
         transform: none !important;
-        margin: 0 auto;                /* center horizontally */
+        margin: 0 auto;             
     }
 
-    /* Center image behaves like others */
     .gallery-wrapper .img-wrapper.top-50.start-50.translate-middle {
         position: relative !important;
         width: 100% !important;
@@ -973,25 +925,18 @@ h5{
         transform: none !important;
     }
     .gallery-img-center {
-        aspect-ratio: 350 / 320; /* shorter ratio than desktop (580) */
+        aspect-ratio: 350 / 320; 
         object-fit: cover;
     }
-    /* Text overlay adapts for smaller screens */
     .img-text h5 {
         font-size: 18px;
     }
     .img-text p {
         font-size: 14px;
     }
-    .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0,0,0,0.8); 
-        z-index: 5;
-    }
+
     /*++++++++++++ Adventure Section ++++++++++*/
+
     #adventure-section .container {
         flex-direction: column;
         gap: 20px;
@@ -1008,7 +953,6 @@ h5{
         width: 100%;
         height: auto;
     }
-    /* Floating card reposition */
     #adventure-section .right-content > div {
         position: static;
         margin: 15px auto 0 auto;
@@ -1024,47 +968,44 @@ h5{
         line-height: 1.5;
     }
 
-    /* Counter boxes stack */
     #adventure-section .row.g-4 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
     .floating-card {
-        bottom: -10px;          /* closer to image bottom */
-        left: 10px;             /* small padding from left edge */
-        padding: 12px 16px;     /* reduce size for small screens */
+        bottom: -10px;          
+        left: 10px;            
+        padding: 12px 16px;    
         border-radius: 8px;
         font-size: 14px;
         align-items: flex-start;
     }
 
     .floating-card span:first-child {
-        font-size: 18px;        /* slightly smaller */
+        font-size: 18px;        
     }
-
     .floating-card span:last-child {
-        font-size: 12px;        /* slightly smaller */
+        font-size: 12px;        
     }
     .counter-box {
-        padding: 1px 10px;        /* smaller padding */
+        padding: 1px 10px;        
     }
-
     .counter-box i {
-        font-size: 28px;            /* smaller icon */
+        font-size: 28px;         
         margin-bottom: 10px;
     }
-
     .counter-number,
     .counter-suffix {
-        font-size: 20px;            /* smaller number */
+        font-size: 20px;            
     }
 
     .counter-text {
-        font-size: 14px;            /* smaller text */
+        font-size: 14px;           
     }
 
     /* ++++++++++++++ testimonial section ++++++++++ */
+    
     #testimonial-carousel {
         display: flex;
         flex-wrap: nowrap;
@@ -1074,5 +1015,4 @@ h5{
         flex: 0 0 100%; 
         max-width: 100%;  
     }
-
 }
