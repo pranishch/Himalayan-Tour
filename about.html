@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
+    <!-- Main Navbar -->
     <!-- Navbar overlay -->
     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 w-100 p-3">
         <div class="container">
@@ -35,18 +35,69 @@
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item me-3"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item me-3"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item me-3"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item me-3"><a class="nav-link" href="#packages">Packages</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="destination.html">Destination</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="activities.html">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
                 </ul>
             </div>
 
             <!-- Contact Us button right -->
             <div class="d-flex ms-auto">
-                <a class="btn btn-contact" href="#contact">Contact Us</a>
+                <a class="btn btn-contact" href="contact_us.html">Contact Us</a>
             </div>
         </div>
     </nav>
+    <!-- Main Navbar End -->
+
+    <!-- Breadcrumb Section -->
+    <body class="about-page">
+        <section id="breadcrumb-section" class="d-flex align-items-center text-center">
+        <div class="container">
+            <h2 class="text-white fw-bold">About Us</h2>
+            <p class="mb-0">Building lasting connections through exceptional service.</p>
+        </div>
+        </section>
+    </body>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Why We Are Best Section -->
+    <section id="best" class="why-best-section">
+    <div class="container">
+        <!-- Section Heading -->
+        <h2 class="why-best-heading">Why We Are Best</h2>
+
+        <!-- Features Grid -->
+        <div class="row g-4">
+        <!-- Column 1 -->
+        <div class="col-md-3 text-center text-md-start feature-column">
+            <i class="bi bi-chat-dots feature-icon"></i>
+            <h4 class="feature-title">24-hour support</h4>
+            <p class="feature-text">Enjoy guided tours with expert local guides ensuring a seamless and memorable experience.</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-md-3 text-center text-md-start feature-column">
+            <i class="bi bi-emoji-smile feature-icon"></i>
+            <h4 class="feature-title">No hidden fees</h4>
+            <p class="feature-text">All prices are transparent with no extra charges, ensuring a worry-free Kathmandu Valley experience.</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="col-md-3 text-center text-md-start feature-column">
+            <i class="bi bi-calendar-check feature-icon"></i>
+            <h4 class="feature-title">Booking flexibility</h4>
+            <p class="feature-text">Easily modify or reschedule your Kathmandu Valley tour to suit your travel plans and needs.</p>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="col-md-3 text-center text-md-start feature-column">
+            <i class="bi bi-truck feature-icon"></i>
+            <h4 class="feature-title">Included transfers</h4>
+            <p class="feature-text">All airport and local transfers are included, making your Kathmandu Valley tour smooth and stress-free.</p>
+        </div>
+        </div>
+    </div>
+    </section>
 
     <!-- Adventure Section -->
     <section id="adventure-section" style="background-image: url('images/world_map_bg.jpg'); background-size: cover; background-position: center; padding: 80px 0;">
@@ -129,6 +180,116 @@
             </div>
         </div>
     </section>
+    <!-- Adventure Section End -->
+
+    <!-- Testimonial Section -->
+    <section id="testimonial-section" class="py-5" style="background: url('images/testimonial/testimonial-bg.jpg') no-repeat center center/cover;">
+        <div class="container text-center text-white">
+            <!-- Heading -->
+            <h5 class="fw-bold">Testimonials</h5>
+            <h2 class="fw-bold mb-3">What Our Customers Say </h2>
+            <p class="mb-5">Hear from travelers who turned their journeys with us into unforgettable memories.</p>
+
+            <!-- Carousel Wrapper -->
+            <div class="overflow-hidden">
+            <div id="testimonial-carousel" class="d-flex transition">
+
+                <!-- Testimonial 1 -->
+                <div class="col-md-4 px-2">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-transparent text-start">
+                    <!-- Small Image -->
+                    <div class="text-start mb-4">
+                    <img src="images/testimonial/1.jpg" alt="John Doe"
+                        class="rounded-circle border border-2 border-white"
+                        style="width: 76px; height: 76px; object-fit: cover;">
+                    </div>
+                    <!-- Text -->
+                    <p class="mb-3 text-white">Glance Himalaya made our trip unforgettable! From smooth bookings to breathtaking treks, every detail was perfectly handled. Highly recommend for anyone seeking authentic Himalayan adventures.</p>
+                    <h5 class="mb-0">John Doe</h5>
+                    <small class="text-light">New York, USA</small>
+                </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4 px-2">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-transparent text-start">
+                    <div class="text-start mb-4">
+                    <img src="images/testimonial/2.jpg" alt="James Turner"
+                        class="rounded-circle border border-2 border-white"
+                        style="width: 76px; height: 76px; object-fit: cover;">
+                    </div>
+                    <p class="mb-3 text-white">Glance Himalaya made our trip unforgettable! From smooth bookings to breathtaking treks, every detail was perfectly handled. Highly recommend for anyone seeking authentic Himalayan adventures.</p>
+                    <h5 class="mb-0">James Turner</h5>
+                    <small class="text-light">UK, London</small>
+                </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4 px-2">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-transparent text-start">
+                    <div class="text-start mb-4">
+                    <img src="images/testimonial/1.jpg" alt="Anjali Sharma"
+                        class="rounded-circle border border-2 border-white"
+                        style="width: 76px; height: 76px; object-fit: cover;">
+                    </div>
+                    <p class="mb-3 text-white">Glance Himalaya made our trip unforgettable! From smooth bookings to breathtaking treks, every detail was perfectly handled. Highly recommend for anyone seeking authentic Himalayan adventures.</p>
+                    <h5 class="mb-0">Anjali Sharma</h5>
+                    <small class="text-light">India, Delhi</small>
+                </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="col-md-4 px-2">
+                <div class="testimonial-card p-4 rounded shadow-sm bg-transparent text-start">
+                    <div class="text-start mb-4">
+                    <img src="images/testimonial/2.jpg" alt="Sophie Lee"
+                        class="rounded-circle border border-2 border-white"
+                        style="width: 76px; height: 76px; object-fit: cover;">
+                    </div>
+                    <p class="mb-3 text-white">Glance Himalaya made our trip unforgettable! From smooth bookings to breathtaking treks, every detail was perfectly handled. Highly recommend for anyone seeking authentic Himalayan adventures.</p>
+                    <h5 class="mb-0">Sophie Lee</h5>
+                    <small class="text-light">Sydney, Australia</small>
+                </div>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section -->
+
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section">
+        <div class="container">
+            <h2 class="connect-heading">Not sure which tour is right for you?<br>We're here to help</h2>
+            
+            <div class="row connect-row">
+            <div class="col-md-4 connect-column first-column">
+                <i class="bi bi-chat-dots connect-icon"></i>
+                <h4 class="connect-title">Chat online</h4>
+                <p class="connect-text text-start">Chat instantly with us during our normal hours and we'll get back to you ASAP.</p>
+                <a href="#" class="chat-now-link">Chat Now</a>
+            </div>
+            
+            <div class="col-md-4 connect-column second-column">
+                <i class="bi bi-calendar connect-icon"></i>
+                <h4 class="connect-title">Schedule a call</h4>
+                <p class="connect-text text-start">Book an appointment with us during our working hours at your convenience.</p>
+                <a href="#" class="chat-now-link">Schedule Now</a>
+            </div>
+            
+            <div class="col-md-4 connect-column">
+                <i class="bi bi-telephone connect-icon"></i>
+                <h4 class="connect-title">Call us</h4>
+                <p class="connect-text text-start">Give us a call and our team will assist you immediately during office hours.</p>
+                <a href="#" class="chat-now-link">Call Now</a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- Footer Start -->
     <footer id="footer" class="text-white pt-5">
         <div class="container">
@@ -151,11 +312,12 @@
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3 text-white">Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Home</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Services</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Tours</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="destination.html" class="text-white text-decoration-none">Destination</a></li>
+                        <li><a href="activities.html" class="text-white text-decoration-none">Activities</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">FAQ</a></li>
+                        <li><a href="contact_us.html" class="text-white text-decoration-none">Contact</a></li>
                     </ul>
                 </div>
 
@@ -163,11 +325,11 @@
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3 text-white">Travel Guide</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white text-decoration-none">Destinations</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Tips & Tricks</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Hotels</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Restaurants</a></li>
-                        <li><a href="#" class="text-white text-decoration-none">Travel Blogs</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Policies & Legal</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Tour Highlights</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Newsletter Signup</a></li>
+                        <!-- <li><a href="#" class="text-white text-decoration-none">Restaurants</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Travel Blogs</a></li> -->
                     </ul>
                 </div>
 
@@ -205,5 +367,6 @@
     <!-- Footer End -->  
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
+    <script src="script.js"></script>
 </body>
 </html>
