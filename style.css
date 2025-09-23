@@ -1011,7 +1011,10 @@ Navbar CSS
   color: #555555 !important;
 }
 
-/* Contact Section Scoped CSS */
+/*===============================================================
+    Contact Page
+  =============================================================== */
+
 #contact-section {
     width: 100%;
     padding: 60px 20px;
@@ -1127,7 +1130,12 @@ Navbar CSS
     border-radius: 16px;
     overflow: hidden;
 }
- #activities-feature .feature-card {
+
+/*========================================================
+    Activities Page
+  ======================================================== */
+
+#activities-feature .feature-card {
   position: relative;
 }
 #activities-feature .rating-badge {
@@ -1144,6 +1152,7 @@ Navbar CSS
   background-color: #0d6efd;
   color: #fff;
 }
+
 /* ==============================================================
     Mobile view
    ============================================================== */  
