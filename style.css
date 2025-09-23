@@ -20,7 +20,7 @@ h5{
 /* Default breadcrumb style */
 #breadcrumb-section {
     width: 100%;                
-    height: 380px;             
+    height: 530px;             
     padding-top: 96px;           
     display: flex;
     flex-direction: column;
@@ -647,22 +647,22 @@ Navbar CSS
     Activities Section
    ================================================================== */
 
-#activities-section h5{
+#activities h5{
     font-weight: 600;
     font-size: 16px;
     color: #0077CC;
 }   
-#activities-section h3{
+#activities h3{
     font-weight: 600;
     font-size: 35px;
     color: #1B1D21;
 } 
-#activities-section p{
+#activities p{
     font-weight: 500;
     font-size: 16px;
     color: #6B6B6B;
 } 
-#activities-section .btn{
+#activities .btn{
     border-radius: 20px;
 }
 .activity-card {
@@ -1127,7 +1127,23 @@ Navbar CSS
     border-radius: 16px;
     overflow: hidden;
 }
- 
+ #activities-feature .feature-card {
+  position: relative;
+}
+#activities-feature .rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+}
+#activities-feature .btn.active {
+  background-color: #0d6efd;
+  color: #fff;
+}
 /* ==============================================================
     Mobile view
    ============================================================== */  
