@@ -1173,7 +1173,7 @@ Navbar CSS
     user-select: none;
     pointer-events: auto;
 }
-/* ++++++++++++++++++++++++++ activities section ++++++++++++++++++*/
+/* ++++++++++++++++++++++++++ Activities Section (Activities Page) ++++++++++++++++++*/
 
 #activities-section {
   background: #f9f9f9;
@@ -1209,7 +1209,8 @@ Navbar CSS
 
 /* Cards */
 #activities-section .activity-card {
-  flex: 0 0 calc(25% - 20px); /* 4 cards on desktop */
+  height: 397px;   
+  flex: 0 0 calc(25% - 20px); 
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
@@ -1221,7 +1222,7 @@ Navbar CSS
 
 #activities-section .activity-card .card-img {
   position: relative;
-  height: 50%;
+  height: 214.28px;
 }
 
 #activities-section .activity-card .card-img img {
@@ -1244,7 +1245,7 @@ Navbar CSS
 
 #activities-section .activity-card .card-content {
   padding: 15px;
-  height: 50%;
+  height: 182.72px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1253,7 +1254,7 @@ Navbar CSS
 #activities-section .activity-card .location {
   font-size: 14px;
   color: #666;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 #activities-section .activity-card h5 {
@@ -1272,12 +1273,6 @@ Navbar CSS
   margin-left: 5px;
 }
 
-#activities-section .activity-card hr {
-  margin: 10px 0;
-  border: none;
-  border-top: 1px solid #eee;
-}
-
 #activities-section .activity-card .bottom-info {
   display: flex;
   justify-content: space-between;
@@ -1287,7 +1282,7 @@ Navbar CSS
 
 #activities-section .activity-card .bottom-info .price {
   font-weight: bold;
-  color: #000;
+  color: #1B1D21;
 }
 /* Prevent text selection in the activities section */
 #activities-section {
