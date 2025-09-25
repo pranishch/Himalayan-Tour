@@ -13,6 +13,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
+    <style>
+        @media (max-width: 767px) {
+            #activities-feature .filter-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+
+            #activities-feature .filter-row .btn {
+                padding: 5px 10px;  /* smaller buttons */
+                font-size: 12px;    /* smaller text */
+            }
+            #activities-section #activities-slider {
+                flex-direction: column;
+                overflow-x: visible;  /* disable horizontal scroll */
+            }
+
+            #activities-section .activity-card {
+                width: 100%;  /* full width */
+                margin-bottom: 15px;
+            }
+
+            #activities-section .activity-card .card-img img {
+                height: auto;  /* let image scale naturally */
+                width: 100%;
+            }
+
+            #activities-section .activity-card .card-content h5,
+            #activities-section .activity-card .card-content p,
+            #activities-section .activity-card .card-content .bottom-info p {
+                font-size: 14px; /* smaller text for mobile */
+            }
+
+            #activities-section .activity-card .rating {
+                font-size: 13px;
+            }
+
+            #activities-section .activity-card .bottom-info p {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Main Navbar -->
@@ -62,172 +106,305 @@
 
     <!-- Activities Feature Section -->
     <section id="activities-feature" class="py-5">
-    <div class="container text-center">
+        <div class="container text-center">
 
-        <!-- Buttons Row -->
-        <div class="d-flex justify-content-center mb-4 flex-wrap gap-2">
-        <button class="btn btn-outline-primary active" data-target="all">All Activities</button>
-        <button class="btn btn-outline-primary" data-target="hiking">Hiking</button>
-        <button class="btn btn-outline-primary" data-target="bungee">Bungee</button>
-        <button class="btn btn-outline-primary" data-target="jungle">Jungle Safari</button>
-        <button class="btn btn-outline-primary" data-target="surfing">Surfing</button>
-        <button class="btn btn-outline-primary" data-target="trekking">Trekking</button>
-        <button class="btn btn-outline-primary" data-target="paragliding">Paragliding</button>
-        <button class="btn btn-outline-primary" data-target="rafting">Rafting</button>
-        </div>
+            <!-- Buttons Row -->
+            <div class="filter-row mb-4">
+                <button class="btn btn-outline-primary active" data-target="all">All Activities</button>
+                <button class="btn btn-outline-primary" data-target="hiking">Hiking</button>
+                <button class="btn btn-outline-primary" data-target="bungee">Bungee</button>
+                <button class="btn btn-outline-primary" data-target="jungle">Jungle Safari</button>
+                <button class="btn btn-outline-primary" data-target="surfing">Surfing</button>
+                <button class="btn btn-outline-primary" data-target="trekking">Trekking</button>
+                <button class="btn btn-outline-primary" data-target="paragliding">Paragliding</button>
+                <button class="btn btn-outline-primary" data-target="rafting">Rafting</button>
+                <button class="btn btn-outline-primary" data-target="Beach">Beach</button>
+            </div>
 
-        <!-- Cards Grid -->
-        <div class="row g-4">
-        <!-- Card 1 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card hiking trekking">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/tropical.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Tropical Paradise">
-                <div class="rating-badge">
-                <i class="bi bi-star-fill text-warning"></i>
-                <span>4.8</span>
-                </div>
-            </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Maldives</p>
-                <h4>Tropical Paradise</h4>
-                <p style="color:#646464;">Crystal clear waters and overwater bungalows await.</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="2499">0</span></span><span class="duration-text text-secondary"> / 7 Days</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card hiking trekking">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/mountain.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Mountain Adventure">
-                <div class="rating-badge">
-                <i class="bi bi-star-fill text-warning"></i>
-                <span>4.8</span>
-                </div>
-            </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Nepal Peak</p>
-                <h4>Mountain Adventure</h4>
-                <p style="color:#646464;">Breathtaking peaks and highest peak adventures.</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="2000">0</span></span><span class="duration-text text-secondary"> / 5 Days</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card city surfing">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/surfing.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Surfing">
-                <div class="rating-badge">
-                <i class="bi bi-star-fill text-warning"></i>
-                <span>4.8</span>
-                </div>
-            </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Bali</p>
-                <h4>Surfing Adventure at Kuta Beach</h4>
-                <p style="color:#646464;">Surf lessons for beginners and seasoned pros</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="4499">0</span></span><span class="duration-text text-secondary"> / 12 Days</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card jungle safari">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/safari.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Safari Experience">
-                <div class="rating-badge">
-                <i class="bi bi-star-fill text-warning"></i>
-                <span>4.8</span>
-                </div>
-            </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Chitwan</p>
-                <h4>Safari Experience</h4>
-                <p style="color:#646464;">Wildlife encounters in their natural habitat.</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="3499">0</span></span><span class="duration-text text-secondary"> / 8 Days</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card bungee">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/bungee.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Bungee Jumping">
-                <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>4.9</span></div>
-            </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Sindhupalchowk</p>
-                <h4>Bungee Jump at The Last Resort</h4>
-                <p style="color:#646464;">Breathtaking peaks and highest peak adventures</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="799">0</span></span><span class="duration-text text-secondary"> / 1 Day</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card paragliding">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/paragliding.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Paragliding Adventure">
-                <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>4.7</span></div>
-            </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Pokhara</p>
-                <h4>Paragliding Over Pokhara Lake</h4>
-                <p style="color:#646464;">Soar high above lakes with panoramic views</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="999">0</span></span><span class="duration-text text-secondary"> / Half Day</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
-            </div>
-            </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card zipline">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
+            <!-- Cards Grid -->
+            <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card hiking trekking">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
                 <div class="feature-img" style="height:50%;">
-                    <img src="images/features/zipline.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Zipline Adventure">
-                    <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>4.8</span></div>
+                    <img src="images/features/tropical.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Tropical Paradise">
+                    <div class="rating-badge">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>4.8</span>
+                    </div>
+                </div>
+                <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                    <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Maldives</p>
+                    <h4>Tropical Paradise</h4>
+                    <p style="color:#646464;">Crystal clear waters and overwater bungalows await.</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="2499">0</span></span><span class="duration-text text-secondary"> / 7 Days</span></p>
+                    <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card hiking trekking">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                <div class="feature-img" style="height:50%;">
+                    <img src="images/features/mountain.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Mountain Adventure">
+                    <div class="rating-badge">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>4.8</span>
+                    </div>
+                </div>
+                <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                    <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Nepal Peak</p>
+                    <h4>Mountain Adventure</h4>
+                    <p style="color:#646464;">Breathtaking peaks and highest peak adventures.</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="2000">0</span></span><span class="duration-text text-secondary"> / 5 Days</span></p>
+                    <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card city surfing">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                <div class="feature-img" style="height:50%;">
+                    <img src="images/features/surfing.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Surfing">
+                    <div class="rating-badge">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>4.8</span>
+                    </div>
+                </div>
+                <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                    <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Bali</p>
+                    <h4>Surfing Adventure at Kuta Beach</h4>
+                    <p style="color:#646464;">Surf lessons for beginners and seasoned pros</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="4499">0</span></span><span class="duration-text text-secondary"> / 12 Days</span></p>
+                    <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card jungle safari">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                <div class="feature-img" style="height:50%;">
+                    <img src="images/features/safari.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Safari Experience">
+                    <div class="rating-badge">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span>4.8</span>
+                    </div>
+                </div>
+                <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                    <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Chitwan</p>
+                    <h4>Safari Experience</h4>
+                    <p style="color:#646464;">Wildlife encounters in their natural habitat.</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="3499">0</span></span><span class="duration-text text-secondary"> / 8 Days</span></p>
+                    <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card bungee">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                <div class="feature-img" style="height:50%;">
+                    <img src="images/features/bungee.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Bungee Jumping">
+                    <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>4.9</span></div>
+                </div>
+                <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                    <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Sindhupalchowk</p>
+                    <h4>Bungee Jump at The Last Resort</h4>
+                    <p style="color:#646464;">Breathtaking peaks and highest peak adventures</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="799">0</span></span><span class="duration-text text-secondary"> / 1 Day</span></p>
+                    <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card paragliding">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                <div class="feature-img" style="height:50%;">
+                    <img src="images/features/paragliding.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Paragliding Adventure">
+                    <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>4.7</span></div>
                 </div>
                 <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
                     <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Pokhara</p>
-                    <h4>Zipline Across Sarangkot Hills</h4>
-                    <p style="color:#646464;">Glide through hills on Asia's longest zipline</p>
-                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="65">0</span></span><span class="duration-text text-secondary"> / 5 Minutes</span></p>
+                    <h4>Paragliding Over Pokhara Lake</h4>
+                    <p style="color:#646464;">Soar high above lakes with panoramic views</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="999">0</span></span><span class="duration-text text-secondary"> / Half Day</span></p>
                     <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card zipline">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                    <div class="feature-img" style="height:50%;">
+                        <img src="images/features/zipline.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Zipline Adventure">
+                        <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>4.8</span></div>
+                    </div>
+                    <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                        <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Pokhara</p>
+                        <h4>Zipline Across Sarangkot Hills</h4>
+                        <p style="color:#646464;">Glide through hills on Asia's longest zipline</p>
+                        <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="65">0</span></span><span class="duration-text text-secondary"> / 5 Minutes</span></p>
+                        <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="col-12 col-md-6 col-lg-3 activity-card trekking hiking">
+                <div class="feature-card shadow rounded overflow-hidden h-100">
+                <div class="feature-img" style="height:50%;">
+                    <img src="images/features/hiking.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Hiking">
+                    <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>5.0</span></div>
+                </div>
+                <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
+                    <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Kathmandu</p>
+                    <h4>Hiking at Shivapuri National Park</h4>
+                    <p style="color:#646464;">Surf lessons for beginners and seasoned pros</p>
+                    <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="2999">0</span></span><span class="duration-text text-secondary"> / 14 Days</span></p>
+                    <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+                </div>
                 </div>
             </div>
         </div>
+        <a href="#" class="btn btn-custom">View More</a>
+        </div>
+    </section>
+    <!-- Activities Feature Section End -->
 
-        <!-- Card 8 -->
-        <div class="col-12 col-md-6 col-lg-3 activity-card trekking hiking">
-            <div class="feature-card shadow rounded overflow-hidden h-100">
-            <div class="feature-img" style="height:50%;">
-                <img src="images/features/hiking.jpg" class="img-fluid w-100 h-100" style="object-fit:cover;" alt="Hiking">
-                <div class="rating-badge"><i class="bi bi-star-fill text-warning"></i><span>5.0</span></div>
+    <!-- ================== Activities Section ================== -->
+    <section id="activities-section" class="py-5">
+        <div class="container">
+            <!-- Section Heading -->
+            <div class="text-center mb-5">
+            <h2>Our Top Activities</h2>
+            <h4>Discover unforgettable adventures</h4>
+            <p>Explore the best activities curated for you. From thrilling adventures to relaxing getaways, there’s something for everyone.</p>
             </div>
-            <div class="p-3 d-flex flex-column justify-content-center text-start" style="height:50%;">
-                <p class="mb-3 text-muted"><i class="bi bi-geo-alt text-secondary"></i>Kathmandu</p>
-                <h4>Hiking at Shivapuri National Park</h4>
-                <p style="color:#646464;">Surf lessons for beginners and seasoned pros</p>
-                <p class="mb-2"><span class="price-text text-primary">$<span class="price-counter" data-target="2999">0</span></span><span class="duration-text text-secondary"> / 14 Days</span></p>
-                <a href="#" class="btn btn-book btn-primary btn-sm mt-2">Book Now</a>
+
+            <!-- Slider Wrapper -->
+            <div id="activities-slider">
+            <!-- Card Item -->
+            <div class="activity-card">
+                <div class="card-img">
+                <img src="images/activities/adventures/1.jpg" alt="Activity 1">
+                <div class="love-icon">&#10084;</div>
+                </div>
+                <div class="card-content">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Kathmandu, Nepal</p>
+                <h5>Bungee Jumping</h5>
+                <div class="rating">
+                    ★★★★☆ <span>4.5 (243)</span>
+                </div>
+                <hr>
+                <div class="bottom-info">
+                    <p><i class="far fa-clock"></i> 4 days</p>
+                    <p class="price">From $189.25</p>
+                </div>
+                </div>
+            </div>
+
+            <!-- Repeat 5 more cards -->
+            <div class="activity-card">
+                <div class="card-img">
+                <img src="images/activities/adventures/2.jpg" alt="Activity 2">
+                <div class="love-icon">&#10084;</div>
+                </div>
+                <div class="card-content">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Pokhara, Nepal</p>
+                <h5>Paragliding</h5>
+                <div class="rating">
+                    ★★★★☆ <span>4.5 (243)</span>
+                </div>
+                <hr>
+                <div class="bottom-info">
+                    <p><i class="far fa-clock"></i> 4 days</p>
+                    <p class="price">From $189.25</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="card-img">
+                <img src="images/activities/adventures/4.jpg" alt="Activity 3">
+                <div class="love-icon">&#10084;</div>
+                </div>
+                <div class="card-content">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Chitwan, Nepal</p>
+                <h5>Jungle Safari</h5>
+                <div class="rating">
+                    ★★★★☆ <span>4.5 (243)</span>
+                </div>
+                <hr>
+                <div class="bottom-info">
+                    <p><i class="far fa-clock"></i> 4 days</p>
+                    <p class="price">From $189.25</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="card-img">
+                <img src="images/activities/adventures/1.jpg" alt="Activity 4">
+                <div class="love-icon">&#10084;</div>
+                </div>
+                <div class="card-content">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Everest Region</p>
+                <h5>Trekking</h5>
+                <div class="rating">
+                    ★★★★☆ <span>4.5 (243)</span>
+                </div>
+                <hr>
+                <div class="bottom-info">
+                    <p><i class="far fa-clock"></i> 4 days</p>
+                    <p class="price">From $189.25</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="card-img">
+                <img src="images/activities/adventures/2.jpg" alt="Activity 5">
+                <div class="love-icon">&#10084;</div>
+                </div>
+                <div class="card-content">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Lumbini, Nepal</p>
+                <h5>Cultural Tour</h5>
+                <div class="rating">
+                    ★★★★☆ <span>4.5 (243)</span>
+                </div>
+                <hr>
+                <div class="bottom-info">
+                    <p><i class="far fa-clock"></i> 4 days</p>
+                    <p class="price">From $189.25</p>
+                </div>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <div class="card-img">
+                <img src="images/activities/adventures/4.jpg" alt="Activity 6">
+                <div class="love-icon">&#10084;</div>
+                </div>
+                <div class="card-content">
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Mustang, Nepal</p>
+                <h5>Motorbike Tour</h5>
+                <div class="rating">
+                    ★★★★☆ <span>4.5 (243)</span>
+                </div>
+                <hr>
+                <div class="bottom-info">
+                    <p><i class="far fa-clock"></i> 4 days</p>
+                    <p class="price">From $189.25</p>
+                </div>
+                </div>
             </div>
             </div>
         </div>
-    </div>
-    <a href="#" class="btn btn-custom">View More</a>
-    </div>
     </section>
 
     <!-- Booking Section -->
@@ -293,7 +470,7 @@
                 <!-- Column 4: Contact -->
                 <div class="col-md-3 mb-4">
                     <h5 class="mb-3 text-white">Contact</h5>
-                    <p class="mb-1"><i class="fas fa-phone-alt me-2"></i>+977 1234567890</p>
+                    <p class="mb-1"><i class="fas fa-phone-alt fa-flip-horizontal me-2"></i>+977 1234567890</p>
                     <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@nepalhimalayatours.com</p>
                     <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Kathmandu, Nepal</p>
                 </div>
@@ -322,6 +499,101 @@
         </div>
     </footer>
     <!-- Footer End -->  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // =========================== Activities-feature section =========================
+            const featureButtons = document.querySelectorAll('#activities-feature .btn');
+            const featureCards = document.querySelectorAll('#activities-feature .activity-card');
+            const btnRow = document.querySelector('#activities-feature .filter-row');
+
+            featureButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Only process click if it was not a drag
+                    if (btn.dataset.dragged === "true") {
+                        btn.dataset.dragged = "false"; // reset for next time
+                        return; // ignore click
+                    }
+
+                    // Filter cards
+                    featureButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    let target = btn.getAttribute('data-target');
+
+                    featureCards.forEach(card => {
+                        if (target === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = card.classList.contains(target) ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+
+            // ==================== Grab and Drag for filter-row ======================
+            if (btnRow) {
+                let isDraggingBtn = false;
+                let startXBtn = 0;
+                let scrollStartBtn = 0;
+
+                btnRow.addEventListener('pointerdown', (e) => {
+                    isDraggingBtn = true;
+                    startXBtn = e.clientX;
+                    scrollStartBtn = btnRow.scrollLeft;
+                });
+
+                btnRow.addEventListener('pointermove', (e) => {
+                    if (!isDraggingBtn) return;
+
+                    const walk = (e.clientX - startXBtn);
+                    if (Math.abs(walk) > 5) { // detect drag
+                        btnRow.scrollLeft = scrollStartBtn - walk * 2;
+                        // mark buttons as dragged so click won't trigger filter
+                        featureButtons.forEach(b => b.dataset.dragged = "true");
+                    }
+                });
+
+                btnRow.addEventListener('pointerup', () => {
+                    isDraggingBtn = false;
+                });
+
+                btnRow.addEventListener('pointercancel', () => {
+                    isDraggingBtn = false;
+                });
+            }
+
+            //=========================== Activities section (images) ===================
+            const slider = document.getElementById("activities-slider");
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener("mousedown", (e) => {
+            isDown = true;
+            slider.classList.add("active");
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener("mouseleave", () => {
+            isDown = false;
+            slider.classList.remove("active");
+            });
+
+            slider.addEventListener("mouseup", () => {
+            isDown = false;
+            slider.classList.remove("active");
+            });
+
+            slider.addEventListener("mousemove", (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2; // scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+            });
+        })
+    </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
     <script src="script.js"></script>

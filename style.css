@@ -1134,7 +1134,7 @@ Navbar CSS
 /*========================================================
     Activities Page
   ======================================================== */
-
+/* +++++++++++++++ Activities Feature Section ++++++++++++++ */
 #activities-feature .feature-card {
   position: relative;
 }
@@ -1152,6 +1152,154 @@ Navbar CSS
   background-color: #0d6efd;
   color: #fff;
 }
+#activities-feature .filter-row {
+    overflow-x: auto;
+    white-space: nowrap; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+    cursor: grab;
+    user-select: none;
+}
+/* Hide scrollbar for Chrome, Safari, Edge */
+#activities-feature .filter-row::-webkit-scrollbar {
+    display: none;
+}
+#activities-feature .filter-row .btn {
+    padding: 12px 20px; 
+    font-size: 16px;     
+    min-width: 120px;   
+    margin-right: 10px;  
+    border-radius: 8px;  
+    user-select: none;
+    pointer-events: auto;
+}
+/* ++++++++++++++++++++++++++ activities section ++++++++++++++++++*/
+
+#activities-section {
+  background: #f9f9f9;
+  padding: 60px 0;
+}
+
+#activities-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#activities-section h4 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+#activities-section p {
+  color: #777;
+}
+
+/* Slider Wrapper */
+#activities-section #activities-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding-bottom: 10px;
+}
+
+#activities-section #activities-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards */
+#activities-section .activity-card {
+  flex: 0 0 calc(25% - 20px); /* 4 cards on desktop */
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+#activities-section .activity-card .card-img {
+  position: relative;
+  height: 50%;
+}
+
+#activities-section .activity-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#activities-section .activity-card .love-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 14px;
+  color: red;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#activities-section .activity-card .card-content {
+  padding: 15px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#activities-section .activity-card .location {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+#activities-section .activity-card h5 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+#activities-section .activity-card .rating {
+  font-size: 14px;
+  color: #ff9800;
+}
+
+#activities-section .activity-card .rating span {
+  color: #555;
+  margin-left: 5px;
+}
+
+#activities-section .activity-card hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+#activities-section .activity-card .bottom-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+
+#activities-section .activity-card .bottom-info .price {
+  font-weight: bold;
+  color: #000;
+}
+/* Prevent text selection in the activities section */
+#activities-section {
+  user-select: none;        /* Standard */
+  -webkit-user-select: none; /* Chrome, Safari */
+}
+
+/* Prevent dragging images inside the activities section */
+#activities-section img {
+  pointer-events: none;     /* Optional: disables clicks on images */
+}
+
 
 /* ==============================================================
     Mobile view
@@ -1486,4 +1634,12 @@ Navbar CSS
     #contact-section #map-box iframe {
         height: 300px;
     }
+    /* ======================= Activities page============================ */
+    #activities-section #activities-slider {
+    gap: 15px;
+  }
+
+  #activities-section .activity-card {
+    flex: 0 0 100%; /* One card per row */
+  }
 }

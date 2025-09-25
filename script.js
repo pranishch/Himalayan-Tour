@@ -48,29 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         updateCounter();
     });
 
-    //=========================== Activities section (images) ===================
-    const activityButtons = document.querySelectorAll('#activities .btn');
-    const activityImages = document.querySelectorAll('.activity-img');
-
-    activityButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        activityButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const target = btn.getAttribute('data-target');
-
-        activityImages.forEach(img => {
-        if (target === "all" || img.getAttribute('data-activity') === target) {
-            img.classList.remove('d-none');
-        } else {
-            img.classList.add('d-none');
-        }
-        });
-    });
-    });
-
-    //=========================== Activities-feature section (cards) ===================
-    const featureButtons = document.querySelectorAll('#activities-feature .btn');
-    const featureCards = document.querySelectorAll('#activities-feature .activity-card');
+    //=========================== Activities section (Home Page) ===================
+    const featureButtons = document.querySelectorAll('#activities .btn');
+    const featureCards = document.querySelectorAll('#activities .activity-card');
 
     featureButtons.forEach(btn => {
         btn.addEventListener('click', () => {
