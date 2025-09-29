@@ -1515,6 +1515,32 @@ Navbar CSS
     text-align: center;
     vertical-align: middle;
 }
+
+#left-cards-wrapper .blog-card {
+  display: none !important; 
+}
+
+#left-cards-wrapper .blog-card.active {
+  display: flex !important; 
+}
+
+#blog-section {
+  overflow-x: hidden;
+}
+
+#left-cards-wrapper {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  width: 100%;
+}
+
+#left-cards-wrapper .blog-card {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
 /* ==============================================================
     Mobile view
    ============================================================== */  
