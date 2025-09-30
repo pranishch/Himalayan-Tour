@@ -1541,6 +1541,228 @@ Navbar CSS
   margin: 0 auto; 
 }
 
+/*===============================================================
+    Destination Page
+  =============================================================== */
+
+#tours-page .tours-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; margin-top: 150px; }
+#tours-page .breadcrumb { font-family: DM Sans; font-size: 14.3px; font-weight: 400; color: grey; }
+#tours-page .heading { font-family: DM Sans; font-size: 14.3px; font-weight: 400; color: grey; }
+#tours-page .explore-heading { font-family: Montserrat; font-size: 40px; font-weight: 700; margin-bottom: 20px; }
+
+/* Grid layout for filters + tours */
+#tours-page .tours-grid { display: grid; grid-template-columns: 300px 1fr; gap: 30px; }
+
+/* Left filters */
+#tours-page #filters-container { background: #f8f9fa; padding: 0px; border-radius: 8px; }
+#tours-page #filters-container .filter-heading {background-color: var(--primary-color); width: 300px; height:148px; border-top-left-radius: 12px; border-top-right-radius: 12px; padding: 29px 30px 29px 30px; color: var(--secondary-color);}
+#tours-page #filters-container .filter-heading h4 {font-family: Inter; font-weight: 500; font-size: 14.77px;}
+#tours-page #filters-container .filter-heading #travel-date {width: 240px; height: 50px; border-radius: 12px;}
+#tours-page .filter-card { margin-bottom: 15px; margin-top: 10px; }
+#tours-page .filter-card h4 { margin-bottom: 10px; font-size: 16px; }
+#tours-page .filter-card label { display: block; margin-bottom: 5px; font-size: 14px; }
+#tours-page .filter-card input[type="range"] { width: 100%; }
+#tours-page .divider { border-top: 1px solid #ddd; margin: 15px 0; }
+
+/* Right tours */
+#tours-page #tours-container { display: flex; flex-direction: column; gap: 20px; }
+#tours-page .tour-card { display: flex; gap: 15px; padding: 15px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+#tours-page .tour-info h4 { margin: 0; font-size: 18px; }
+#tours-page .tour-info p { font-size: 14px; color: #555; }
+#tours-page .btn-details { display: inline-block; margin-top: 10px; padding: 6px 12px; background: #007bff; color: #fff; border-radius: 4px; text-decoration: none; }
+#tours-page .btn-details:hover { background: #0056b3; }
+
+/* Pagination */
+#tours-page #pagination { display: flex; gap: 5px; justify-content: center; margin-top: 20px; }
+#tours-page #pagination button { padding: 6px 12px; border: 1px solid #007bff; cursor: pointer; border-radius: 4px; }
+#tours-page #results-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 1px; */
+  gap: 12px;
+}
+#tours-page #results-count {
+  font-weight: 400;
+  font-family: Inter;
+  font-size: 14.18px;
+  color: #1B1D21;
+}
+#tours-page #sort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#tours-page #sort-select {
+  min-width: 200px;
+  height: 36px;
+  border-radius: 6px;
+}
+
+#tours-page #right-section {
+  flex: 1;
+}
+
+/* Card media (image) */
+#tours-page .tour-media {
+  width: 280px;
+  min-width: 140px;
+  height: 240px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 0 0 220px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#tours-page .tour-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Main content of the card */
+#tours-page .tour-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Top row: location & duration */
+#tours-page .card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+#tours-page .location {
+  display: flex;
+  font-family: DM Sans;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  color: #3b3b3b;
+  font-size: 14px;
+}
+#tours-page .location i {
+  color: #ff5a24;
+  font-size: 14px;
+}
+#tours-page .duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Title and rating */
+#tours-page .tour-title {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 500;
+  color: #05073C;
+}
+#tours-page .rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffb400;
+  font-size: 14px;
+}
+#tours-page .rating small {
+  color: #666;
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+/* Description + price row */
+#tours-page .desc-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: flex-start;
+}
+#tours-page .tour-desc {
+  color: #555;
+  font-family: Montserrat;
+  margin: 0;
+  font-weight: 400;
+  flex: 1;
+  font-size: 12px;
+  line-height: 1.35;
+}
+#tours-page .price {
+  font-weight: 500;
+  font-family: Inter;
+  white-space: nowrap;
+  margin-left: 12px;
+  color: #1B1D21;
+  font-size: 16.72pxpx;
+}
+
+/* Bottom row: features & view details */
+#tours-page .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  gap: 12px;
+}
+#tours-page .features {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #4b5563;
+  font-size: 14px;
+}
+#tours-page .features .feature {
+  display: flex;
+  gap: 6px;
+  font-family: Montserrat;
+  font-weight: 400;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 20px;
+  background: #f7fbff;
+  color: #0077CC;
+  border: 1px solid #e6f0ff;
+  font-size: 13.67pxpx;
+}
+#tours-page .features .feature i {
+  font-size: 13px;
+  color: #0a5fbd;
+}
+
+/* View details button wrapper */
+#tours-page .view-details-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Button style */
+#tours-page .btn-details {
+  background: #fff;
+  color: var(--primary-color);
+  border-radius: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  display: inline-block;
+  border: 1px solid var(--primary-color); 
+}
+#tours-page .btn-details:hover {
+  opacity: 0.95;
+  color: #fff;
+}
+
 /* ==============================================================
     Mobile view
    ============================================================== */  
@@ -1958,5 +2180,21 @@ Navbar CSS
     /* Pagination center */
     #blog-section #blog-left nav ul.pagination {
         flex-wrap: wrap;
+    }
+
+    /* =========================== Destination Page ====================== */
+    
+    #tours-page .tours-grid {
+    grid-template-columns: 1fr;
+    }
+    #tours-page #filters-container {
+        width: 100%;
+    }
+    #tours-page .tour-card {
+        flex-direction: column;
+    }
+    #tours-page .tour-card img {
+        width: 100%;
+        height: auto;
     }
 }
