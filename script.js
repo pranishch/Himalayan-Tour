@@ -147,5 +147,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 isPaused = false;
             }, 5000);
         }
+    }); 
+});
+
+//========================= FAQ Section JS =============================
+const faqQuestions = document.querySelectorAll("#faq .faq-question");
+
+faqQuestions.forEach(question => {
+    question.addEventListener("click", () => {
+        const faqItem = question.parentElement;
+
+        // Toggle active class
+        faqItem.classList.toggle("active");
+
+        // Toggle + / - sign
+        const toggle = question.querySelector(".faq-toggle");
+        toggle.textContent = faqItem.classList.contains("active") ? "–" : "+";
     });
 });
+
