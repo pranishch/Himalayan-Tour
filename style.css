@@ -40,16 +40,17 @@ h5{
 body.about-page #breadcrumb-section {
     background-image: url('assets/breadcrumb/aboutus-breadcrumb-bg.jpg');
 }
-
 body.activities-page #breadcrumb-section {
     background-image: url('assets/breadcrumb/destination-breadcrumb-bg.jpg');
 }
-
 body.contact-page #breadcrumb-section {
     background-image: url('assets/breadcrumb/contact-breadcrumb-bg.jpg');
 }
 body.faq-page #breadcrumb-section {
     background-image: url('assets/breadcrumb/faq-breadcrumb-bg.jpg');
+}
+body.blogs-detail-page #breadcrumb-section {
+    background-image: url('assets/breadcrumb/blogs-detail-breadcrumb-bg.jpg');
 }
 /* Heading style */
 #breadcrumb-section h2 {
