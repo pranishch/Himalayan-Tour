@@ -369,46 +369,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
     <script src="script.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const cardsWrapper = document.getElementById('left-cards-wrapper');
-        const allCards = Array.from(cardsWrapper.getElementsByClassName('blog-card'));
-        const cardsPerPage = 5;
-        const totalPages = Math.ceil(allCards.length / cardsPerPage);
-
-        const paginationWrapper = document.getElementById('blog-pagination');
-        paginationWrapper.innerHTML = "";
-
-        for (let i = 1; i <= totalPages; i++) {
-            const li = document.createElement('li');
-            li.className = "page-item";
-            li.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
-            paginationWrapper.appendChild(li);
-        }
-
-        function showPage(page) {
-            allCards.forEach((card, idx) => {
-                if (idx >= (page - 1) * cardsPerPage && idx < page * cardsPerPage) {
-                    card.classList.add("active");
-                } else {
-                    card.classList.remove("active");
-                }
-            });
-        }
-
-        // Initial page
-        showPage(1);
-
-        // Pagination click
-        paginationWrapper.querySelectorAll('.page-link').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                const page = parseInt(link.dataset.page);
-                showPage(page);
-            });
-        });
-    });
-
-    </script>
 </body>
 </html>

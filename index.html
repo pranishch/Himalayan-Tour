@@ -16,41 +16,34 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-    /* navbar */
     .navbar .nav-link {
         font-family: 'Poppins', sans-serif;
     }
-    /* Transparent navbar initially */
     .navbar-scroll {
         background-color: transparent;
         transition: background-color 0.3s ease;
     }
     .navbar-brand img {
-        height: 50px; /* desktop default */
+        height: 50px; 
     }
-    /* Contact button default */
     .navbar-scroll .btn {
         background-color: #0077CC;
         color: white;
         transition: all 0.3s ease;
     }
-    /* Contact button on scroll */
     .navbar-scroll.scrolled .btn {
         background-color: white;
         color: #0d6efd;
     }
-    /* Carousel indicators default visible */
     .carousel-indicators {
         transition: opacity 0.3s ease;
     }
-    /* Hide indicators when navbar is scrolled */
     .carousel-indicators.hidden {
         opacity: 0;
         pointer-events: none;
     }
-    /* Background appears on scroll */
     .navbar-scroll.scrolled {
-        background-color: var(--primary-color); /* Bootstrap primary color */
+        background-color: var(--primary-color);
         transition: background-color 0.3s ease;
     }
     </style>
