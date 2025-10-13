@@ -13,11 +13,10 @@ body {
 h5{
     color: var(--primary-color);
 }
-/*============================================================
-    Breadcrumb Section
-============================================================*/
+/*==================================================================
+            BREADCRUMB SECTION
+====================================================================*/
 
-/* Default breadcrumb style */
 #breadcrumb-section {
     width: 100%;                
     height: 530px;             
@@ -36,7 +35,6 @@ h5{
     background-repeat: no-repeat;
 }
 
-/* Page-specific background images */
 body.about-page #breadcrumb-section {
     background-image: url('assets/breadcrumb/aboutus-breadcrumb-bg.jpg');
 }
@@ -52,7 +50,7 @@ body.faq-page #breadcrumb-section {
 body.blogs-detail-page #breadcrumb-section {
     background-image: url('assets/breadcrumb/blogs-detail-breadcrumb-bg.jpg');
 }
-/* Heading style */
+
 #breadcrumb-section h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -76,24 +74,21 @@ body.blogs-detail-page #breadcrumb-section {
     text-align: center;
 }
 
-/*====================================================
-Scroll animation base 
-====================================================== */
+/*===============================================================
+          SCROLL ANIMATION BASE
+================================================================= */
 
-/* Base state for all scroll animations */
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 1.2s ease, transform 1.2s ease;
     will-change: opacity, transform;
 }
 
-/* Default fade up (for other elements) */
 .animate-on-scroll.in-view {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Slide from left */
 .slide-left {
     transform: translateX(-50px);
 }
@@ -102,7 +97,6 @@ Scroll animation base
     transform: translateX(0);
 }
 
-/* Slide from right */
 .slide-right {
     transform: translateX(50px);
 }
@@ -111,7 +105,6 @@ Scroll animation base
     transform: translateX(0);
 }
 
-/* Fade in */
 .fade-in {
     transform: translateY(20px);
 }
@@ -120,28 +113,25 @@ Scroll animation base
     transform: translateY(0);
 }
 
-/* Zoom effect for gallery images */
 .zoom-on-scroll {
     opacity: 0;
-    transform: scale(0.8); /* start slightly zoomed out */
+    transform: scale(0.8); 
     transition: opacity 1.2s ease, transform 1.2s ease;
     will-change: opacity, transform;
 }
 
 .zoom-on-scroll.in-view {
     opacity: 1;
-    transform: scale(1); /* normal size */
+    transform: scale(1); 
 }
 
-/* ===================================================================
-   ===================================================================
-                    Home Page
-   ===================================================================
-   =================================================================== */
+/* ==========================================================================
+   ==========================================================================
+                    HOME PAGE
+   ==========================================================================
+   ========================================================================== */
    
-/*============================================================================
-Navbar CSS 
-============================================================================ */
+/*======================= Navbar ====================== */
 
 #main-navbar {
     background-color: var(--primary-color);
@@ -166,16 +156,14 @@ Navbar CSS
 }
 
 #main-navbar .navbar-brand img {
-        height: 50px; /* desktop default */
+        height: 50px;
     }
 
 #main-navbar .navbar .nav-link {
         font-family: 'Poppins', sans-serif;
     }    
 
-/*======================================================================
-    Main carousel section 
-  ======================================================================  */
+/*=====================  Main carousel section =======================  */
 
 .carousel-inner img {
     height: 841px; 
@@ -371,9 +359,7 @@ Navbar CSS
     color: white;
 }
 
-/*=============================================================
-   Service Section 
-  ============================================================= */
+/*========================== Service Section ========================= */
 
 .service-section {
   background-color: #f8f9fa;
@@ -471,9 +457,7 @@ Navbar CSS
   transition: background-color 0.3s, color 0.3s;
 }
 
-/*====================================================================
-    Feature section 
-  ====================================================================  */
+/*============================ Feature section =============================  */
 
 .feature-section {
   background-color: #f8f9fa; 
@@ -566,9 +550,7 @@ Navbar CSS
     color: var(--primary-color);
 }
 
-/*====================================================================
-    Adventure Section 
-  ==================================================================== */
+/*============================ Adventure Section ============================== */
 
 #adventure-section .container .row{
     margin: 10px 10px;
@@ -646,9 +628,7 @@ Navbar CSS
     color: #555;
 }
 
-/* ==================================================================
-    Activities Section
-   ================================================================== */
+/* ======================== Activities Section ============================ */
 
 #activities h5{
     font-weight: 600;
@@ -742,9 +722,7 @@ Navbar CSS
     gap: 4px;
 }
 
-/* =========================================================================
-    Testimonial Section
-   ========================================================================= */
+/* ========================== Testimonial Section ========================== */
 
 #testimonial-section h5{
     color: #ffffff;
@@ -773,9 +751,7 @@ Navbar CSS
     min-height: 300px; 
 }
 
-/*===========================================================
-    Blogs Section
-  =========================================================== */
+/*======================= Blogs Section ======================== */
 
 .blog-section {
   background-color: #f8f9fa;
@@ -845,7 +821,7 @@ Navbar CSS
 }
 
 /* =====================================================================
-    Booking Section
+                            BOOKING SECTION
    ===================================================================== */
 
 .booking-section h2{
@@ -854,9 +830,9 @@ Navbar CSS
     color: #FFFFFF;
 }
 
-/* ==============================================================
-    Footer
-   ============================================================== */
+/* ======================================================================
+                            FOOTER
+   ====================================================================== */
 
    #footer .container .row h6{
     font-weight: 600;
@@ -875,23 +851,19 @@ Navbar CSS
    #footer{
     background-color: #0077CC;
    }
-   
 
+/*======================================================================
+  ======================================================================
+                        ABOUT PAGE
+  ======================================================================
+  ====================================================================== */
 
+/*====================== Main Navbar ======================== */
 
-/*============================================================
-  ============================================================
-    About Page
-  ============================================================
-  ============================================================ */
-
-/*============================================================
-    Main Navbar
-  ============================================================ */
 #main-navbar {
     position: sticky;
     top: 0;
-    z-index: 1030; /* keeps it above other elements */
+    z-index: 1030; 
 }
 
 #main-navbar .nav-link {
@@ -899,9 +871,7 @@ Navbar CSS
     font-weight: 500; 
 }
 
-/*=============================================================
-    Why We Are Best Section
-  ============================================================= */
+/*======================== Why We Are Best Section ===================== */
 
 #best {
   padding: 60px 0;
@@ -948,9 +918,7 @@ Navbar CSS
   color: #555555 !important;
 }
 
-/*======================================================
-    Connect Section
-  ======================================================= */
+/*=========================== Connect Section ============================ */
 
 #connect {
   padding: 60px 0;
@@ -1014,9 +982,11 @@ Navbar CSS
   color: #555555 !important;
 }
 
-/*===============================================================
-    Contact Page
-  =============================================================== */
+/*====================================================================
+  ====================================================================
+                        CONTACT PAGE
+  ====================================================================
+  ==================================================================== */
 
 #contact-section {
     width: 100%;
@@ -1026,7 +996,6 @@ Navbar CSS
     background-color: #f1f1f1;
 }
 
-/* Container for left form and right info */
 #contact-section #contact-container {
     display: flex;
     gap: 20px;
@@ -1034,10 +1003,8 @@ Navbar CSS
     justify-content: center;
 }
 
-/* Left Side Form Box */
 #contact-section #contact-form-box {
     width: 760px;
-    /* height: 713px; */
     border-radius: 16px;
     background-color: #FFFFFF;
     padding: 40px;
@@ -1066,17 +1033,17 @@ Navbar CSS
     box-sizing: border-box;
     font-size: 16px;
 }
-/* Checkbox row */
+
 #contact-section #contact-form-box .checkbox-row {
     display: flex;
-    align-items: flex-start;   /* Align label to top-left of checkbox */
-    gap: 10px;                 /* Space between checkbox and label */
+    align-items: flex-start;   
+    gap: 10px;                 
     margin-bottom: 20px;
 }
 
 #contact-section #contact-form-box .checkbox-row input[type="checkbox"] {
-    margin-top: 4px;           /* Align better with text */
-    flex-shrink: 0;            /* Prevent checkbox from stretching */
+    margin-top: 4px;         
+    flex-shrink: 0;           
 }
 
 #contact-section #contact-form-box .checkbox-row label {
@@ -1134,9 +1101,12 @@ Navbar CSS
     overflow: hidden;
 }
 
-/*========================================================
-    Activities Page
-  ======================================================== */
+/*=========================================================================
+  =========================================================================
+                        ACTIVITIES PAGE
+  =========================================================================
+  ========================================================================= */
+
 /* +++++++++++++++ Activities Feature Section ++++++++++++++ */
 #activities-feature .feature-card {
   position: relative;
@@ -1163,7 +1133,6 @@ Navbar CSS
     cursor: grab;
     user-select: none;
 }
-/* Hide scrollbar for Chrome, Safari, Edge */
 #activities-feature .filter-row::-webkit-scrollbar {
     display: none;
 }
@@ -1176,7 +1145,8 @@ Navbar CSS
     user-select: none;
     pointer-events: auto;
 }
-/* ++++++++++++++++++++++++++ Activities Section (Activities Page) ++++++++++++++++++*/
+
+/* ++++++++++++++++++++++++++ Activities Section(Activities Page) ++++++++++++++++++*/
 
 #activities-section {
   background: #f9f9f9;
@@ -1197,7 +1167,6 @@ Navbar CSS
   color: #777;
 }
 
-/* Slider Wrapper */
 #activities-section #activities-slider {
   display: flex;
   overflow-x: auto;
@@ -1210,7 +1179,6 @@ Navbar CSS
   display: none;
 }
 
-/* Cards */
 #activities-section .activity-card {
   height: 397px;   
   flex: 0 0 calc(25% - 20px); 
@@ -1287,20 +1255,21 @@ Navbar CSS
   font-weight: bold;
   color: #1B1D21;
 }
-/* Prevent text selection in the activities section */
+
 #activities-section {
-  user-select: none;        /* Standard */
-  -webkit-user-select: none; /* Chrome, Safari */
+  user-select: none;       
+  -webkit-user-select: none; 
 }
 
-/* Prevent dragging images inside the activities section */
 #activities-section img {
-  pointer-events: none;     /* Optional: disables clicks on images */
+  pointer-events: none;     
 }
 
-/*=================================================================
-   Blog Page
-  =================================================================  */
+/*=======================================================================
+  =======================================================================
+                            BLOG PAGE
+  =======================================================================
+  ======================================================================= */
 
 #blog-section {
     padding-top: 60px !important;
@@ -1443,7 +1412,6 @@ Navbar CSS
     opacity: 1;
 }
 #blog-section #blog-right .tags .btn {
-    /* width: 72px; */
     height: 34px;
     top: -0.39px;
     opacity: 1;
@@ -1458,15 +1426,14 @@ Navbar CSS
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* take full image height */
+  height: 100%; 
   background: rgba(0,0,0,0.5);
   border-radius: 5px;
   color: #fff;
-
-  display: flex;               /* enable flexbox */
-  flex-direction: column;      /* stack h5, p, button */
-  justify-content: center;     /* center vertically */
-  align-items: center;         /* center horizontally */
+  display: flex;               
+  flex-direction: column;      
+  justify-content: center;     
+  align-items: center;        
   text-align: center;
   padding: 20px;
 }
@@ -1544,16 +1511,17 @@ Navbar CSS
   margin: 0 auto; 
 }
 
-/*===============================================================
-    Destination Page
-  =============================================================== */
+/*==============================================================================
+  ==============================================================================
+                          DESTINATION PAGE
+  ==============================================================================
+  ============================================================================== */
 
 #tours-page .tours-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; margin-top: 150px; }
 #tours-page .breadcrumb { font-family: DM Sans; font-size: 14.3px; font-weight: 400; color: grey; }
 #tours-page .heading { font-family: DM Sans; font-size: 14.3px; font-weight: 400; color: grey; }
 #tours-page .explore-heading { font-family: Montserrat; font-size: 40px; font-weight: 700; margin-bottom: 20px; }
 
-/* Grid layout for filters + tours */
 #tours-page .tours-grid { display: grid; grid-template-columns: 300px 1fr; gap: 30px; }
 
 /* Left filters */
@@ -1578,6 +1546,7 @@ Navbar CSS
 /* Pagination */
 /* #tours-page #pagination { display: flex; gap: 5px; justify-content: center; margin-top: 20px; }
 #tours-page #pagination button { padding: 6px 12px; border: 1px solid #007bff; cursor: pointer; border-radius: 4px; } */
+
 #tours-page #results-row {
   display: flex;
   align-items: center;
@@ -1605,7 +1574,6 @@ Navbar CSS
   flex: 1;
 }
 
-/* Card media (image) */
 #tours-page .tour-media {
   width: 280px;
   min-width: 140px;
@@ -1625,7 +1593,6 @@ Navbar CSS
   display: block;
 }
 
-/* Main content of the card */
 #tours-page .tour-main {
   flex: 1;
   display: flex;
@@ -1633,7 +1600,6 @@ Navbar CSS
   gap: 8px;
 }
 
-/* Top row: location & duration */
 #tours-page .card-top {
   display: flex;
   justify-content: space-between;
@@ -1662,7 +1628,6 @@ Navbar CSS
   font-size: 14px;
 }
 
-/* Title and rating */
 #tours-page .tour-title {
   font-size: 18px;
   margin: 0;
@@ -1682,7 +1647,6 @@ Navbar CSS
   margin-left: 6px;
 }
 
-/* Description + price row */
 #tours-page .desc-row {
   display: flex;
   justify-content: space-between;
@@ -1707,7 +1671,6 @@ Navbar CSS
   font-size: 16.72pxpx;
 }
 
-/* Bottom row: features & view details */
 #tours-page .card-bottom {
   display: flex;
   justify-content: space-between;
@@ -1741,14 +1704,12 @@ Navbar CSS
   color: #0a5fbd;
 }
 
-/* View details button wrapper */
 #tours-page .view-details-wrap {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-/* Button style */
 #tours-page .btn-details {
   background: #fff;
   color: var(--primary-color);
@@ -1765,9 +1726,12 @@ Navbar CSS
   color: #fff;
 }
 
-/*===============================================================
-    FAQ Page
-  =============================================================== */
+/*==========================================================================
+  ==========================================================================
+                            FAQ PAGE
+  ==========================================================================
+  ========================================================================== */
+
 #faq {
   max-width: 800px;
   margin: 60px auto;
@@ -1826,11 +1790,13 @@ Navbar CSS
   color: #e63946;
 }
 
-/* ==============================================================
-    Privacy Policy page
-   ============================================================== */
+/* ======================================================================
+   ======================================================================
+                        PRIVACY POLICY PAGE
+   ======================================================================
+   ====================================================================== */
+
 #privacy-policy {
-  /* background-color: #fff; */
   padding: 40px 30px;
   border-radius: 10px;
   max-width: 900px;
@@ -1874,9 +1840,11 @@ Navbar CSS
   color: #555555;
 }
 
-/* ========================================================
-    Blogs Detail Page
-   ======================================================== */
+/* =======================================================================
+   =======================================================================
+                       BLOGS DETAIL PAGE
+   =======================================================================
+   ======================================================================= */
 
 #blog-detail {
   padding: 60px 0;
@@ -2169,15 +2137,12 @@ Navbar CSS
   border-radius: 0 6px 6px 0;
 }
 
-/* ==============================================================
-   Destination Details Page
-   ============================================================== */
+/* =========================================================================
+   =========================================================================
+                    DESTINATION DETAIL PAGE
+   =========================================================================
+   ========================================================================= */
 
-/* #destination-details {
-  padding: 109px 0;
-} */
-
-/* Breadcrumb */
 #breadcrumb-path {
   background: none;
   padding: 0;
@@ -2186,11 +2151,11 @@ Navbar CSS
   font-size: 0.95rem;
 }
 #breadcrumb-path .breadcrumb-item a {
-  color: black; /* blue link color */
-  text-decoration: none; /* removes underline */
+  color: black; 
+  text-decoration: none;
   transition: color 0.3s ease;
 }
-/* Badges */
+
 #tour-badges a {
   font-size: 0.9rem;
   text-decoration: none;
@@ -2206,7 +2171,6 @@ Navbar CSS
   background-color: #06d6a0;
 }
 
-/* Wishlist & Share Icons */
 #wishlist-share i {
   font-size: 1.3rem;
   margin-left: 15px;
@@ -2368,47 +2332,44 @@ Navbar CSS
 }
 
 #tour-info #tour-left ol {
-    padding-left: 1.5rem;      /* space for numbers */
+    padding-left: 1.5rem;      
     margin-bottom: 20px;
-    list-style-type: decimal;   /* ensure decimal numbers */
+    list-style-type: decimal;   
 }
 
 #tour-info #tour-left ol li {
-    margin-bottom: 10px;       /* spacing between items */
-    line-height: 1.5;          /* better readability */
+    margin-bottom: 10px;      
+    line-height: 1.5;         
     font-size: 1rem;
 }
 
 #tour-info #tour-left ol li strong {
-    /* color: #0d6efd;           highlight strong text */
     font-weight: 600;
 }
 
-/* Style the list numbers */
 #tour-info #tour-left ol li::marker {
-    /* color: #0d6efd;           number color */
     font-weight: bold;
 }
 
 #tour-info #tour-left ul.list-unstyled li {
-    display: flex;              /* icon + text in one row */
-    align-items: flex-start;     /* align icon with top of text */
-    gap: 8px;                   /* space between icon and text */
-    margin-bottom: 12px;        /* spacing between list items */
-    font-size: 1rem;            /* text size */
-    line-height: 1.4;           /* spacing between lines in text */
+    display: flex;             
+    align-items: flex-start;    
+    gap: 8px;                   
+    margin-bottom: 12px;        
+    font-size: 1rem;           
+    line-height: 1.4;          
 }
 
 #tour-info #tour-left ul.list-unstyled li i.bi-check-circle-fill {
-    color: #28a745;            /* green */
-    font-size: 1.2rem;         /* icon size */
-    flex-shrink: 0;            /* prevent shrinking */
-    margin-top: 2px;           /* align with top of text */
+    color: #28a745;            
+    font-size: 1.2rem;        
+    flex-shrink: 0;            
+    margin-top: 2px;         
 }
 
 #tour-info #tour-left ul.list-unstyled li i.bi-x-circle-fill {
-    color: #dc3545;            /* red */
-    font-size: 1.2rem;         /* icon size */
+    color: #dc3545;          
+    font-size: 1.2rem;         
     flex-shrink: 0;
     margin-top: 2px;
 }
@@ -2523,14 +2484,11 @@ Navbar CSS
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-
-/* Right Booking Box */
 #tour-right #booking-box {
     background: #f8f9fa;
     border: 1px solid #dee2e6;
     border-radius: 8px;
 }
-
 
 #tour-right .quantity-selector {
     display: flex;
@@ -2560,15 +2518,19 @@ Navbar CSS
 }
 
 
-/* ==============================================================
-    Mobile view
-   ============================================================== */  
+/* =================================================================
+   =================================================================
+   =================================================================
+                          MOBILE VIEW
+   =================================================================
+   =================================================================
+   ================================================================= */  
    
 @media (max-width: 767px) {
     body, html {
         overflow-x: hidden;
     }
-    /*+++++++++ Booking Section ++++++++++*/
+    /*++++++++++++++++++ Booking Section +++++++++++++++++*/
     .booking-section .row {
         flex-direction: column;
         text-align: center;
@@ -2582,7 +2544,7 @@ Navbar CSS
     }
 
     .booking-section h2 {
-        font-size: 20px; /* smaller font for mobile */
+        font-size: 20px; 
         margin-bottom: 15px;
     }
 
@@ -2590,20 +2552,22 @@ Navbar CSS
         font-size: 16px;
         padding: 10px 20px;
     }
+
     /*++++++++++++++ Breadcrumb Section ++++++++++++++++++*/
     #breadcrumb-section {
-        height: 220px; /* smaller height on mobile */
+        height: 220px; 
         padding-top: 70px;
     }
 
     #breadcrumb-section h2 {
-        font-size: 24px; /* smaller heading */
+        font-size: 24px;
     }
 
     #breadcrumb-section p {
         font-size: 14px;
-        padding: 0 15px; /* some side padding */
+        padding: 0 15px; 
     }
+
     /*===================================== Home Page =====================================  */
     /*+++++++++++++++++++++++ Navbar Section ++++++++++++++++++++++++  */
  
@@ -2813,6 +2777,7 @@ Navbar CSS
         flex: 0 0 100%; 
         max-width: 100%;  
     }
+
     /*============================== ABOUT PAGE =========================*/
     /*++++++++++++++++++++++ Main Navbar ++++++++++++++++++++++++++++  */
     #main-navbar .container {
@@ -2858,50 +2823,42 @@ Navbar CSS
         margin-bottom: 15px;     
     }
 
-    /*================== Contact Page =============================*/
-    /* Container: stack left and right boxes vertically */
+    /*============================= Contact Page =============================*/
     #contact-section #contact-container {
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
-    /* Left Form Box: full width */
     #contact-section #contact-form-box {
         width: 100%;
         padding: 20px;
     }
 
-    /* Right Info Box: full width */
     #contact-section #contact-info-box {
         width: 100%;
         height: auto;
         padding: 20px;
     }
 
-    /* Form rows: stack vertically */
     #contact-section #contact-form-box .form-row {
         flex-direction: column;
         gap: 15px;
     }
 
-    /* Submit button: full width */
     #contact-section #contact-form-box #submit-btn {
         width: 100%;
     }
 
-    /* Map box: height smaller for mobile */
     #contact-section #map-box iframe {
         height: 300px;
     }
 
-    /* ======================= Activities page============================ */
-    /* +++++++++++++++ Activities Feature Section +++++++++++++++++ */
+    /* =============================== Activities page============================ */
     #activities-feature {
       padding: 40px 0;
     }
 
-    /* Make filter buttons scrollable horizontally */
     #activities-feature .filter-row {
       display: flex;
       overflow-x: auto;
@@ -2918,7 +2875,6 @@ Navbar CSS
       border-radius: 6px;
     }
 
-    /* Cards */
     #activities-feature .activity-card {
       flex: 0 0 100%;
       max-width: 100%;
@@ -2945,14 +2901,13 @@ Navbar CSS
       padding: 6px 12px;
     }
 
-    /* View More Button */
     #activities-feature .btn.btn-custom {
       display: inline-block;
       font-size: 14px;
       padding: 8px 18px;
     }
 
-    /* ++++++++++++++++++++ Activities Section +++++++++++++++++++++++++++++ */
+    /* ++++++++++++++++++++++ Activities Section +++++++++++++++++++++++++++++ */
     #activities-section {
       padding: 40px 0;
     }
@@ -2969,14 +2924,13 @@ Navbar CSS
       font-size: 14px;
     }
 
-    /* Make slider cards scroll horizontally */
     #activities-section #activities-slider {
       display: flex;
       overflow-x: auto;
       scroll-behavior: smooth;
       gap: 15px;
-      padding: 0 15px; /* equal spacing on left and right */
-      justify-content: center; /* centers first and last card nicely */
+      padding: 0 15px; 
+      justify-content: center;
     }
 
 
@@ -2986,7 +2940,7 @@ Navbar CSS
 
     #activities-section .activity-card .card-img {
       width: 100%;
-      height: 180px; /* consistent height for all images */
+      height: 180px; 
       overflow: hidden;
       border-radius: 8px 8px 0 0;
       position: relative;
@@ -2995,7 +2949,7 @@ Navbar CSS
     #activities-section .activity-card .card-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* ensures images fill without distortion */
+      object-fit: cover; 
       display: block;
     }
 
@@ -3036,34 +2990,28 @@ Navbar CSS
       color: #0d6efd;
     }
 
-    /* Reduce shadow for lightweight look */
     #activities-section .activity-card {
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    /* =========================================================== 
-        Blog Page 
-       =========================================================== */
+    /* ============================Blog Page =========================== */
     #blog-section {
         padding-top: 40px !important;
         margin-top: 50px !important;
     }
 
-    /* Left section full width */
     #blog-section #blog-left {
         width: 100% !important;
         height: auto !important;
         margin: 0;
     }
 
-    /* Blog cards stacked vertically */
     #blog-section .blog-card {
         width: 100% !important;
         height: auto !important;
         flex-direction: column;
     }
 
-    /* Blog card image full width on top */
     #blog-section .blog-card .card-img {
         width: 100% !important;
         height: 200px !important;
@@ -3076,21 +3024,18 @@ Navbar CSS
         object-fit: cover;
     }
 
-    /* Card content below the image */
     #blog-section .blog-card .card-content {
         width: 100% !important;
         height: auto !important;
         padding: 15px;
     }
 
-    /* Right section (below blog cards) */
     #blog-section #blog-right {
         width: 100% !important;
         height: auto !important;
         margin-top: 30px;
     }
 
-    /* Recent news cards responsive */
     #blog-section #blog-right .recent-news-card {
         width: 100% !important;
         height: auto !important;
@@ -3100,7 +3045,6 @@ Navbar CSS
         height: 70px;
     }
 
-    /* Tags */
     #blog-section #blog-right .tags {
         width: 100% !important;
         height: auto !important;
@@ -3110,12 +3054,10 @@ Navbar CSS
         min-width: 80px;
     }
 
-    /* Newsletter button full width */
     #blog-section #blog-right .news .btn {
         width: 100% !important;
     }
 
-    /* Pagination center */
     #blog-section #blog-left nav ul.pagination {
         flex-wrap: wrap;
     }
@@ -3136,17 +3078,14 @@ Navbar CSS
         height: auto;
     }
     /* ========================== Blog Detail Page ========================== */
-    /* General Padding */
     #blog-detail {
       padding: 40px 10px;
     }
 
-    /* Blog Main Image */
     #blog-detail .blog-main-image img {
       border-radius: 8px;
     }
 
-    /* Blog Content */
     #blog-detail .blog-content h2 {
       font-size: 1.4rem;
       line-height: 1.4;
@@ -3181,12 +3120,11 @@ Navbar CSS
 
     #blog-detail .blog-gallery img {
       width: 100%;
-      height: 200px; /* adjust this height if needed */
+      height: 200px;
       object-fit: cover;
       border-radius: 8px;
     }
 
-    /* Tags Section */
     #blog-detail .tags-section {
       margin-top: 25px;
       text-align: center;
@@ -3197,7 +3135,6 @@ Navbar CSS
       padding: 6px 10px;
     }
 
-    /* Comments Section */
     #blog-detail .comments-section h5 {
       font-size: 1.1rem;
     }
@@ -3221,7 +3158,6 @@ Navbar CSS
       font-size: 0.85rem;
     }
 
-    /* Leave Comment */
     #blog-detail .leave-comment h4 {
       font-size: 1.2rem;
     }
@@ -3231,7 +3167,6 @@ Navbar CSS
       font-size: 0.9rem;
     }
 
-    /* Right Section (Sidebar) */
     #blog-detail #blog-right {
       margin-top: 40px;
     }
@@ -3297,34 +3232,28 @@ Navbar CSS
 
     /* =================================Destination Details Page=================== */
     
-    /* Breadcrumb */
     #breadcrumb-path {
         font-size: 14px;
     }
 
-    /* Tour Badges */
     #tour-badges a {
         display: inline-block;
         font-size: 12px;
         margin-bottom: 5px;
     }
 
-    /* Tour Title */
     #tour-title {
         font-size: 20px;
     }
 
-    /* Tour Rating */
     #tour-rating {
         font-size: 14px;
     }
 
-    /* Tour Address */
     #tour-address {
         font-size: 14px;
     }
 
-    /* Wishlist & Share */
     #wishlist-share {
         text-align: left !important;
         margin-top: 10px;
@@ -3334,7 +3263,6 @@ Navbar CSS
         margin-right: 10px;
     }
 
-    /* Image Gallery */
     #image-gallery {
         text-align: center;
     }
@@ -3348,7 +3276,6 @@ Navbar CSS
         margin: 1%;
     }
 
-    /* Tour Details */
     #tour-details {
         flex-direction: column !important;
         text-align: left;
@@ -3366,12 +3293,10 @@ Navbar CSS
         font-size: 14px;
     }
 
-    /* Timeline */
     .timeline li {
         font-size: 14px;
     }
 
-    /* FAQ */
     #faq-section .faq-title {
         font-size: 14px;
     }
@@ -3379,7 +3304,6 @@ Navbar CSS
         font-size: 13px;
     }
 
-    /* Customer Reviews */
     #customer-reviews .review img {
         width: 50px;
     }
@@ -3391,7 +3315,6 @@ Navbar CSS
         margin-bottom: 5px;
     }
 
-    /* Leave a Reply Form */
     #leave-reply-form .form-label {
         font-size: 14px;
     }
@@ -3403,7 +3326,6 @@ Navbar CSS
         padding: 8px 12px;
     }
 
-    /* Tour Right / Booking Box */
     #tour-right {
         margin-top: 30px;
     }
