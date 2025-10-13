@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //========================= Scroll Animation Logic =============================
     const scrollElements = document.querySelectorAll(
-        'h1, h2, h3, h4, h5, h6, p, small, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .right-content img, #activities-images img, .blog-card, #testimonial-section img'
+        'small, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .right-content img, #activities-images img, .blog-card, #testimonial-section img'
     );
 
     scrollElements.forEach(el => {
@@ -89,10 +89,10 @@ document.addEventListener('DOMContentLoaded', function() {
             el.classList.add('zoom-on-scroll');
         }
 
-        if (el.tagName === 'H1') el.classList.add('fade-in');
-        if (el.tagName === 'H2') el.classList.add('fade-in');
-        if (el.tagName === 'H5') el.classList.add('fade-in');
-        if (el.tagName === 'P') el.classList.add('fade-in');
+        // if (el.tagName === 'H1') el.classList.add('fade-in');
+        // if (el.tagName === 'H2') el.classList.add('fade-in');
+        // if (el.tagName === 'H5') el.classList.add('fade-in');
+        // if (el.tagName === 'P') el.classList.add('fade-in');
         if (el.tagName === 'SMALL') el.classList.add('fade-in');
     });
 
