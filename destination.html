@@ -1,526 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himalayan Tour</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himalayan Tour</title>
 
-    <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section id="tours-page">
-        <!-- Main Navbar -->
-        <!-- Navbar overlay -->
-        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 w-100 p-3">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="index.html">
-                    <img src="assets/logo1.png" alt="Logo">
-                </a>
+  <section id="tours-page">
+    <!-- Navbar -->
+    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark position-fixed top-0 start-0 w-100 p-3">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/logo1.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <!-- Hamburger toggle button for mobile -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-                    aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Menu items center -->
-                <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item me-3"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item me-3"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item me-3"><a class="nav-link" href="destination.html">Destination</a></li>
-                        <li class="nav-item me-3"><a class="nav-link" href="activities.html">Activities</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Us button right -->
-                <div class="d-flex ms-auto">
-                    <a class="btn btn-contact" href="contact_us.html">Contact Us</a>
-                </div>
-            </div>
-        </nav>
-        <!-- Main Navbar End -->
-        
-        <div class="container">
-            <div class="tours-header">
-                <div class="breadcrumb">Home > Tours > <span id="country-breadcrumb">Nepal</span></div>
-                <div class="heading"> The <span id="tour-count">0</span> Best <span id="country-heading">Nepal</span> Tours </div>
-            </div>
-
-            <h3 class="explore-heading">Explore all things to do in <span id="explore-country">Nepal</span></h3>
-
-            <div class="tours-grid">
-                <!-- Left Filters -->
-                <aside id="filters-container">
-                <div class="filter-heading">
-                    <h4>When you are travelling</h4>
-                    <input type="date" id="travel-date" class="form-control">
-                </div>
-                <!-- keep other filter content (auto-inserted by your script) -->
-                </aside>
-
-                <!-- Right Section -->
-                <div id="right-section">
-                <!-- Results + Sort Row -->
-                    <div id="results-row">
-                        <div id="results-count">Showing <span id="shown-count">0</span> of 1362 results</div>
-                        <div id="sort-wrap">
-                            <label for="sort-select" style="font-weight: 400; font-size: 14.3px; margin-right: 8px;">Sort by:</label>
-                            <select id="sort-select" style="padding: 4px 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; background-color: #fff; color: #333;">
-                            <option value="featured">Featured</option>
-                            <option value="price-asc">Price: Low to High</option>
-                            <option value="price-desc">Price: High to Low</option>
-                            <option value="duration-asc">Duration: Short to Long</option>
-                            <option value="rating-desc">Rating: High to Low</option>
-                            </select>
-                        </div>
-                    </div>
-
-                <!-- Tours -->
-                <div id="tours-container"></div>
-
-                <!-- Pagination -->
-                <div id="pagination" class="mt-3"></div>
-                </div>
-            </div>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item me-3"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item me-3"><a class="nav-link active" href="destination.html">Destination</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="activities.html">Activities</a></li>
+            <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+          </ul>
         </div>
 
-        <!-- Booking Section -->
-        <section class="booking-section">
-            <div class="container-fluid d-flex justify-content-center p-0">
-                <div class="position-relative" 
-                    style="width: 100%; height: 299px; background-image: url('images/banner.jpg'); background-size: cover; background-position: center;">
-                    <div class="row h-100 align-items-center m-0">
-                        <div class="col-md-6 text-start ps-4 ps-md-5">
-                            <h2 class="text-white fw-bold">Let's make your Adventure amazing</h2>
-                        </div>
-                        <div class="col-md-6 text-end pe-4 pe-md-5">
-                            <a href="#" class="btn btn-primary btn-lg">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer Start -->
-        <footer id="footer" class="text-white pt-5">
-            <div class="container">
-                <div class="row">
-                    <!-- Column 1: Logo & Email Form -->
-                    <div class="col-md-3 mb-4">
-                        <img src="assets/logo1.png" alt="Logo" class="mb-3" style="width:150px;">
-                        <h6>Subscribe to our Newsletter</h6>
-                        <form class="d-flex">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your email" required>
-                            <button class="btn btn-dark" type="submit">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </form>
-                    </div>
-
-                    <!-- Column 2: Quick Links -->
-                    <div class="col-md-3 mb-4">
-                        <h5 class="mb-3 text-white">Quick Links</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-                            <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
-                            <li><a href="destination.html" class="text-white text-decoration-none">Destination</a></li>
-                            <li><a href="activities.html" class="text-white text-decoration-none">Activities</a></li>
-                            <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
-                            <li><a href="contact_us.html" class="text-white text-decoration-none">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Column 3: Travel Guide -->
-                    <div class="col-md-3 mb-4">
-                        <h5 class="mb-3 text-white">Travel Guide</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="privacy_policy.html" class="text-white text-decoration-none">Policies & Legal</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Tour Highlights</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Newsletter Signup</a></li>
-                            <!-- <li><a href="#" class="text-white text-decoration-none">Restaurants</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Travel Blogs</a></li> -->
-                        </ul>
-                    </div>
-
-                    <!-- Column 4: Contact -->
-                    <div class="col-md-3 mb-4">
-                        <h5 class="mb-3 text-white">Contact</h5>
-                        <p class="mb-1"><i class="fas fa-phone-alt fa-flip-horizontal me-2"></i>+977 1234567890</p>
-                        <p class="mb-1"><i class="fas fa-envelope me-2"></i>info@nepalhimalayatours.com</p>
-                        <p class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Kathmandu, Nepal</p>
-                    </div>
-                </div>
-
-                <hr class="border-light">
-
-                <!-- Bottom Row -->
-                <div class="d-flex justify-content-between align-items-center py-3 flex-wrap" style="font-weight: 400; font-size: 14px;">
-                    <!-- Left Side: Text & Links -->
-                    <div class="text-white mb-2 mb-md-0">
-                        <span class="me-3">© 2025 Nepal Himalaya Tours. All rights reserved.</span>
-                        <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
-                        <a href="#" class="text-white text-decoration-none me-3">Terms of Service</a>
-                        <a href="#" class="text-white text-decoration-none">Cookie Settings</a>
-                    </div>
-
-                    <!-- Right Side: Social Icons -->
-                    <div>
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-            </div>
-        </footer>
-        <!-- Footer End -->  
-    </section> 
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
-    <script src="script.js"></script>
-    <script>
-    // ================= DYNAMIC FILTER DATA (same as yours) =================
-    const filtersData = {
-      "Tour Type": ["Nepal Trekking", "Nepal Tours", "Nepal Helicopter Tour", "Adventure Sports", "City Tours", "Kathmandu Tours"],
-      "Price": "range",
-      "Duration": ["1-3 Days", "4-7 Days", "8-14 Days", "15+ Days"],
-      "Rating": ["★★★★★", "★★★★☆", "★★★☆☆", "★★☆☆☆", "★☆☆☆☆"],
-      "Specials": ["Deals & Discounts", "Free Cancellation", "Private Tour"]
-    };
-
-    const filtersContainer = document.getElementById("filters-container");
-    Object.keys(filtersData).forEach((section, index) => {
-      if(section === "Price") {
-        const div = document.createElement("div");
-        div.classList.add("filter-card");
-        const title = document.createElement("h4");
-        title.textContent = "Price";
-        div.appendChild(title);
-
-        const input = document.createElement("input");
-        input.type = "range";
-        input.min = 100;
-        input.max = 5000;
-        input.step = 100;
-        div.appendChild(input);
-
-        const priceValue = document.createElement("p");
-        priceValue.id = "price-value";
-        priceValue.textContent = "Up to $5000";
-        div.appendChild(priceValue);
-
-        input.addEventListener("input", () => {
-          priceValue.textContent = "Up to $" + input.value;
-        });
-
-        filtersContainer.appendChild(div);
-      } else {
-        const div = document.createElement("div");
-        div.classList.add("filter-card");
-
-        const title = document.createElement("h4");
-        title.textContent = section;
-        div.appendChild(title);
-
-        filtersData[section].forEach(option => {
-          const label = document.createElement("label");
-          label.style.display = "block";
-          label.style.marginBottom = "6px";
-          const checkbox = document.createElement("input");
-          checkbox.type = "checkbox";
-          checkbox.value = option;
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(" " + option));
-          div.appendChild(label);
-        });
-
-        filtersContainer.appendChild(div);
-      }
-
-      if(index < Object.keys(filtersData).length - 1) {
-        const divider = document.createElement("hr");
-        filtersContainer.appendChild(divider);
-      }
-    });
-
-    // ================= DYNAMIC TOURS DATA (expanded fields for each card) =================
-    const toursData = [
-      {
-        title: "Everest Base Camp Trek",
-        desc: "High-mountain trekking to the base of the world's highest peak with Sherpa culture.",
-        img: "images/dummy-image1.jpg",
-        location: "Everest",
-        country: "Nepal",
-        duration: "12 Days 11 Nights",
-        rating: 4.9,
-        price: 3200,
-        bestPriceGuarantee: true,
-        freeCancellation: true
-      },
-      {
-        title: "Annapurna Circuit Adventure",
-        desc: "Iconic route with varied landscapes: montane forests, terraced fields and Himalaya views.",
-        img: "images/dummy-image2.jpg",
-        location: "Annapurna",
-        country: "Nepal",
-        duration: "10 Days 9 Nights",
-        rating: 4.7,
-        price: 2800,
-        bestPriceGuarantee: true,
-        freeCancellation: false
-      },
-      {
-        title: "Kathmandu & Cultural Heritage",
-        desc: "A gentle city tour visiting the Durbar Squares, temples and local bazaars.",
-        img: "images/dummy-image3.jpg",
-        location: "Kathmandu",
-        country: "Nepal",
-        duration: "1 Day",
-        rating: 4.5,
-        price: 120,
-        bestPriceGuarantee: false,
-        freeCancellation: true
-      },
-      {
-        title: "Pokhara Adventure & Paragliding",
-        desc: "Short getaway with paragliding over the Phewa Lake and mountain panoramas.",
-        img: "images/dummy-image4.jpg",
-        location: "Pokhara",
-        country: "Nepal",
-        duration: "3 Days 2 Nights",
-        rating: 4.6,
-        price: 420,
-        bestPriceGuarantee: true,
-        freeCancellation: true
-      },
-      {
-        title: "Chitwan Wildlife Safari",
-        desc: "Jungle safari with chances to see rhinos, crocodiles and rich birdlife.",
-        img: "images/dummy-image5.jpg",
-        location: "Chitwan",
-        country: "Nepal",
-        duration: "2 Days 1 Night",
-        rating: 4.4,
-        price: 240,
-        bestPriceGuarantee: false,
-        freeCancellation: false
-      },
-      {
-        title: "Rara Lake Remote Escape",
-        desc: "Off-the-grid exploration to Nepal's largest and most pristine high-altitude lake.",
-        img: "images/dummy-image5.jpg",
-        location: "Rara",
-        country: "Nepal",
-        duration: "6 Days 5 Nights",
-        rating: 4.8,
-        price: 950,
-        bestPriceGuarantee: true,
-        freeCancellation: false
-      },
-      {
-        title: "Lumbini Pilgrimage & Spiritual Tour",
-        desc: "Visit the birthplace of Buddha and serene monasteries around Lumbini.",
-        img: "images/dummy-image6.jpg",
-        location: "Lumbini",
-        country: "Nepal",
-        duration: "1-2 Days",
-        rating: 4.3,
-        price: 180,
-        bestPriceGuarantee: false,
-        freeCancellation: true
-      },
-      {
-        title: "Bhaktapur Heritage Walk",
-        desc: "Walk through ancient palaces, art and traditional Newari crafts in Bhaktapur.",
-        img: "images/dummy-image2.jpg",
-        location: "Bhaktapur",
-        country: "Nepal",
-        duration: "1 Day",
-        rating: 4.2,
-        price: 90,
-        bestPriceGuarantee: false,
-        freeCancellation: true
-      }
-    ];
-
-    // DOM refs
-    const toursContainer = document.getElementById("tours-container");
-    const tourCount = document.getElementById("tour-count");
-    const shownCount = document.getElementById("shown-count");
-    const pagination = document.getElementById("pagination");
-    const sortSelect = document.getElementById("sort-select");
-    const TOTAL_RESULTS = 1362; // keeps the left label value as requested
-
-    // show total in header and initial counts
-    tourCount.textContent = toursData.length;
-    document.getElementById("results-count").innerHTML = `Showing <span id="shown-count">0</span> of ${TOTAL_RESULTS} results`;
-
-    // helper to create stars using FontAwesome
-    function starsMarkup(rating) {
-      const full = Math.floor(rating);
-      const half = (rating - full) >= 0.5 ? 1 : 0;
-      const empty = 5 - full - half;
-      let html = '';
-      for(let i=0;i<full;i++) html += '<i class="fas fa-star"></i>';
-      if(half) html += '<i class="fas fa-star-half-alt"></i>';
-      for(let i=0;i<empty;i++) html += '<i class="far fa-star"></i>';
-      return html;
-    }
-
-    // render single tour card
-    function createTourCard(tour) {
-      const card = document.createElement("article");
-      card.className = "tour-card";
-
-      card.innerHTML = `
-        <div class="tour-media">
-          <img src="${tour.img}" alt="${tour.title}">
+        <div class="d-flex ms-auto">
+          <a class="btn btn-contact" href="contact_us.html">Contact Us</a>
         </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
 
-        <div class="tour-main">
-          <div class="card-top">
-            <div class="location"><i class="bi bi-geo-alt-fill"></i> ${tour.location}, ${tour.country}</div>
-            <div class="duration"><i class="bi bi-clock-history"></i> ${tour.duration}</div>
+    <div class="container">
+      <div class="tours-header">
+        <div class="breadcrumb">Home > Tours > <span>Nepal</span></div>
+        <div class="heading">The 8 Best Nepal Tours</div>
+      </div>
+
+      <h3 class="explore-heading">Explore all things to do in Nepal</h3>
+
+      <div class="tours-grid">
+        <!-- Left Filters -->
+        <aside id="filters-container">
+          <div class="filter-heading">
+            <h4>When you are travelling</h4>
+            <input type="date" id="travel-date" class="form-control" />
           </div>
 
+          <div class="filter-card">
+            <h4>Tour Type</h4>
+            <label><input type="checkbox" /> Nepal Trekking</label>
+            <label><input type="checkbox" /> Nepal Tours</label>
+            <label><input type="checkbox" /> Nepal Helicopter Tour</label>
+            <label><input type="checkbox" /> Adventure Sports</label>
+            <label><input type="checkbox" /> City Tours</label>
+            <label><input type="checkbox" /> Kathmandu Tours</label>
+          </div>
+          <hr />
+          <div class="filter-card">
+            <h4>Price</h4>
+            <input type="range" min="100" max="5000" value="5000" />
+            <p>Up to $5000</p>
+          </div>
+          <hr />
+          <div class="filter-card">
+            <h4>Duration</h4>
+            <label><input type="checkbox" /> 1–3 Days</label>
+            <label><input type="checkbox" /> 4–7 Days</label>
+            <label><input type="checkbox" /> 8–14 Days</label>
+            <label><input type="checkbox" /> 15+ Days</label>
+          </div>
+          <hr />
+          <div class="filter-card">
+            <h4>Rating</h4>
+            <label><input type="checkbox" /> ★★★★★</label>
+            <label><input type="checkbox" /> ★★★★☆</label>
+            <label><input type="checkbox" /> ★★★☆☆</label>
+            <label><input type="checkbox" /> ★★☆☆☆</label>
+          </div>
+          <hr />
+          <div class="filter-card">
+            <h4>Specials</h4>
+            <label><input type="checkbox" /> Deals & Discounts</label>
+            <label><input type="checkbox" /> Free Cancellation</label>
+            <label><input type="checkbox" /> Private Tour</label>
+          </div>
+        </aside>
+
+        <!-- Right Section -->
+        <div id="right-section">
+          <div id="results-row">
+            <div id="results-count">Showing 8 of 1362 results</div>
+            <div id="sort-wrap">
+              <label for="sort-select">Sort by:</label>
+              <select id="sort-select">
+                <option>Featured</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Duration: Short to Long</option>
+                <option>Rating: High to Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Tour Cards -->
+          <div id="tours-container">
+            <article class="tour-card">
+              <div class="tour-media">
+                <img src="images/dummy-image1.jpg" alt="Everest Base Camp Trek" />
+              </div>
+              <div class="tour-main">
+                <div class="card-top">
+                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Everest, Nepal</div>
+                  <div class="duration"><i class="bi bi-clock-history"></i> 12 Days 11 Nights</div>
+                </div>
+                <h4 class="tour-title">Everest Base Camp Trek</h4>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.9</div>
+                <p class="tour-desc">High-mountain trekking to the base of the world's highest peak with Sherpa culture.</p>
+                <div class="desc-row"><div class="price">$3,200</div></div>
+                <div class="card-bottom">
+                  <span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>
+                  <span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>
+                  <a href="destination_details.html" class="btn-details">View Details</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-media">
+                <img src="images/dummy-image2.jpg" alt="Annapurna Circuit" />
+              </div>
+              <div class="tour-main">
+                <div class="card-top">
+                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Annapurna, Nepal</div>
+                  <div class="duration"><i class="bi bi-clock-history"></i> 10 Days 9 Nights</div>
+                </div>
+                <h4 class="tour-title">Annapurna Circuit Adventure</h4>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.7</div>
+                <p class="tour-desc">Iconic route with varied landscapes: montane forests, terraced fields and Himalaya views.</p>
+                <div class="desc-row"><div class="price">$2,800</div></div>
+                <div class="card-bottom">
+                  <span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>
+                  <a href="destination_details.html" class="btn-details">View Details</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-media">
+                <img src="images/dummy-image3.jpg" alt="Kathmandu" />
+              </div>
+              <div class="tour-main">
+                <div class="card-top">
+                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Kathmandu, Nepal</div>
+                  <div class="duration"><i class="bi bi-clock-history"></i> 1 Day</div>
+                </div>
+                <h4 class="tour-title">Kathmandu & Cultural Heritage</h4>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.5</div>
+                <p class="tour-desc">A gentle city tour visiting the Durbar Squares, temples and local bazaars.</p>
+                <div class="desc-row"><div class="price">$120</div></div>
+                <div class="card-bottom">
+                  <span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>
+                  <a href="destination_details.html" class="btn-details">View Details</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-media">
+                <img src="images/dummy-image4.jpg" alt="Pokhara" />
+              </div>
+              <div class="tour-main">
+                <div class="card-top">
+                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Pokhara, Nepal</div>
+                  <div class="duration"><i class="bi bi-clock-history"></i> 3 Days 2 Nights</div>
+                </div>
+                <h4 class="tour-title">Pokhara Adventure & Paragliding</h4>
+                <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.6</div>
+                <p class="tour-desc">Short getaway with paragliding over the Phewa Lake and mountain panoramas.</p>
+                <div class="desc-row"><div class="price">$420</div></div>
+                <div class="card-bottom">
+                  <span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>
+                  <span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>
+                  <a href="destination_details.html" class="btn-details">View Details</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- You can continue with Chitwan, Rara, Lumbini, Bhaktapur the same way -->
+          </div>
+
+          <!-- Pagination -->
+          <!-- <div id="pagination" class="mt-3 text-center">
+            <button class="btn btn-primary btn-sm">1</button>
+            <button class="btn btn-outline-secondary btn-sm">2</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+      <div class="container-fluid d-flex justify-content-center p-0">
+        <div class="position-relative" style="width: 100%; height: 299px; background-image: url('images/banner.jpg'); background-size: cover; background-position: center;">
+          <div class="row h-100 align-items-center m-0">
+            <div class="col-md-6 text-start ps-4 ps-md-5">
+              <h2 class="text-white fw-bold">Let's make your Adventure amazing</h2>
+            </div>
+            <div class="col-md-6 text-end pe-4 pe-md-5">
+              <a href="#" class="btn btn-primary btn-lg">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="text-white pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <img src="assets/logo1.png" alt="Logo" class="mb-3" style="width:150px;" />
+            <h6>Subscribe to our Newsletter</h6>
+            <form class="d-flex">
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Your email" required />
+                <button class="btn btn-dark" type="submit"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+              <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+              <li><a href="destination.html" class="text-white text-decoration-none">Destination</a></li>
+              <li><a href="activities.html" class="text-white text-decoration-none">Activities</a></li>
+              <li><a href="faq.html" class="text-white text-decoration-none">FAQ</a></li>
+              <li><a href="contact_us.html" class="text-white text-decoration-none">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5>Travel Guide</h5>
+            <ul class="list-unstyled">
+              <li><a href="privacy_policy.html" class="text-white text-decoration-none">Policies & Legal</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Tour Highlights</a></li>
+              <li><a href="#" class="text-white text-decoration-none">Newsletter Signup</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 mb-4">
+            <h5>Contact</h5>
+            <p><i class="fas fa-phone-alt me-2"></i> +977 1234567890</p>
+            <p><i class="fas fa-envelope me-2"></i> info@nepalhimalayatours.com</p>
+            <p><i class="fas fa-map-marker-alt me-2"></i> Kathmandu, Nepal</p>
+          </div>
+        </div>
+        <hr class="border-light" />
+        <div class="d-flex justify-content-between align-items-center py-3 flex-wrap" style="font-size: 14px;">
           <div>
-            <h4 class="tour-title">${tour.title}</h4>
-            <div class="rating">
-              <span class="stars">${starsMarkup(tour.rating)}</span>
-              <small>${tour.rating.toFixed(1)}</small>
-            </div>
+            <span>© 2025 Nepal Himalaya Tours. All rights reserved.</span>
           </div>
-
-          <div class="desc-row">
-            <p class="tour-desc">${tour.desc}</p>
-            <div class="price">$${tour.price.toLocaleString()}</div>
-          </div>
-
-          <div class="card-bottom">
-            <div class="features">
-              ${tour.bestPriceGuarantee ? `<span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>` : ''}
-              ${tour.freeCancellation ? `<span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>` : ''}
-            </div>
-
-            <div class="view-details-wrap">
-              <a href="destination_details.html" class="btn-details">View Details</a>
-            </div>
+          <div>
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
           </div>
         </div>
-      `;
+      </div>
+    </footer>
+  </section>
 
-      return card;
-    }
-
-    // ============== Pagination & Sorting ==============
-    const toursPerPage = 5; // show 5 per page (featured default)
-    let currentPage = 1;
-    let currentTours = [...toursData]; // working copy
-
-    function renderTours(list) {
-      toursContainer.innerHTML = "";
-      if(!list || list.length === 0) {
-        toursContainer.innerHTML = "<p>No tours found.</p>";
-        updateShownCount(0);
-        return;
-      }
-      list.forEach(t => toursContainer.appendChild(createTourCard(t)));
-      updateShownCount(list.length);
-    }
-
-    function updateShownCount(n) {
-      // ensure the shown-count span exists (we set results-count earlier)
-      const sc = document.getElementById("shown-count");
-      if(sc) sc.textContent = n;
-    }
-
-    function renderToursPage(page) {
-      const start = (page - 1) * toursPerPage;
-      const end = start + toursPerPage;
-      const pageTours = currentTours.slice(start, end);
-      renderTours(pageTours);
-    }
-
-    function renderPagination(){
-      pagination.innerHTML = "";
-      if (currentTours.length <= toursPerPage) return;
-      const totalPages = Math.ceil(currentTours.length / toursPerPage);
-
-      for (let i = 1; i <= totalPages; i++) {
-        const btn = document.createElement("button");
-        btn.className = 'btn btn-sm me-1';
-        btn.style.minWidth = '38px';
-        btn.textContent = i;
-        if (i === currentPage) { 
-            btn.classList.add('btn-primary'); 
-            btn.style.color = '#fff';  // make active number white
-            btn.style.backgroundColor = '#0d6efd';
-        } else { 
-            btn.classList.add('btn-outline-secondary'); 
-            btn.style.color = '#000';  // other numbers black
-        }
-
-        btn.addEventListener("click", () => {
-          currentPage = i;
-          renderToursPage(currentPage);
-          renderPagination();
-          window.scrollTo({top: 0, behavior: 'smooth'});
-        });
-
-        pagination.appendChild(btn);
-      }
-    }
-
-    function applySort(value) {
-      if (value === 'featured') {
-        // original order as featured
-        currentTours = [...toursData];
-      } else if (value === 'price-asc') {
-        currentTours = [...toursData].sort((a,b) => a.price - b.price);
-      } else if (value === 'price-desc') {
-        currentTours = [...toursData].sort((a,b) => b.price - a.price);
-      } else if (value === 'duration-asc') {
-        const durVal = s => {
-          const m = s.match(/\d+/);
-          return m ? parseInt(m[0],10) : 9999;
-        };
-        currentTours = [...toursData].sort((a,b) => durVal(a.duration) - durVal(b.duration));
-      } else if (value === 'rating-desc') {
-        currentTours = [...toursData].sort((a,b) => b.rating - a.rating);
-      } else {
-        currentTours = [...toursData];
-      }
-
-      // reset to first page after sorting
-      currentPage = 1;
-      renderToursPage(currentPage);
-      renderPagination();
-    }
-
-    // wire sort select
-    sortSelect.addEventListener("change", () => {
-      applySort(sortSelect.value);
-    });
-
-    // INITIAL LOAD
-    window.addEventListener("DOMContentLoaded", () => {
-      // default to featured and show 5 per page
-      sortSelect.value = 'featured';
-      applySort('featured');
-    });
-  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

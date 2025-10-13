@@ -89,9 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
             el.classList.add('zoom-on-scroll');
         }
 
-        if (el.tagName === 'H1') el.classList.add('slide-left');
-        if (el.tagName === 'H2') el.classList.add('slide-left');
-        if (el.tagName === 'H5') el.classList.add('slide-right');
+        if (el.tagName === 'H1') el.classList.add('fade-in');
+        if (el.tagName === 'H2') el.classList.add('fade-in');
+        if (el.tagName === 'H5') el.classList.add('fade-in');
         if (el.tagName === 'P') el.classList.add('fade-in');
         if (el.tagName === 'SMALL') el.classList.add('fade-in');
     });
