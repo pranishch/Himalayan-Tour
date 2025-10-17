@@ -154,11 +154,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //========================= Scroll Animation Logic =============================
     const scrollElements = document.querySelectorAll(
-        'small, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .right-content img, #activities-images img, .blog-card, #testimonial-section img'
+        'small, h1, h2, h3, h4, h5, h6, p, a, .search-form, .gallery-img-other, .gallery-img-center, .service-card, .feature-card, .right-content img, #activities-images img, .blog-card, #testimonial-section img'
     );
 
     scrollElements.forEach(el => {
         el.classList.add('animate-on-scroll');
+
         if (
             el.classList.contains('search-form') ||
             el.classList.contains('gallery-img-other') ||
@@ -172,12 +173,24 @@ document.addEventListener('DOMContentLoaded', function() {
         ) {
             el.classList.add('zoom-on-scroll');
         }
+
+        // small tag fade-in
         if (el.tagName === 'SMALL') el.classList.add('fade-in');
+
+        // headings slide-up
+        if (/^H[1-6]$/.test(el.tagName)) el.classList.add('slide-up');
+
+        // paragraphs fade-in-up
+        if (el.tagName === 'P') el.classList.add('fade-in-up');
+
+        // links fade-in-link
+        if (el.tagName === 'A') el.classList.add('fade-in-link');
+        
     });
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if(entry.isIntersecting){
+            if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
             } else {
                 entry.target.classList.remove('in-view');
