@@ -138,6 +138,44 @@ body.blogs-detail-page #breadcrumb-section {
     z-index: 10;
 }
 
+#mainCarousel .navbar .nav-link {
+  font-family: 'Poppins', sans-serif;
+}
+
+#mainCarousel .navbar-scroll {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+#mainCarousel .navbar-brand img {
+  height: 50px;
+}
+
+#mainCarousel .navbar-scroll .btn {
+  background-color: #0077CC;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#mainCarousel .navbar-scroll.scrolled .btn {
+  background-color: white;
+  color: #0d6efd;
+}
+
+#mainCarousel .carousel-indicators {
+  transition: opacity 0.3s ease;
+}
+
+#mainCarousel .carousel-indicators.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#mainCarousel .navbar-scroll.scrolled {
+  background-color: var(--primary-color);
+  transition: background-color 0.3s ease;
+}
+
 #main-navbar .nav-link {
     color: var(--secondary-color) !important;
     font-weight: 400;
@@ -2932,6 +2970,8 @@ body.blogs-detail-page #breadcrumb-section {
       gap: 15px;
       padding: 0 15px; 
       justify-content: center;
+      flex-direction: column;
+      overflow-x: visible; 
     }
 
 
@@ -2993,8 +3033,22 @@ body.blogs-detail-page #breadcrumb-section {
 
     #activities-section .activity-card {
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 100%;  
+      margin-bottom: 15px;
+    }
+    #activities-section .activity-card .card-content h5,
+    #activities-section .activity-card .card-content p,
+    #activities-section .activity-card .card-content .bottom-info p {
+        font-size: 14px; 
+    }
+      #activities-section .activity-card .rating {
+        font-size: 13px;
     }
 
+    #activities-section .activity-card .bottom-info p {
+        display: flex;
+        justify-content: space-between;
+    }
     /* ============================Blog Page =========================== */
     #blog-section {
         padding-top: 40px !important;
