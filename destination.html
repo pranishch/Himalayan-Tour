@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section id="tours-page">
@@ -52,7 +52,7 @@
         <!-- Left Filters -->
         <aside id="filters-container">
           <div class="filter-heading">
-            <h4>When you are travelling</h4>
+            <h4>When are you travelling</h4>
             <input type="date" id="travel-date" class="form-control" />
           </div>
 
@@ -67,9 +67,9 @@
           </div>
           <hr />
           <div class="filter-card">
-            <h4>Price</h4>
+            <h4>Filter Price</h4>
             <input type="range" min="100" max="5000" value="5000" />
-            <p>Up to $5000</p>
+            <p>Price: $200 - $4000</p>
           </div>
           <hr />
           <div class="filter-card">
@@ -82,11 +82,29 @@
           <hr />
           <div class="filter-card">
             <h4>Rating</h4>
-            <label><input type="checkbox" /> ★★★★★</label>
-            <label><input type="checkbox" /> ★★★★☆</label>
-            <label><input type="checkbox" /> ★★★☆☆</label>
-            <label><input type="checkbox" /> ★★☆☆☆</label>
-          </div>
+            <label><input type="checkbox" /> 
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </label>
+            <label><input type="checkbox" /> 
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </label>
+            <label><input type="checkbox" /> 
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </label>
+            <label><input type="checkbox" /> 
+                <i class="fas fa-star"></i>
+            </label>
+        </div>
+
           <hr />
           <div class="filter-card">
             <h4>Specials</h4>
@@ -99,7 +117,7 @@
         <!-- Right Section -->
         <div id="right-section">
           <div id="results-row">
-            <div id="results-count">Showing 8 of 1362 results</div>
+            <div id="results-count">1362 results</div>
             <div id="sort-wrap">
               <label for="sort-select">Sort by:</label>
               <select id="sort-select">
@@ -120,16 +138,18 @@
               </div>
               <div class="tour-main">
                 <div class="card-top">
-                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Everest, Nepal</div>
+                  <div class="location"><i class="bi bi-geo-alt"></i> Everest, Nepal</div>
                   <div class="duration"><i class="bi bi-clock-history"></i> 12 Days 11 Nights</div>
                 </div>
                 <h4 class="tour-title">Everest Base Camp Trek</h4>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.9</div>
-                <p class="tour-desc">High-mountain trekking to the base of the world's highest peak with Sherpa culture.</p>
-                <div class="desc-row"><div class="price">$3,200</div></div>
+                <div class="desc-row">
+                  <p class="tour-desc">Scenic helicopter tour to Everest Base Camp with stunning Himalayan views and a close-up experience of Mt. Everest’s majestic beauty</p>
+                  <div class="price">$3,200</div>
+                </div>
                 <div class="card-bottom">
-                  <span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>
-                  <span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>
+                  <span class="feature"><i class="fas fa-tag fa-rotate-90"></i> Best price guarantee</span>
+                  <span class="feature"><i class="fas fa-check"></i> Free cancellation</span>
                   <a href="destination_details.html" class="btn-details">View Details</a>
                 </div>
               </div>
@@ -141,15 +161,18 @@
               </div>
               <div class="tour-main">
                 <div class="card-top">
-                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Annapurna, Nepal</div>
+                  <div class="location"><i class="bi bi-geo-alt"></i> Annapurna, Nepal</div>
                   <div class="duration"><i class="bi bi-clock-history"></i> 10 Days 9 Nights</div>
                 </div>
                 <h4 class="tour-title">Annapurna Circuit Adventure</h4>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> 4.7</div>
-                <p class="tour-desc">Iconic route with varied landscapes: montane forests, terraced fields and Himalaya views.</p>
-                <div class="desc-row"><div class="price">$2,800</div></div>
+                <div class="desc-row">
+                  <p class="tour-desc">Fly deep into the heart of the Annapurnas on a thrilling helicopter tour, landing at Annapurna Base Camp for breathtaking 360° views of towering peaks.</p>
+                  <div class="price">$2,600</div>
+                </div>
+
                 <div class="card-bottom">
-                  <span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>
+                  <span class="feature"><i class="fas fa-tag fa-rotate-90"></i> Best price guarantee</span>
                   <a href="destination_details.html" class="btn-details">View Details</a>
                 </div>
               </div>
@@ -161,15 +184,17 @@
               </div>
               <div class="tour-main">
                 <div class="card-top">
-                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Kathmandu, Nepal</div>
+                  <div class="location"><i class="bi bi-geo-alt"></i> Kathmandu, Nepal</div>
                   <div class="duration"><i class="bi bi-clock-history"></i> 1 Day</div>
                 </div>
                 <h4 class="tour-title">Kathmandu & Cultural Heritage</h4>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.5</div>
-                <p class="tour-desc">A gentle city tour visiting the Durbar Squares, temples and local bazaars.</p>
-                <div class="desc-row"><div class="price">$120</div></div>
+                <div class="desc-row">
+                  <p class="tour-desc">Scenic helicopter tour to Everest Base Camp with stunning Himalayan views and a close-up experience of Mt. Everest’s majestic beauty</p>
+                  <div class="price">$630</div>
+                </div>
                 <div class="card-bottom">
-                  <span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>
+                  <span class="feature"><i class="fas fa-check"></i> Free cancellation</span>
                   <a href="destination_details.html" class="btn-details">View Details</a>
                 </div>
               </div>
@@ -181,16 +206,19 @@
               </div>
               <div class="tour-main">
                 <div class="card-top">
-                  <div class="location"><i class="bi bi-geo-alt-fill"></i> Pokhara, Nepal</div>
+                  <div class="location"><i class="bi bi-geo-alt"></i> Pokhara, Nepal</div>
                   <div class="duration"><i class="bi bi-clock-history"></i> 3 Days 2 Nights</div>
                 </div>
                 <h4 class="tour-title">Pokhara Adventure & Paragliding</h4>
                 <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i> 4.6</div>
-                <p class="tour-desc">Short getaway with paragliding over the Phewa Lake and mountain panoramas.</p>
-                <div class="desc-row"><div class="price">$420</div></div>
+                <div class="desc-row">
+                  <p class="tour-desc">Discover the cultural heart of Nepal with a Kathmandu 
+                    sightseeing tour — explore UNESCO World Heritage sites, ancient temples, bustling squares, and vibrant local life.</p>
+                  <div class="price">$3,20</div>
+                </div>
                 <div class="card-bottom">
-                  <span class="feature"><i class="fas fa-tag"></i> Best price guarantee</span>
-                  <span class="feature"><i class="fas fa-times-circle"></i> Free cancellation</span>
+                  <span class="feature"><i class="fas fa-tag fa-rotate-90"></i> Best price guarantee</span>
+                  <span class="feature"><i class="fas fa-check"></i> Free cancellation</span>
                   <a href="destination_details.html" class="btn-details">View Details</a>
                 </div>
               </div>
@@ -210,21 +238,22 @@
 
     <!-- Booking Section -->
     <section class="booking-section">
-      <div class="container-fluid d-flex justify-content-center p-0">
-        <div class="position-relative" style="width: 100%; height: 299px; background-image: url('images/banner.jpg'); background-size: cover; background-position: center;">
-          <div class="row h-100 align-items-center m-0">
-            <div class="col-md-6 text-start ps-4 ps-md-5">
-              <h2 class="text-white fw-bold">Let's make your Adventure amazing</h2>
+        <div class="container-fluid d-flex justify-content-center p-0">
+            <div class="position-relative" 
+                style="width: 100%; height: 299px; background-image: url('images/banner.jpg'); background-size: cover; background-position: center;">
+                <div class="row h-100 align-items-center m-0">
+                    <div class="col-md-6 text-start ps-4 ps-md-5">
+                        <h2>Let’s Make Your <br> Adventure Amazing</h2>
+                    </div>
+                    <div class="booking col-md-6 text-end pe-4 pe-md-5">
+                        <a href="#" class="btn btn-primary btn-lg">Book Now</a>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 text-end pe-4 pe-md-5">
-              <a href="#" class="btn btn-primary btn-lg">Book Now</a>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-   <footer id="footer" class="text-white pt-5">
+    <footer id="footer" class="text-white pt-5">
         <div class="container">
             <div class="row">
                 <!-- Column 1: Logo & Email Form -->
